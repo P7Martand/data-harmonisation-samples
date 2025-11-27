@@ -92,38 +92,6 @@
         "isCustomOutputSchema" : false
       }
     },
-    "25pHjkTdX9-X6YG7yNQKL" : {
-      "id" : "25pHjkTdX9-X6YG7yNQKL",
-      "component" : "Dataset",
-      "metadata" : {
-        "label" : "cdm_player_master",
-        "x" : -560,
-        "y" : 0,
-        "phase" : 0
-      },
-      "properties" : {
-        "writeOptions" : {
-          "writeMode" : "overwrite"
-        },
-        "table" : {
-          "name" : "cdm_player_master",
-          "sourceType" : "Table",
-          "sourceName" : "qa_team_prakhartargets",
-          "alias" : ""
-        }
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "_qtfM10nOfSqhnMkmEqIB",
-          "slug" : "in"
-        } ],
-        "outputs" : [ {
-          "id" : "Msfs09qAdXNKg_tCXi0hy",
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false
-      }
-    },
     "bmvFW9xte5Qm7vjrVYgdM" : {
       "id" : "bmvFW9xte5Qm7vjrVYgdM",
       "component" : "Dataset",
@@ -151,6 +119,67 @@
         } ],
         "outputs" : [ {
           "id" : "CA6JLho8CoKmRcRYkmslH",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "RlAo6cYwst0CXBjHXrywZ$$Rf9zMXeFgwDyieih5Jbob" : {
+      "id" : "RlAo6cYwst0CXBjHXrywZ$$Rf9zMXeFgwDyieih5Jbob",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "new_cdm_brand_summary",
+        "x" : -580,
+        "y" : 320,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "new_cdm_brand_summary",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_prakhartargets",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "V5c8rIBSrQZfFt0CPnJpb$$olOVWU6fONkIoiGpz8sEb",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "k3HjT62q2g2c_GcFeNqRC$$m2muuQTWONu0mcf1emyNZ",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "25pHjkTdX9-X6YG7yNQKL" : {
+      "id" : "25pHjkTdX9-X6YG7yNQKL",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "cdm_player_master",
+        "x" : -560,
+        "y" : 0,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "cdm_player_master",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_prakhartargets",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "_qtfM10nOfSqhnMkmEqIB",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "Msfs09qAdXNKg_tCXi0hy",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false

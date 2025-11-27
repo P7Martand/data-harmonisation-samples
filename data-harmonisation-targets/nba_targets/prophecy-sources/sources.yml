@@ -290,3 +290,54 @@ sources:
       dataType:
         type: "Timestamp"
     type: "table"
+  - name: "new_cdm_brand_summary"
+    config:
+      tags:
+      - "pipeline:pipeline1"
+    columns:
+    - name: "cdm_brand_engagement_id"
+      dataType:
+        type: "String"
+    - name: "cdm_player_id"
+      dataType:
+        type: "String"
+    - name: "brand_name_normalized"
+      dataType:
+        type: "String"
+    - name: "brand_category"
+      dataType:
+        type: "String"
+    - name: "engagement_start_date"
+      dataType:
+        type: "Date"
+    - name: "engagement_end_date"
+      dataType:
+        type: "Date"
+    - name: "engagement_status"
+      dataType:
+        type: "String"
+    - name: "deal_value_total_usd"
+      dataType:
+        type: "Bigint"
+    - name: "deal_value_annual_usd"
+      dataType:
+        type: "Bigint"
+    - name: "engagement_type"
+      dataType:
+        type: "String"
+    - name: "created_timestamp"
+      dataType:
+        type: "Timestamp"
+    - name: "dbt_scd_id"
+      dataType:
+        type: "String"
+    - name: "dbt_updated_at"
+      dataType:
+        type: "Timestamp"
+    - name: "dbt_valid_from"
+      dataType:
+        type: "Timestamp"
+    - name: "dbt_valid_to"
+      dataType:
+        type: "Timestamp"
+    type: "table"
