@@ -1,0 +1,8 @@
+---
+packages:
+- revision: "1.0.4.dev2"
+  git: "https://github.com/prophecy-io/prophecy-basics"
+  subdirectory: ""
+- revision: "harmonize_targets/5"
+  git: "http://gitserver:3000/oIW7hWw9_team_1070/WJNVlyUa_project_67826.git"
+  subdirectory: ""

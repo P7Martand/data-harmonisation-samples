@@ -1,0 +1,245 @@
+{
+  "id" : "ref1__best_bowlers",
+  "metainfo" : {
+    "label" : "ref1__best_bowlers",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "alias" : "\"best_bowlers\"",
+        "materialized" : "table",
+        "database" : "\"qa_team\"",
+        "schema" : "\"prakhartargets\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "zK7Lbdlgl0ccn4Y5KrXfM$$47sJF2BzLpy-Bfis8Mrhs" : {
+      "id" : "zK7Lbdlgl0ccn4Y5KrXfM$$47sJF2BzLpy-Bfis8Mrhs",
+      "component" : "OrderBy",
+      "metadata" : {
+        "label" : "ranked_batsmen",
+        "x" : 660,
+        "y" : 120,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "orders" : [ {
+          "expression" : {
+            "expression" : "total_scores"
+          },
+          "sortType" : "desc",
+          "nullsType" : ""
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "pUhBu4_BYPpvBSY4McYKJ$$D_s-oBCpZv8PZ0oOJR4x5",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "Eas5pHDEZrVHmyuAot3uU$$HIAbUAANCNOovFQpG8rHi",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "UohDvZAgfTjL-k95MN2Xk$$0wON6iRcYBRnlzHGkrVL5" : {
+      "id" : "UohDvZAgfTjL-k95MN2Xk$$0wON6iRcYBRnlzHGkrVL5",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "batsman_players",
+        "x" : 60,
+        "y" : 120,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "category == 'Batsman'"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "gvXw-NDYPGogTbNJLG795$$dbtZ3knFNhYdW8gPyGXad",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "LzF0IfSPEePYXgJ_TkRiu$$wcizaDX-Tv1XqY1EvW3xb",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "combined_player_data_3a8u7mx4AzfZ3ULwuDBdz$$hkovrPGdNdQWF6wE1jzTy" : {
+      "id" : "combined_player_data_3a8u7mx4AzfZ3ULwuDBdz$$hkovrPGdNdQWF6wE1jzTy",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "combined_player_data"
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "output_port_0",
+          "id" : "output_port_0",
+          "language" : "sql",
+          "content" : "\nSELECT *\n\nFROM {{ ref('ref1__combined_player_data') }}\n\n"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "tXzst3kY10fAG1mItK9AD$$pgfP0PUCr-MospX8t78fR" : {
+      "id" : "tXzst3kY10fAG1mItK9AD$$pgfP0PUCr-MospX8t78fR",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "active_batsman_rankings",
+        "x" : 460,
+        "y" : 120,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "total_scores > 0"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "atPQIHkJnEa_-UsNvOw3Y$$jl9mAdAHWAnbwfLSJRZcO",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "wOgkfXmxzH9ps8-jst8WB$$_Oek6BVSXnfh7jQ4Ow2PL",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "mXiCAzScG7dqTk_XvxG3Q$$zCJFtad6dxYTxO_oR5KH5" : {
+      "id" : "mXiCAzScG7dqTk_XvxG3Q$$zCJFtad6dxYTxO_oR5KH5",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "best_bowlers",
+        "phase" : 0
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM ranked_batsmen\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "WqBh6s25OXsNspKyv7oQd$$3ob68OhQw3UF6k-qb7hbR",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "feBpAGW13PSoft1KZmlNE$$ESenDkMgIz33cEgGJ_zOd",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "KF5d1OrEqkfLctVuUVHtu$$rTHMIovO_gntbHxliXBST" : {
+      "id" : "KF5d1OrEqkfLctVuUVHtu$$rTHMIovO_gntbHxliXBST",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "batsman_rankings_with_average",
+        "x" : 260,
+        "y" : 120,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "*"
+          },
+          "alias" : "",
+          "_row_id" : "S9sxRWZcoi"
+        }, {
+          "expression" : {
+            "expression" : "ROUND(total_scores::FLOAT / NULLIF(total_matches, 0), 2)"
+          },
+          "alias" : "average",
+          "_row_id" : "rcQNGD-yR3"
+        }, {
+          "expression" : {
+            "expression" : "ROW_NUMBER() OVER (ORDER BY total_scores DESC)"
+          },
+          "alias" : "world_ranking",
+          "_row_id" : "4dtYRa6PIA"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "x2Velk6LJ149vFpwiR8BU$$kFdg7FE2-0CFCArHdxKGl",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "nrSr4olQxl466KkwPlGA2$$ErRTBgRn2J7Iwsqybictk",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "tvK49aPT7i_SXSOj_et7G",
+    "source" : "zK7Lbdlgl0ccn4Y5KrXfM$$47sJF2BzLpy-Bfis8Mrhs",
+    "sourcePort" : "Eas5pHDEZrVHmyuAot3uU$$HIAbUAANCNOovFQpG8rHi",
+    "target" : "mXiCAzScG7dqTk_XvxG3Q$$zCJFtad6dxYTxO_oR5KH5",
+    "targetPort" : "WqBh6s25OXsNspKyv7oQd$$3ob68OhQw3UF6k-qb7hbR"
+  }, {
+    "id" : "6t6b50oahuEC-7aDEKE3C",
+    "source" : "tXzst3kY10fAG1mItK9AD$$pgfP0PUCr-MospX8t78fR",
+    "sourcePort" : "wOgkfXmxzH9ps8-jst8WB$$_Oek6BVSXnfh7jQ4Ow2PL",
+    "target" : "zK7Lbdlgl0ccn4Y5KrXfM$$47sJF2BzLpy-Bfis8Mrhs",
+    "targetPort" : "pUhBu4_BYPpvBSY4McYKJ$$D_s-oBCpZv8PZ0oOJR4x5"
+  }, {
+    "id" : "p9oKUdzhjYZX4wgP503AI",
+    "source" : "KF5d1OrEqkfLctVuUVHtu$$rTHMIovO_gntbHxliXBST",
+    "sourcePort" : "nrSr4olQxl466KkwPlGA2$$ErRTBgRn2J7Iwsqybictk",
+    "target" : "tXzst3kY10fAG1mItK9AD$$pgfP0PUCr-MospX8t78fR",
+    "targetPort" : "atPQIHkJnEa_-UsNvOw3Y$$jl9mAdAHWAnbwfLSJRZcO"
+  }, {
+    "id" : "rOIYm0C0En6IZncBSi9pd",
+    "source" : "UohDvZAgfTjL-k95MN2Xk$$0wON6iRcYBRnlzHGkrVL5",
+    "sourcePort" : "LzF0IfSPEePYXgJ_TkRiu$$wcizaDX-Tv1XqY1EvW3xb",
+    "target" : "KF5d1OrEqkfLctVuUVHtu$$rTHMIovO_gntbHxliXBST",
+    "targetPort" : "x2Velk6LJ149vFpwiR8BU$$kFdg7FE2-0CFCArHdxKGl"
+  }, {
+    "id" : "uLWcUo3sHMd1lZ1TlYlgH",
+    "source" : "combined_player_data_3a8u7mx4AzfZ3ULwuDBdz$$hkovrPGdNdQWF6wE1jzTy",
+    "sourcePort" : "output_port_0",
+    "target" : "UohDvZAgfTjL-k95MN2Xk$$0wON6iRcYBRnlzHGkrVL5",
+    "targetPort" : "gvXw-NDYPGogTbNJLG795$$dbtZ3knFNhYdW8gPyGXad"
+  } ],
+  "component" : "Model"
+}

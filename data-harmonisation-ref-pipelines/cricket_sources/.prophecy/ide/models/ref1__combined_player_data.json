@@ -1,0 +1,268 @@
+{
+  "id" : "ref1__combined_player_data",
+  "metainfo" : {
+    "label" : "ref1__combined_player_data",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "database" : "\"qa_team\"",
+        "schema" : "\"qa_orchestration\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "BK0M8v5W3btOGqzVscJuu$$LMXLo2lE_PrqHqprbZRy3" : {
+      "id" : "BK0M8v5W3btOGqzVscJuu$$LMXLo2lE_PrqHqprbZRy3",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "ind_team",
+        "x" : -1120,
+        "y" : -140,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "ind_team",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_prakhar",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "3XGvPNJKERxs5Qi3tm_nK$$Ggemon7qmRO_7U1lbOkXI",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "m-nbsGb-ysXuoSvwME16i$$wEhyvGeptg83HynyIuApB" : {
+      "id" : "m-nbsGb-ysXuoSvwME16i$$wEhyvGeptg83HynyIuApB",
+      "component" : "Union",
+      "metadata" : {
+        "label" : "combined_player_data",
+        "x" : -660,
+        "y" : -140,
+        "phase" : 0
+      },
+      "properties" : {
+        "operationType" : "union",
+        "preserveDuplicates" : true,
+        "useMinus" : false,
+        "inputAliases" : [ "in0", "in1", "in2", "in3", "in4" ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "PI8l1FfAd1URnkCq2h0Rf$$xwyedfb2XPZ_jeFRJlMgw",
+          "slug" : "in0"
+        }, {
+          "id" : "wtGbJmLSyJJYl7HG7DgBh$$TOHaDHLOg8u_jcw5ltxi0",
+          "slug" : "in1"
+        }, {
+          "id" : "-_HXkdaFgo2m6bvME_CAf$$IToIhAxGKcS9dNq_dcMkz",
+          "slug" : "in2"
+        }, {
+          "id" : "Yu-Nd6yMSvTH-DhKBpA8R$$57DIJ7oLIu_ijpHbfqmHf",
+          "slug" : "in3"
+        }, {
+          "id" : "R0D_icMUpj7Pwp53tiWuF$$I-x3svCGBxW3WZPc44VLA",
+          "slug" : "in4"
+        } ],
+        "outputs" : [ {
+          "id" : "3a8u7mx4AzfZ3ULwuDBdz$$hkovrPGdNdQWF6wE1jzTy",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "combined_player_data_3a8u7mx4AzfZ3ULwuDBdz$$hkovrPGdNdQWF6wE1jzTy" : {
+      "id" : "combined_player_data_3a8u7mx4AzfZ3ULwuDBdz$$hkovrPGdNdQWF6wE1jzTy",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "combined_player_data"
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM combined_player_data\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "pZcltK0o9vhwKWavpi4cl$$pXwt4l4vigFl1GqFL8u7h" : {
+      "id" : "pZcltK0o9vhwKWavpi4cl$$pXwt4l4vigFl1GqFL8u7h",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "eng_team",
+        "x" : -1120,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "eng_team",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_prakhar",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "eriW5tzAs80zEowNBJm8R$$Y05hbQvMuwuwbU5SxHw_u",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "K7Em5MJKoYEWnujWEnd6m$$rJXPkOyGSB7QTm81UnWmP" : {
+      "id" : "K7Em5MJKoYEWnujWEnd6m$$rJXPkOyGSB7QTm81UnWmP",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "srilanka_team",
+        "x" : -1120,
+        "y" : 140,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "srilanka_team",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_prakhar",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "lc_xc_4JA8CktPdUYk_E6$$K3RCp4O9_83be3ACLMWSD",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "vGpDL3HdqXAxVZ0VP_QrJ$$Pk6M746lgVCMyLOl82gsM" : {
+      "id" : "vGpDL3HdqXAxVZ0VP_QrJ$$Pk6M746lgVCMyLOl82gsM",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "nz_team",
+        "x" : -1120,
+        "y" : 0,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "nz-team",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_prakhar",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "gZJN-u7JTUbV9C_8vxtTI$$C8f7fYKBwuIegjmORdjvp",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "NK5IvkRrGKO9fFq4UQHVO" : {
+      "id" : "NK5IvkRrGKO9fFq4UQHVO",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "ind_team_1",
+        "x" : -1120,
+        "y" : -420,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "ind_team",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_prakhar",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "zBc79qVzAKjxi5daHOaAM",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_m-nbsGb-ysXuoSvwME16i$$wEhyvGeptg83HynyIuApB_3a8u7mx4AzfZ3ULwuDBdz$$hkovrPGdNdQWF6wE1jzTy_combined_player_data_3a8u7mx4AzfZ3ULwuDBdz$$hkovrPGdNdQWF6wE1jzTy",
+    "source" : "m-nbsGb-ysXuoSvwME16i$$wEhyvGeptg83HynyIuApB",
+    "sourcePort" : "3a8u7mx4AzfZ3ULwuDBdz$$hkovrPGdNdQWF6wE1jzTy",
+    "target" : "combined_player_data_3a8u7mx4AzfZ3ULwuDBdz$$hkovrPGdNdQWF6wE1jzTy",
+    "targetPort" : "input_port_0"
+  }, {
+    "id" : "0_yHaXmLyMqYKl6T-gl6U",
+    "source" : "pZcltK0o9vhwKWavpi4cl$$pXwt4l4vigFl1GqFL8u7h",
+    "sourcePort" : "eriW5tzAs80zEowNBJm8R$$Y05hbQvMuwuwbU5SxHw_u",
+    "target" : "m-nbsGb-ysXuoSvwME16i$$wEhyvGeptg83HynyIuApB",
+    "targetPort" : "PI8l1FfAd1URnkCq2h0Rf$$xwyedfb2XPZ_jeFRJlMgw"
+  }, {
+    "id" : "_3BNslhR5AcZAXw4naHCp",
+    "source" : "BK0M8v5W3btOGqzVscJuu$$LMXLo2lE_PrqHqprbZRy3",
+    "sourcePort" : "3XGvPNJKERxs5Qi3tm_nK$$Ggemon7qmRO_7U1lbOkXI",
+    "target" : "m-nbsGb-ysXuoSvwME16i$$wEhyvGeptg83HynyIuApB",
+    "targetPort" : "Yu-Nd6yMSvTH-DhKBpA8R$$57DIJ7oLIu_ijpHbfqmHf"
+  }, {
+    "id" : "uGdzRlB3XBu15Qg_fpW2W",
+    "source" : "vGpDL3HdqXAxVZ0VP_QrJ$$Pk6M746lgVCMyLOl82gsM",
+    "sourcePort" : "gZJN-u7JTUbV9C_8vxtTI$$C8f7fYKBwuIegjmORdjvp",
+    "target" : "m-nbsGb-ysXuoSvwME16i$$wEhyvGeptg83HynyIuApB",
+    "targetPort" : "-_HXkdaFgo2m6bvME_CAf$$IToIhAxGKcS9dNq_dcMkz"
+  }, {
+    "id" : "d40B22cuRA5Vj6nHayd-b",
+    "source" : "K7Em5MJKoYEWnujWEnd6m$$rJXPkOyGSB7QTm81UnWmP",
+    "sourcePort" : "lc_xc_4JA8CktPdUYk_E6$$K3RCp4O9_83be3ACLMWSD",
+    "target" : "m-nbsGb-ysXuoSvwME16i$$wEhyvGeptg83HynyIuApB",
+    "targetPort" : "R0D_icMUpj7Pwp53tiWuF$$I-x3svCGBxW3WZPc44VLA"
+  }, {
+    "id" : "T-mwcsJzEAF_qwQwtbQVt",
+    "source" : "NK5IvkRrGKO9fFq4UQHVO",
+    "sourcePort" : "zBc79qVzAKjxi5daHOaAM",
+    "target" : "m-nbsGb-ysXuoSvwME16i$$wEhyvGeptg83HynyIuApB",
+    "targetPort" : "wtGbJmLSyJJYl7HG7DgBh$$TOHaDHLOg8u_jcw5ltxi0"
+  } ],
+  "component" : "Model"
+}
