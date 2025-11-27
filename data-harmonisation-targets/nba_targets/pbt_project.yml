@@ -1,6 +1,6 @@
 name: nba_targets
 description: ''
-version: '1'
+version: '2'
 author: prakharmartand@prophecy.io
 language: sql
 buildSystem: ''
@@ -280,3 +280,14 @@ flags:
   shouldAddDefaultDependenciesIfAbsent: false
 pipelineConfigurations: {}
 projectConfigurations: {}
+sqlOrchestratorPipelines:
+  .prophecy/metadata/sqlorchestratorpipeline/pipeline1:
+    name: pipeline1
+    schema: null
+    description: null
+    author: prakharmartand@prophecy.io
+    files:
+    - .prophecy/ide/pipelines/pipeline1.json
+    - pipelines/pipeline1.py
+    createdAt: '2025-11-24 22:02:17'
+sqlBusinessApps: {}

@@ -1,0 +1,162 @@
+{
+  "id" : "pipeline1",
+  "metainfo" : {
+    "label" : "pipeline1",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false,
+    "publishDiagnosticMetrics" : false
+  },
+  "processes" : {
+    "C1N4RQtGu0tCqZYC14ZIC" : {
+      "id" : "C1N4RQtGu0tCqZYC14ZIC",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "cdm_player_brand_engagement",
+        "x" : -560,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "cdm_player_brand_engagement",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_prakhartargets",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "1g0skgk77h6BTzIausZ46",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "4KQJEUc0tw0Oqvw3VWx0J",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "3bSsvIQUNJQrb4EOSOHHE" : {
+      "id" : "3bSsvIQUNJQrb4EOSOHHE",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "cdm_player_financial_snapshot",
+        "x" : -560,
+        "y" : -140,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "cdm_player_financial_snapshot",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_prakhartargets",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "-Tm6NSDq0Kck1SeVeMWB6",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "Jsi307-4Sny6xmmdGq9Bf",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "25pHjkTdX9-X6YG7yNQKL" : {
+      "id" : "25pHjkTdX9-X6YG7yNQKL",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "cdm_player_master",
+        "x" : -560,
+        "y" : 0,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "cdm_player_master",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_prakhartargets",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "_qtfM10nOfSqhnMkmEqIB",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "Msfs09qAdXNKg_tCXi0hy",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "bmvFW9xte5Qm7vjrVYgdM" : {
+      "id" : "bmvFW9xte5Qm7vjrVYgdM",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "cdm_player_performance_aggregate",
+        "x" : -560,
+        "y" : 140,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "cdm_player_performance_aggregate",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_prakhartargets",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "4l_8YuzkU221xp2yK_Gv4",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "CA6JLho8CoKmRcRYkmslH",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Pipeline"
+}

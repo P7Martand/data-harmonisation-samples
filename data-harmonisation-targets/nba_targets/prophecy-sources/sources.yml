@@ -12,6 +12,7 @@ sources:
     config:
       tags:
       - "table:cdm_player_brand_engagement"
+      - "pipeline:pipeline1"
     columns:
     - name: "cdm_brand_engagement_id"
       tests:
@@ -78,6 +79,9 @@ sources:
     description: "Provides a comprehensive view of player earnings, including salaries,\
       \ endorsements, and net income, supporting financial analysis of athletes and\
       \ teams."
+    config:
+      tags:
+      - "pipeline:pipeline1"
     columns:
     - name: "cdm_financial_id"
       description: "Unique identifier for each financial record of a player."
@@ -163,6 +167,9 @@ sources:
   - name: "cdm_player_master"
     description: "Comprehensive player profiles supporting player identification,\
       \ status tracking, and talent management."
+    config:
+      tags:
+      - "pipeline:pipeline1"
     columns:
     - name: "cdm_player_id"
       description: "Unique identifier assigned to each player in the system."
@@ -227,6 +234,9 @@ sources:
         type: "String"
     type: "table"
   - name: "cdm_player_performance_aggregate"
+    config:
+      tags:
+      - "pipeline:pipeline1"
     columns:
     - name: "cdm_performance_id"
       dataType:
