@@ -1,0 +1,153 @@
+name: harmonize_targets
+description: ''
+version: '6'
+author: prakharmartand@prophecy.io
+language: sql
+buildSystem: ''
+buildSystemDetails: null
+pipelines: {}
+datasets: {}
+templates: {}
+jobs: {}
+gemContainer:
+  languageVersion: ''
+  gemLibsVersion: ''
+  gems: {}
+  dependencies: null
+functions:
+  author: null
+  createdAt: '2025-11-21 09:09:32'
+  udfs: {}
+  udafs: {}
+  expressions: {}
+  airflowFunctions: {}
+  businessRules: {}
+subgraphs: {}
+sqlModels: {}
+sqlSnapshots: {}
+sqlTests: {}
+sqlMacros:
+  .prophecy/metadata/sqlmacros/generate_schema_name:
+    name: generate_schema_name
+    macroType: expression
+    description: null
+    author: prakharmartand@prophecy.io
+    files:
+    - macros/generate_schema_name.sql
+    - .prophecy/ide/macros/generate_schema_name.json
+    createdAt: '2025-11-21 09:09:35'
+  .prophecy/metadata/sqlmacros/prophecy_tmp_source:
+    name: prophecy_tmp_source
+    macroType: expression
+    description: null
+    author: prakharmartand@prophecy.io
+    files:
+    - macros/prophecy_tmp_source.sql
+    - .prophecy/ide/macros/prophecy_tmp_source.json
+    createdAt: '2025-11-21 09:10:04'
+sqlSeeds: {}
+sqlSources:
+  .prophecy/metadata/sqlsources/qa_team_prakharTargets:
+    name: qa_team_prakharTargets
+    description: null
+    author: prakharmartand@prophecy.io
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2025-11-21 09:38:12'
+    tables:
+    - name: best_bowlers
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: id
+          dataType:
+            type: Integer
+        - name: player_name
+          dataType:
+            type: String
+        - name: total_matches
+          dataType:
+            type: Integer
+        - name: total_scores
+          dataType:
+            type: Integer
+        - name: category
+          dataType:
+            type: String
+        - name: total_wickets
+          dataType:
+            type: Integer
+        - name: best_wicket_performance
+          dataType:
+            type: String
+        - name: average
+          dataType:
+            type: Double
+        - name: world_ranking
+          dataType:
+            type: Integer
+      description: null
+      author: prakharmartand@prophecy.io
+      createdAt: '2025-11-21 09:38:12'
+      tableType: table
+    - name: best_batsman
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: id
+          dataType:
+            type: Integer
+        - name: player_name
+          dataType:
+            type: String
+        - name: total_matches
+          dataType:
+            type: Integer
+        - name: total_scores
+          dataType:
+            type: Integer
+        - name: category
+          dataType:
+            type: String
+        - name: total_wickets
+          dataType:
+            type: Integer
+        - name: best_wicket_performance
+          dataType:
+            type: String
+        - name: average
+          dataType:
+            type: Double
+        - name: world_ranking
+          dataType:
+            type: Integer
+      description: Profiles top-performing batsmen, highlighting their match participation,
+        scores, averages, rankings, and wicket achievements for performance assessment.
+      author: prakharmartand@prophecy.io
+      createdAt: '2025-11-21 09:49:51'
+      tableType: table
+sqlUnreferencedSources: {}
+sqlPipeline:
+  name: sqlPipeline
+  description: null
+  author: prakharmartand@prophecy.io
+  createdAt: '2025-11-21 09:09:32'
+dependencies: []
+projectDependencies: {}
+flags:
+  shouldAddDefaultDependenciesIfAbsent: false
+pipelineConfigurations: {}
+projectConfigurations: {}
+sqlOrchestratorPipelines:
+  .prophecy/metadata/sqlorchestratorpipeline/ref_target1:
+    name: ref_target1
+    schema: null
+    description: null
+    author: prakharmartand@prophecy.io
+    files:
+    - .prophecy/ide/pipelines/ref_target1.json
+    - pipelines/ref_target1.py
+    createdAt: '2025-11-21 09:10:04'
+sqlBusinessApps: {}
