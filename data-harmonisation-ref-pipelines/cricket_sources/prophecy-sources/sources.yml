@@ -1,0 +1,252 @@
+---
+version: 2
+sources:
+- name: "qa_team_prakhar"
+  database: "qa_team"
+  schema: "prakhar"
+  tables:
+  - name: "eng_team"
+    config:
+      tags:
+      - "pipeline:ref1"
+    columns:
+    - name: "id"
+      dataType:
+        type: "Bigint"
+      mappings: []
+    - name: "player_name"
+      dataType:
+        type: "String"
+      mappings:
+      - type: "foreign"
+        columnName: "player_name"
+        datasetId: "table/qa_team_prakhartargets/best_batsman"
+        datasetName: "qa_team_prakhartargets"
+    - name: "total_matches"
+      dataType:
+        type: "Bigint"
+      mappings: []
+    - name: "total_scores"
+      dataType:
+        type: "Bigint"
+      mappings: []
+    - name: "category"
+      dataType:
+        type: "String"
+      mappings: []
+    - name: "total_wickets"
+      dataType:
+        type: "Bigint"
+      mappings: []
+    - name: "best_wicket_performance"
+      dataType:
+        type: "String"
+      mappings: []
+    type: "table"
+  - name: "ind_team"
+    config:
+      tags:
+      - "pipeline:ref1"
+    columns:
+    - name: "id"
+      dataType:
+        type: "Bigint"
+      mappings: []
+    - name: "player_name"
+      dataType:
+        type: "String"
+      mappings: []
+    - name: "total_matches"
+      dataType:
+        type: "Bigint"
+      mappings: []
+    - name: "total_scores"
+      dataType:
+        type: "Bigint"
+      mappings:
+      - type: "foreign"
+        columnName: "total_scores"
+        datasetId: "table/qa_team_prakhartargets/best_batsman"
+        datasetName: "qa_team_prakhartargets"
+    - name: "category"
+      dataType:
+        type: "String"
+      mappings:
+      - type: "foreign"
+        columnName: "category"
+        datasetId: "table/qa_team_prakhartargets/best_bowlers"
+        datasetName: "qa_team_prakhartargets"
+    - name: "total_wickets"
+      dataType:
+        type: "Bigint"
+      mappings: []
+    - name: "best_wicket_performance"
+      dataType:
+        type: "String"
+      mappings: []
+    type: "table"
+  - name: "nz-team"
+    config:
+      tags:
+      - "pipeline:ref1"
+    columns:
+    - name: "id"
+      dataType:
+        type: "Bigint"
+    - name: "player_name"
+      dataType:
+        type: "String"
+      mappings:
+      - type: "foreign"
+        columnName: "player_name"
+        datasetId: "table/qa_team_prakhartargets/best_bowlers"
+        datasetName: "qa_team_prakhartargets"
+    - name: "total_matches"
+      dataType:
+        type: "Bigint"
+      mappings:
+      - type: "foreign"
+        columnName: "total_matches"
+        datasetId: "table/qa_team_prakhartargets/best_batsman"
+        datasetName: "qa_team_prakhartargets"
+    - name: "total_scores"
+      dataType:
+        type: "Bigint"
+    - name: "category"
+      dataType:
+        type: "String"
+    - name: "total_wickets"
+      dataType:
+        type: "Bigint"
+    - name: "best_wicket_performance"
+      dataType:
+        type: "String"
+    type: "table"
+  - name: "srilanka_team"
+    config:
+      tags:
+      - "pipeline:ref1"
+    columns:
+    - name: "id"
+      dataType:
+        type: "Bigint"
+      mappings:
+      - type: "foreign"
+        columnName: "id"
+        datasetId: "table/qa_team_prakhartargets/best_bowlers"
+        datasetName: "qa_team_prakhartargets"
+    - name: "player_name"
+      dataType:
+        type: "String"
+      mappings:
+      - type: "foreign"
+        columnName: "player_name"
+        datasetId: "table/qa_team_prakhartargets/best_batsman"
+        datasetName: "qa_team_prakhartargets"
+    - name: "total_matches"
+      dataType:
+        type: "Bigint"
+      mappings: []
+    - name: "total_scores"
+      dataType:
+        type: "Bigint"
+      mappings: []
+    - name: "category"
+      dataType:
+        type: "String"
+      mappings: []
+    - name: "total_wickets"
+      dataType:
+        type: "Bigint"
+      mappings: []
+    - name: "best_wicket_performance"
+      dataType:
+        type: "String"
+      mappings: []
+    type: "table"
+- name: "qa_team_prakharTargets"
+  database: "qa_team"
+  schema: "prakharTargets"
+  tables: []
+- name: "qa_team_prakhartargets"
+  database: "qa_team"
+  schema: "prakhartargets"
+  tables:
+  - name: "best_batsman"
+    description: "Comprehensive player statistics supporting performance evaluation\
+      \ and global ranking of batsmen."
+    config:
+      tags:
+      - "pipeline:ref1"
+    columns:
+    - name: "id"
+      description: "Unique identifier for each player."
+      dataType:
+        type: "Integer"
+    - name: "player_name"
+      description: "Name of the cricket player."
+      dataType:
+        type: "String"
+    - name: "total_matches"
+      description: "Total number of matches played by the player."
+      dataType:
+        type: "Integer"
+    - name: "total_scores"
+      description: "Total runs scored by the player across all matches."
+      dataType:
+        type: "Integer"
+    - name: "category"
+      description: "Player's role or classification in the team, such as batsman or\
+        \ all-rounder."
+      dataType:
+        type: "String"
+    - name: "total_wickets"
+      description: "Total number of wickets taken by the batsman in their career."
+      dataType:
+        type: "Integer"
+    - name: "best_wicket_performance"
+      description: "Best single-match wicket-taking performance achieved by the batsman."
+      dataType:
+        type: "String"
+    - name: "average"
+      description: "The batsman's average score per match."
+      dataType:
+        type: "Double"
+    - name: "world_ranking"
+      description: "Current global ranking of the batsman."
+      dataType:
+        type: "Integer"
+    type: "table"
+  - name: "best_bowlers"
+    config:
+      tags:
+      - "pipeline:ref1"
+    columns:
+    - name: "id"
+      dataType:
+        type: "Integer"
+    - name: "player_name"
+      dataType:
+        type: "String"
+    - name: "total_matches"
+      dataType:
+        type: "Integer"
+    - name: "total_scores"
+      dataType:
+        type: "Integer"
+    - name: "category"
+      dataType:
+        type: "String"
+    - name: "total_wickets"
+      dataType:
+        type: "Integer"
+    - name: "best_wicket_performance"
+      dataType:
+        type: "String"
+    - name: "average"
+      dataType:
+        type: "Double"
+    - name: "world_ranking"
+      dataType:
+        type: "Integer"
+    type: "table"

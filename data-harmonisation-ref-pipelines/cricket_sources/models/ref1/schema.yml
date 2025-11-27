@@ -1,0 +1,12 @@
+---
+version: 2
+models:
+- name: "ref1__combined_player_data"
+  tags:
+  - "prophecy_temp"
+- name: "ref1__best_batsman_1"
+  tags:
+  - "prophecy_temp"
+- name: "ref1__best_bowlers"
+  tags:
+  - "prophecy_temp"
