@@ -1,0 +1,193 @@
+{
+  "id" : "pipeline1",
+  "metainfo" : {
+    "label" : "pipeline1",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false,
+    "publishDiagnosticMetrics" : false
+  },
+  "processes" : {
+    "Srsz4_zIH3E_bNy6Uobsv$$3kxyNy5CX9NJt_gj1vfP6" : {
+      "id" : "Srsz4_zIH3E_bNy6Uobsv$$3kxyNy5CX9NJt_gj1vfP6",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "pipeline1__player_financials_and_compensation",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "pipeline1__player_financials_and_compensation"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "Srsz4_zIH3E_bNy6Uobsv$$3kxyNy5CX9NJt_gj1vfP6", "8xJIU5xo5JvTlDSjnUWhy$$IyrNcfMsI5LvAKiooD511", "O_Kfe6zUlSpd7x3lDxG9i$$15uozZ3ATasn_wArrkZEw", "e712stE5_AeT7BVzovVjl$$H-UwrFa0cIZc1AXPYEjNZ", "69pGx3g9yq9Cth9sV9T-L$$SMWPCCY14u9BEE4_8QTi6", "Y5x5ndUw460NEEn0a7Iz5$$MueTv-lqoJa4GU97NMIgT", "4bxsoaQ2FVz0hzzXGQ-nU$$rBIyh_134gWE3LpYYMUe1", "Col9ncIINNQ2rR8ooYJj6$$ywiJYNNEsw29nozJUYhiN" ],
+        "type" : "table",
+        "isTemporaryTable" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "pipeline1__player_financials_and_compensation_in_0",
+          "slug" : "in_0"
+        }, {
+          "id" : "pipeline1__player_financials_and_compensation_in_1",
+          "slug" : "in_1"
+        } ],
+        "outputs" : [ {
+          "id" : "pipeline1__player_financials_and_compensation_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "Col9ncIINNQ2rR8ooYJj6$$ywiJYNNEsw29nozJUYhiN" : {
+      "id" : "Col9ncIINNQ2rR8ooYJj6$$ywiJYNNEsw29nozJUYhiN",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "nba_brand_patnership",
+        "x" : 20,
+        "y" : 320,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "nba_brand_patnership",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_prakhar",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "e06Sglpcr_77C2H8U546A$$snd7LMEZoYabPJCLfhLFz",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "s6g4bfT-E6YqoVHASoEQr$$VkitHMWOSBx67yQkNQoWH",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "iJsfmklg73T96XRHfoHgm$$YBcdfN6PjqfQQOwj434Vx" : {
+      "id" : "iJsfmklg73T96XRHfoHgm$$YBcdfN6PjqfQQOwj434Vx",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "pipeline1__basketball_player_performance",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "pipeline1__basketball_player_performance"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "iJsfmklg73T96XRHfoHgm$$YBcdfN6PjqfQQOwj434Vx", "PQQXPr8EKedS4HUSDCWmG$$Xiw9pS1F3Tr25I1ICY63P", "sjYPePeN9h1YKI16y0XEa$$wRajRXZqiPvKKLbjfmJqf", "9wxHKDt-rqTCNTVfyYQsH$$xCJv0uAuGy7x9q_HbDMLh", "DLoLn_4RpJUqi6rVRyB9r$$IS8yMU7K2JY5WVVtS_8Mk", "rf56nZQ1EZXmMmVAI8rEy$$g_7CIgXlXHnpAZ8zGupj5", "1o7e7sl2cpm8jpn9eBmoi$$jH8i9GBI6XyerUfKIgJTP" ],
+        "type" : "incremental",
+        "isTemporaryTable" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "pipeline1__basketball_player_performance_in_0",
+          "slug" : "in_0"
+        }, {
+          "id" : "pipeline1__basketball_player_performance_in_1",
+          "slug" : "in_1"
+        }, {
+          "id" : "pipeline1__basketball_player_performance_in_2",
+          "slug" : "in_2"
+        } ],
+        "outputs" : [ {
+          "id" : "pipeline1__basketball_player_performance_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "G1C05uNtCO-MzdweIKDeW$$Y09mwFPELTjm6d8bAu9iG" : {
+      "id" : "G1C05uNtCO-MzdweIKDeW$$Y09mwFPELTjm6d8bAu9iG",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "pipeline1__new_cdm_brand_summary",
+        "phase" : 0
+      },
+      "properties" : {
+        "snapshotName" : "pipeline1__new_cdm_brand_summary",
+        "modelName" : ""
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "G1C05uNtCO-MzdweIKDeW$$Y09mwFPELTjm6d8bAu9iG", "3jB_g97rb0urf1S70z49M$$WrB2o0ph2gkQ4AHQWT47R", "Col9ncIINNQ2rR8ooYJj6$$ywiJYNNEsw29nozJUYhiN" ],
+        "type" : "table",
+        "isTemporaryTable" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "pipeline1__new_cdm_brand_summary_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "pipeline1__new_cdm_brand_summary_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "5CqkhdwOv5UaOYIAiG-k7$$TXjyaoUSb2BfYoie3Ph_n" : {
+      "id" : "5CqkhdwOv5UaOYIAiG-k7$$TXjyaoUSb2BfYoie3Ph_n",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "pipeline1__player_profiles",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "pipeline1__player_profiles"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "5CqkhdwOv5UaOYIAiG-k7$$TXjyaoUSb2BfYoie3Ph_n", "39glxtd6Mq8GtjrAa0suu$$jARBguzH2SE1xYyLQA8yz", "IpSYdfsF76wNVnFz60mOo$$KCtRrDtQTXnIyXNCK-baq" ],
+        "type" : "incremental",
+        "isTemporaryTable" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "pipeline1__player_profiles_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "pipeline1__player_profiles_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "BsC0AnaJDf8r4aPkdQwH4",
+    "source" : "Col9ncIINNQ2rR8ooYJj6$$ywiJYNNEsw29nozJUYhiN",
+    "sourcePort" : "s6g4bfT-E6YqoVHASoEQr$$VkitHMWOSBx67yQkNQoWH",
+    "target" : "Srsz4_zIH3E_bNy6Uobsv$$3kxyNy5CX9NJt_gj1vfP6",
+    "targetPort" : "pipeline1__player_financials_and_compensation_in_1"
+  }, {
+    "id" : "f-cyXdruwRdHSI2D0zcy2$$-Ig4isOh6cObioqXIOB31",
+    "source" : "Col9ncIINNQ2rR8ooYJj6$$ywiJYNNEsw29nozJUYhiN",
+    "sourcePort" : "s6g4bfT-E6YqoVHASoEQr$$VkitHMWOSBx67yQkNQoWH",
+    "target" : "G1C05uNtCO-MzdweIKDeW$$Y09mwFPELTjm6d8bAu9iG",
+    "targetPort" : "pipeline1__new_cdm_brand_summary_in_0"
+  } ],
+  "component" : "Pipeline"
+}

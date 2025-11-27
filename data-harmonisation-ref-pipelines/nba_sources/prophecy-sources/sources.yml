@@ -1,0 +1,507 @@
+---
+version: 2
+sources:
+- name: "qa_team_prakhar"
+  database: "qa_team"
+  schema: "prakhar"
+  tables:
+  - name: "nba_team_roaster"
+    config:
+      tags:
+      - "pipeline:pipeline1"
+    columns:
+    - name: "roster_id"
+      dataType:
+        type: "String"
+    - name: "team_id"
+      dataType:
+        type: "String"
+    - name: "player_id"
+      dataType:
+        type: "String"
+    - name: "season_year"
+      dataType:
+        type: "Bigint"
+    - name: "join_date"
+      dataType:
+        type: "Date"
+    - name: "position_on_team"
+      dataType:
+        type: "String"
+    - name: "is_starter"
+      dataType:
+        type: "String"
+    - name: "games_played"
+      dataType:
+        type: "Bigint"
+    - name: "minutes_played"
+      dataType:
+        type: "Bigint"
+    - name: "points_per_game"
+      dataType:
+        type: "Double"
+    - name: "assists_per_game"
+      dataType:
+        type: "Double"
+    - name: "rebounds_per_game"
+      dataType:
+        type: "Double"
+    type: "table"
+  - name: "nba_players"
+    config:
+      tags:
+      - "pipeline:pipeline1"
+    columns:
+    - name: "player_id"
+      dataType:
+        type: "String"
+    - name: "first_name"
+      dataType:
+        type: "String"
+    - name: "last_name"
+      dataType:
+        type: "String"
+    - name: "date_of_birth"
+      dataType:
+        type: "Date"
+    - name: "height_cm"
+      dataType:
+        type: "Bigint"
+    - name: "weight_kg"
+      dataType:
+        type: "Bigint"
+    - name: "position"
+      dataType:
+        type: "String"
+    - name: "draft_year"
+      dataType:
+        type: "Bigint"
+    - name: "draft_round"
+      dataType:
+        type: "Bigint"
+    - name: "draft_pick"
+      dataType:
+        type: "Bigint"
+    - name: "college"
+      dataType:
+        type: "String"
+    - name: "country"
+      dataType:
+        type: "String"
+    - name: "jersey_number"
+      dataType:
+        type: "Bigint"
+    - name: "active_status"
+      dataType:
+        type: "String"
+    type: "table"
+  - name: "nba_player_performance"
+    config:
+      tags:
+      - "pipeline:pipeline1"
+    columns:
+    - name: "performance_id"
+      dataType:
+        type: "String"
+    - name: "player_id"
+      dataType:
+        type: "String"
+    - name: "season_year"
+      dataType:
+        type: "String"
+    - name: "team_id"
+      dataType:
+        type: "String"
+    - name: "games_played"
+      dataType:
+        type: "Bigint"
+    - name: "total_points"
+      dataType:
+        type: "Bigint"
+    - name: "total_assists"
+      dataType:
+        type: "Bigint"
+    - name: "total_rebounds"
+      dataType:
+        type: "Double"
+    - name: "field_goal_percentage"
+      dataType:
+        type: "Double"
+    - name: "three_point_percentage"
+      dataType:
+        type: "Double"
+    - name: "free_throw_percentage"
+      dataType:
+        type: "Double"
+    - name: "steals"
+      dataType:
+        type: "Bigint"
+    - name: "blocks"
+      dataType:
+        type: "Bigint"
+    - name: "turnovers"
+      dataType:
+        type: "Bigint"
+    type: "table"
+  - name: "nba_contracts"
+    config:
+      tags:
+      - "pipeline:pipeline1"
+    columns:
+    - name: "contract_id"
+      dataType:
+        type: "String"
+    - name: "player_id"
+      dataType:
+        type: "String"
+    - name: "team_id"
+      dataType:
+        type: "String"
+    - name: "season_start_year"
+      dataType:
+        type: "Bigint"
+    - name: "contract_years"
+      dataType:
+        type: "Bigint"
+    - name: "total_value_usd"
+      dataType:
+        type: "Bigint"
+    - name: "annual_salary_usd"
+      dataType:
+        type: "Bigint"
+    - name: "signing_date"
+      dataType:
+        type: "Date"
+    - name: "contract_type"
+      dataType:
+        type: "String"
+    - name: "guaranteed_amount_usd"
+      dataType:
+        type: "Bigint"
+    - name: "signing_bonus_usd"
+      dataType:
+        type: "Bigint"
+    - name: "incentives_usd"
+      dataType:
+        type: "Bigint"
+    - name: "state_tax_rate"
+      dataType:
+        type: "Double"
+    type: "table"
+  - name: "nba_brand_patnership"
+    config:
+      tags:
+      - "pipeline:pipeline1"
+    columns:
+    - name: "partnership_id"
+      dataType:
+        type: "String"
+    - name: "player_id"
+      dataType:
+        type: "String"
+    - name: "brand_name"
+      dataType:
+        type: "String"
+    - name: "category"
+      dataType:
+        type: "String"
+    - name: "partnership_start_date"
+      dataType:
+        type: "Date"
+    - name: "partnership_end_date"
+      dataType:
+        type: "Date"
+    - name: "deal_value_usd"
+      dataType:
+        type: "Bigint"
+    - name: "annual_value_usd"
+      dataType:
+        type: "Bigint"
+    - name: "deal_type"
+      dataType:
+        type: "String"
+    - name: "status"
+      dataType:
+        type: "String"
+    type: "table"
+- name: "qa_team_prakhartargets"
+  database: "qa_team"
+  schema: "prakhartargets"
+  tables:
+  - name: "cdm_player_master"
+    config:
+      tags:
+      - "pipeline:pipeline1"
+    columns:
+    - name: "cdm_player_id"
+      dataType:
+        type: "String"
+    - name: "cdm_player_key"
+      dataType:
+        type: "String"
+    - name: "first_name"
+      dataType:
+        type: "String"
+    - name: "last_name"
+      dataType:
+        type: "String"
+    - name: "full_name"
+      dataType:
+        type: "String"
+    - name: "player_status"
+      dataType:
+        type: "String"
+    - name: "position_code"
+      dataType:
+        type: "String"
+    - name: "draft_info_year"
+      dataType:
+        type: "Bigint"
+    - name: "country_of_origin"
+      dataType:
+        type: "String"
+    - name: "physical_attributes_height_cm"
+      dataType:
+        type: "Bigint"
+    - name: "physical_attributes_weight_kg"
+      dataType:
+        type: "Bigint"
+    - name: "created_date"
+      dataType:
+        type: "Timestamp"
+    - name: "updated_date"
+      dataType:
+        type: "Timestamp"
+    - name: "data_source"
+      dataType:
+        type: "String"
+    type: "table"
+  - name: "cdm_player_brand_engagement"
+    description: "Captures player interactions and partnerships with brands, supporting\
+      \ analysis of engagement types, status, and deal values."
+    columns:
+    - name: "cdm_brand_engagement_id"
+      description: "Unique identifier for each brand engagement with a player."
+      dataType:
+        type: "String"
+    - name: "cdm_player_id"
+      description: "Unique identifier for the player involved in the brand engagement."
+      dataType:
+        type: "String"
+    - name: "brand_name_normalized"
+      description: "Standardized name of the brand associated with the engagement."
+      dataType:
+        type: "String"
+    - name: "brand_category"
+      description: "Category or industry segment of the brand involved in the engagement."
+      dataType:
+        type: "String"
+    - name: "engagement_start_date"
+      description: "Date when the player's engagement with the brand began."
+      dataType:
+        type: "Date"
+    - name: "engagement_end_date"
+      description: "Date when the partnership or engagement with the brand ends."
+      dataType:
+        type: "Date"
+    - name: "engagement_status"
+      description: "Current status of the engagement, such as active or completed."
+      dataType:
+        type: "String"
+    - name: "deal_value_total_usd"
+      description: "Total monetary value of the brand engagement deal in US dollars."
+      dataType:
+        type: "Bigint"
+    - name: "deal_value_annual_usd"
+      description: "Annualized value of the brand engagement deal in US dollars."
+      dataType:
+        type: "Bigint"
+    - name: "engagement_type"
+      description: "Type of partnership or engagement established with the brand."
+      dataType:
+        type: "String"
+    - name: "created_timestamp"
+      description: "The date and time when the player brand engagement record was\
+        \ created."
+      dataType:
+        type: "Timestamp"
+    - name: "dbt_updated_at"
+      description: "The time when the engagement record was last updated for tracking\
+        \ changes."
+      dataType:
+        type: "SmallInt"
+    - name: "dbt_valid_from"
+      description: "The starting time from which the engagement record is considered\
+        \ valid."
+      dataType:
+        type: "SmallInt"
+    - name: "dbt_valid_to"
+      description: "The ending time until which the engagement record remains valid."
+      dataType:
+        type: "SmallInt"
+    type: "table"
+  - name: "cdm_player_financial_snapshot"
+    config:
+      tags:
+      - "pipeline:pipeline1"
+    columns:
+    - name: "cdm_financial_id"
+      dataType:
+        type: "String"
+    - name: "cdm_player_id"
+      dataType:
+        type: "String"
+    - name: "season_year"
+      dataType:
+        type: "Bigint"
+    - name: "team_id"
+      dataType:
+        type: "String"
+    - name: "salary_annual_usd"
+      dataType:
+        type: "Bigint"
+    - name: "salary_total_contract_usd"
+      dataType:
+        type: "Bigint"
+    - name: "salary_guaranteed_usd"
+      dataType:
+        type: "Bigint"
+    - name: "salary_signing_bonus_usd"
+      dataType:
+        type: "Bigint"
+    - name: "salary_incentives_usd"
+      dataType:
+        type: "Bigint"
+    - name: "endorsement_annual_revenue_usd"
+      dataType:
+        type: "Bigint"
+    - name: "endorsement_total_active_deals"
+      dataType:
+        type: "Bigint"
+    - name: "total_compensation_usd"
+      dataType:
+        type: "Bigint"
+    - name: "effective_tax_rate"
+      dataType:
+        type: "Double"
+    - name: "net_earnings_after_tax_usd"
+      dataType:
+        type: "Double"
+    - name: "capped_room_impact_usd"
+      dataType:
+        type: "Bigint"
+    - name: "financial_snapshot_date"
+      dataType:
+        type: "Timestamp"
+    type: "table"
+  - name: "cdm_player_performance_aggregate"
+    config:
+      tags:
+      - "pipeline:pipeline1"
+    columns:
+    - name: "cdm_performance_id"
+      dataType:
+        type: "String"
+    - name: "cdm_player_id"
+      dataType:
+        type: "String"
+    - name: "season_year"
+      dataType:
+        type: "Bigint"
+    - name: "team_id"
+      dataType:
+        type: "String"
+    - name: "stat_games_played"
+      dataType:
+        type: "Bigint"
+    - name: "stat_minutes_total"
+      dataType:
+        type: "Bigint"
+    - name: "stat_points_total"
+      dataType:
+        type: "Bigint"
+    - name: "stat_assists_total"
+      dataType:
+        type: "Bigint"
+    - name: "stat_rebounds_total"
+      dataType:
+        type: "Double"
+    - name: "stat_blocks_total"
+      dataType:
+        type: "Bigint"
+    - name: "stat_steals_total"
+      dataType:
+        type: "Bigint"
+    - name: "stat_turnovers_total"
+      dataType:
+        type: "Bigint"
+    - name: "efficiency_field_goal_pct"
+      dataType:
+        type: "Double"
+    - name: "efficiency_three_point_pct"
+      dataType:
+        type: "Double"
+    - name: "efficiency_free_throw_pct"
+      dataType:
+        type: "Double"
+    - name: "efficiency_player_efficiency_rating"
+      dataType:
+        type: "Double"
+    - name: "stat_capture_date"
+      dataType:
+        type: "Timestamp"
+    type: "table"
+  - name: "new_cdm_brand_summary"
+    description: "Summarizes player engagement with brands, including deal values,\
+      \ engagement periods, and status, supporting brand partnership and sponsorship\
+      \ analysis."
+    config:
+      tags:
+      - "pipeline:pipeline1"
+    columns:
+    - name: "cdm_brand_engagement_id"
+      description: "Unique identifier for each brand engagement instance."
+      dataType:
+        type: "String"
+    - name: "cdm_player_id"
+      description: "Unique identifier for the player involved in the brand engagement."
+      dataType:
+        type: "String"
+    - name: "brand_name_normalized"
+      description: "Standardized name of the brand for consistent reporting."
+      dataType:
+        type: "String"
+    - name: "brand_category"
+      description: "Category to which the brand belongs, such as apparel or electronics."
+      dataType:
+        type: "String"
+    - name: "engagement_start_date"
+      description: "Date when the brand engagement with the player began."
+      dataType:
+        type: "Date"
+    - name: "engagement_end_date"
+      description: "Date when the brand's engagement or partnership is scheduled to\
+        \ end."
+      dataType:
+        type: "Date"
+    - name: "engagement_status"
+      description: "Current status of the brand's engagement, such as active or completed."
+      dataType:
+        type: "String"
+    - name: "deal_value_total_usd"
+      description: "Total value of the deal with the brand in US dollars."
+      dataType:
+        type: "Bigint"
+    - name: "deal_value_annual_usd"
+      description: "Annualized value of the deal with the brand in US dollars."
+      dataType:
+        type: "Bigint"
+    - name: "engagement_type"
+      description: "Type of engagement or partnership the brand is involved in."
+      dataType:
+        type: "String"
+    - name: "created_timestamp"
+      description: "The date and time when the brand summary record was created."
+      dataType:
+        type: "Timestamp"
+    type: "table"

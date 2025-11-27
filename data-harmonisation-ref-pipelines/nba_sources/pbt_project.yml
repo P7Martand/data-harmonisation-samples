@@ -1,0 +1,590 @@
+name: nba_sources
+description: ''
+version: '1'
+author: prakharmartand@prophecy.io
+language: sql
+buildSystem: ''
+buildSystemDetails: null
+pipelines: {}
+datasets: {}
+templates: {}
+jobs: {}
+gemContainer:
+  languageVersion: ''
+  gemLibsVersion: ''
+  gems: {}
+  dependencies: null
+functions:
+  author: null
+  createdAt: '2025-11-24 05:41:17'
+  udfs: {}
+  udafs: {}
+  expressions: {}
+  airflowFunctions: {}
+  businessRules: {}
+subgraphs: {}
+sqlModels: {}
+sqlSnapshots: {}
+sqlTests: {}
+sqlMacros:
+  .prophecy/metadata/sqlmacros/generate_schema_name:
+    name: generate_schema_name
+    macroType: expression
+    description: null
+    author: prakharmartand@prophecy.io
+    files:
+    - macros/generate_schema_name.sql
+    - .prophecy/ide/macros/generate_schema_name.json
+    createdAt: '2025-11-24 05:41:21'
+  .prophecy/metadata/sqlmacros/prophecy_tmp_source:
+    name: prophecy_tmp_source
+    macroType: expression
+    description: null
+    author: prakharmartand@prophecy.io
+    files:
+    - macros/prophecy_tmp_source.sql
+    - .prophecy/ide/macros/prophecy_tmp_source.json
+    createdAt: '2025-11-24 07:20:37'
+sqlSeeds: {}
+sqlSources:
+  .prophecy/metadata/sqlsources/qa_team_prakhar:
+    name: qa_team_prakhar
+    description: null
+    author: prakharmartand@prophecy.io
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2025-11-24 07:21:14'
+    tables:
+    - name: nba_team_roaster
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: roster_id
+          dataType:
+            type: String
+        - name: team_id
+          dataType:
+            type: String
+        - name: player_id
+          dataType:
+            type: String
+        - name: season_year
+          dataType:
+            type: Bigint
+        - name: join_date
+          dataType:
+            type: Date
+        - name: position_on_team
+          dataType:
+            type: String
+        - name: is_starter
+          dataType:
+            type: String
+        - name: games_played
+          dataType:
+            type: Bigint
+        - name: minutes_played
+          dataType:
+            type: Bigint
+        - name: points_per_game
+          dataType:
+            type: Double
+        - name: assists_per_game
+          dataType:
+            type: Double
+        - name: rebounds_per_game
+          dataType:
+            type: Double
+      description: null
+      author: prakharmartand@prophecy.io
+      createdAt: '2025-11-24 07:21:14'
+      tableType: table
+    - name: nba_players
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: player_id
+          dataType:
+            type: String
+        - name: first_name
+          dataType:
+            type: String
+        - name: last_name
+          dataType:
+            type: String
+        - name: date_of_birth
+          dataType:
+            type: Date
+        - name: height_cm
+          dataType:
+            type: Bigint
+        - name: weight_kg
+          dataType:
+            type: Bigint
+        - name: position
+          dataType:
+            type: String
+        - name: draft_year
+          dataType:
+            type: Bigint
+        - name: draft_round
+          dataType:
+            type: Bigint
+        - name: draft_pick
+          dataType:
+            type: Bigint
+        - name: college
+          dataType:
+            type: String
+        - name: country
+          dataType:
+            type: String
+        - name: jersey_number
+          dataType:
+            type: Bigint
+        - name: active_status
+          dataType:
+            type: String
+      description: null
+      author: prakharmartand@prophecy.io
+      createdAt: '2025-11-24 07:21:30'
+      tableType: table
+    - name: nba_player_performance
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: performance_id
+          dataType:
+            type: String
+        - name: player_id
+          dataType:
+            type: String
+        - name: season_year
+          dataType:
+            type: String
+        - name: team_id
+          dataType:
+            type: String
+        - name: games_played
+          dataType:
+            type: Bigint
+        - name: total_points
+          dataType:
+            type: Bigint
+        - name: total_assists
+          dataType:
+            type: Bigint
+        - name: total_rebounds
+          dataType:
+            type: Double
+        - name: field_goal_percentage
+          dataType:
+            type: Double
+        - name: three_point_percentage
+          dataType:
+            type: Double
+        - name: free_throw_percentage
+          dataType:
+            type: Double
+        - name: steals
+          dataType:
+            type: Bigint
+        - name: blocks
+          dataType:
+            type: Bigint
+        - name: turnovers
+          dataType:
+            type: Bigint
+      description: null
+      author: prakharmartand@prophecy.io
+      createdAt: '2025-11-24 07:21:59'
+      tableType: table
+    - name: nba_contracts
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: contract_id
+          dataType:
+            type: String
+        - name: player_id
+          dataType:
+            type: String
+        - name: team_id
+          dataType:
+            type: String
+        - name: season_start_year
+          dataType:
+            type: Bigint
+        - name: contract_years
+          dataType:
+            type: Bigint
+        - name: total_value_usd
+          dataType:
+            type: Bigint
+        - name: annual_salary_usd
+          dataType:
+            type: Bigint
+        - name: signing_date
+          dataType:
+            type: Date
+        - name: contract_type
+          dataType:
+            type: String
+        - name: guaranteed_amount_usd
+          dataType:
+            type: Bigint
+        - name: signing_bonus_usd
+          dataType:
+            type: Bigint
+        - name: incentives_usd
+          dataType:
+            type: Bigint
+        - name: state_tax_rate
+          dataType:
+            type: Double
+      description: null
+      author: prakharmartand@prophecy.io
+      createdAt: '2025-11-24 07:22:14'
+      tableType: table
+    - name: nba_brand_patnership
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: partnership_id
+          dataType:
+            type: String
+        - name: player_id
+          dataType:
+            type: String
+        - name: brand_name
+          dataType:
+            type: String
+        - name: category
+          dataType:
+            type: String
+        - name: partnership_start_date
+          dataType:
+            type: Date
+        - name: partnership_end_date
+          dataType:
+            type: Date
+        - name: deal_value_usd
+          dataType:
+            type: Bigint
+        - name: annual_value_usd
+          dataType:
+            type: Bigint
+        - name: deal_type
+          dataType:
+            type: String
+        - name: status
+          dataType:
+            type: String
+      description: null
+      author: prakharmartand@prophecy.io
+      createdAt: '2025-11-24 07:22:29'
+      tableType: table
+  .prophecy/metadata/sqlsources/qa_team_prakhartargets:
+    name: qa_team_prakhartargets
+    description: null
+    author: prakharmartand@prophecy.io
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2025-11-24 08:03:05'
+    tables:
+    - name: cdm_player_master
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: cdm_player_id
+          dataType:
+            type: String
+        - name: cdm_player_key
+          dataType:
+            type: String
+        - name: first_name
+          dataType:
+            type: String
+        - name: last_name
+          dataType:
+            type: String
+        - name: full_name
+          dataType:
+            type: String
+        - name: player_status
+          dataType:
+            type: String
+        - name: position_code
+          dataType:
+            type: String
+        - name: draft_info_year
+          dataType:
+            type: Bigint
+        - name: country_of_origin
+          dataType:
+            type: String
+        - name: physical_attributes_height_cm
+          dataType:
+            type: Bigint
+        - name: physical_attributes_weight_kg
+          dataType:
+            type: Bigint
+        - name: created_date
+          dataType:
+            type: Timestamp
+        - name: updated_date
+          dataType:
+            type: Timestamp
+        - name: data_source
+          dataType:
+            type: String
+      description: null
+      author: prakharmartand@prophecy.io
+      createdAt: '2025-11-24 08:03:05'
+      tableType: table
+    - name: cdm_player_brand_engagement
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: cdm_brand_engagement_id
+          dataType:
+            type: String
+        - name: cdm_player_id
+          dataType:
+            type: String
+        - name: brand_name_normalized
+          dataType:
+            type: String
+        - name: brand_category
+          dataType:
+            type: String
+        - name: engagement_start_date
+          dataType:
+            type: Date
+        - name: engagement_end_date
+          dataType:
+            type: Date
+        - name: engagement_status
+          dataType:
+            type: String
+        - name: deal_value_total_usd
+          dataType:
+            type: Bigint
+        - name: deal_value_annual_usd
+          dataType:
+            type: Bigint
+        - name: engagement_type
+          dataType:
+            type: String
+        - name: created_timestamp
+          dataType:
+            type: Timestamp
+        - name: dbt_updated_at
+          dataType:
+            type: SmallInt
+        - name: dbt_valid_from
+          dataType:
+            type: SmallInt
+        - name: dbt_valid_to
+          dataType:
+            type: SmallInt
+      description: Captures player interactions and partnerships with brands, supporting
+        analysis of engagement types, status, and deal values.
+      author: prakharmartand@prophecy.io
+      createdAt: '2025-11-24 08:18:28'
+      tableType: table
+    - name: cdm_player_financial_snapshot
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: cdm_financial_id
+          dataType:
+            type: String
+        - name: cdm_player_id
+          dataType:
+            type: String
+        - name: season_year
+          dataType:
+            type: Bigint
+        - name: team_id
+          dataType:
+            type: String
+        - name: salary_annual_usd
+          dataType:
+            type: Bigint
+        - name: salary_total_contract_usd
+          dataType:
+            type: Bigint
+        - name: salary_guaranteed_usd
+          dataType:
+            type: Bigint
+        - name: salary_signing_bonus_usd
+          dataType:
+            type: Bigint
+        - name: salary_incentives_usd
+          dataType:
+            type: Bigint
+        - name: endorsement_annual_revenue_usd
+          dataType:
+            type: Bigint
+        - name: endorsement_total_active_deals
+          dataType:
+            type: Bigint
+        - name: total_compensation_usd
+          dataType:
+            type: Bigint
+        - name: effective_tax_rate
+          dataType:
+            type: Double
+        - name: net_earnings_after_tax_usd
+          dataType:
+            type: Double
+        - name: capped_room_impact_usd
+          dataType:
+            type: Bigint
+        - name: financial_snapshot_date
+          dataType:
+            type: Timestamp
+      description: null
+      author: prakharmartand@prophecy.io
+      createdAt: '2025-11-24 19:06:50'
+      tableType: table
+    - name: cdm_player_performance_aggregate
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: cdm_performance_id
+          dataType:
+            type: String
+        - name: cdm_player_id
+          dataType:
+            type: String
+        - name: season_year
+          dataType:
+            type: Bigint
+        - name: team_id
+          dataType:
+            type: String
+        - name: stat_games_played
+          dataType:
+            type: Bigint
+        - name: stat_minutes_total
+          dataType:
+            type: Bigint
+        - name: stat_points_total
+          dataType:
+            type: Bigint
+        - name: stat_assists_total
+          dataType:
+            type: Bigint
+        - name: stat_rebounds_total
+          dataType:
+            type: Double
+        - name: stat_blocks_total
+          dataType:
+            type: Bigint
+        - name: stat_steals_total
+          dataType:
+            type: Bigint
+        - name: stat_turnovers_total
+          dataType:
+            type: Bigint
+        - name: efficiency_field_goal_pct
+          dataType:
+            type: Double
+        - name: efficiency_three_point_pct
+          dataType:
+            type: Double
+        - name: efficiency_free_throw_pct
+          dataType:
+            type: Double
+        - name: efficiency_player_efficiency_rating
+          dataType:
+            type: Double
+        - name: stat_capture_date
+          dataType:
+            type: Timestamp
+      description: null
+      author: prakharmartand@prophecy.io
+      createdAt: '2025-11-24 20:44:23'
+      tableType: table
+    - name: new_cdm_brand_summary
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: cdm_brand_engagement_id
+          dataType:
+            type: String
+        - name: cdm_player_id
+          dataType:
+            type: String
+        - name: brand_name_normalized
+          dataType:
+            type: String
+        - name: brand_category
+          dataType:
+            type: String
+        - name: engagement_start_date
+          dataType:
+            type: Date
+        - name: engagement_end_date
+          dataType:
+            type: Date
+        - name: engagement_status
+          dataType:
+            type: String
+        - name: deal_value_total_usd
+          dataType:
+            type: Bigint
+        - name: deal_value_annual_usd
+          dataType:
+            type: Bigint
+        - name: engagement_type
+          dataType:
+            type: String
+        - name: created_timestamp
+          dataType:
+            type: Timestamp
+      description: Summarizes player engagement with brands, including deal values,
+        engagement periods, and status, supporting brand partnership and sponsorship
+        analysis.
+      author: prakharmartand@prophecy.io
+      createdAt: '2025-11-25 06:45:30'
+      tableType: table
+sqlUnreferencedSources: {}
+sqlPipeline:
+  name: sqlPipeline
+  description: null
+  author: prakharmartand@prophecy.io
+  createdAt: '2025-11-24 05:41:17'
+dependencies: []
+projectDependencies: {}
+flags:
+  shouldAddDefaultDependenciesIfAbsent: false
+pipelineConfigurations: {}
+projectConfigurations: {}
+sqlOrchestratorPipelines:
+  .prophecy/metadata/sqlorchestratorpipeline/pipeline1:
+    name: pipeline1
+    schema: null
+    description: null
+    author: prakharmartand@prophecy.io
+    files:
+    - .prophecy/ide/pipelines/pipeline1.json
+    - pipelines/pipeline1.py
+    - models/pipeline1/schema.yml
+    - models/pipeline1/pipeline1__player_profiles.sql
+    - models/pipeline1/pipeline1__player_financials_and_compensation.sql
+    - models/pipeline1/pipeline1__basketball_player_performance.sql
+    createdAt: '2025-11-24 07:20:37'
+sqlBusinessApps: {}
