@@ -28,38 +28,6 @@
     "publishDiagnosticMetrics" : false
   },
   "processes" : {
-    "C1N4RQtGu0tCqZYC14ZIC" : {
-      "id" : "C1N4RQtGu0tCqZYC14ZIC",
-      "component" : "Dataset",
-      "metadata" : {
-        "label" : "cdm_player_brand_engagement",
-        "x" : -560,
-        "y" : -280,
-        "phase" : 0
-      },
-      "properties" : {
-        "writeOptions" : {
-          "writeMode" : "overwrite"
-        },
-        "table" : {
-          "name" : "cdm_player_brand_engagement",
-          "sourceType" : "Table",
-          "sourceName" : "qa_team_prakhartargets",
-          "alias" : ""
-        }
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "1g0skgk77h6BTzIausZ46",
-          "slug" : "in"
-        } ],
-        "outputs" : [ {
-          "id" : "4KQJEUc0tw0Oqvw3VWx0J",
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false
-      }
-    },
     "3bSsvIQUNJQrb4EOSOHHE" : {
       "id" : "3bSsvIQUNJQrb4EOSOHHE",
       "component" : "Dataset",

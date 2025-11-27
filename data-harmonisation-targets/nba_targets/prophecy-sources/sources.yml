@@ -12,7 +12,6 @@ sources:
     config:
       tags:
       - "table:cdm_player_brand_engagement"
-      - "pipeline:pipeline1"
     columns:
     - name: "cdm_brand_engagement_id"
       tests:
