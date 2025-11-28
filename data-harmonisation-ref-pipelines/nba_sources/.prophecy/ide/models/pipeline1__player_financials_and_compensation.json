@@ -1,0 +1,624 @@
+{
+  "id" : "pipeline1__player_financials_and_compensation",
+  "metainfo" : {
+    "label" : "pipeline1__player_financials_and_compensation",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "alias" : "\"cdm_player_financial_snapshot\"",
+        "materialized" : "table",
+        "database" : "\"qa_team\"",
+        "schema" : "\"prakhartargets\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "O_Kfe6zUlSpd7x3lDxG9i$$15uozZ3ATasn_wArrkZEw" : {
+      "id" : "O_Kfe6zUlSpd7x3lDxG9i$$15uozZ3ATasn_wArrkZEw",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "player_contracts_with_endorsements",
+        "x" : 620,
+        "y" : 220,
+        "phase" : 0
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "in1",
+          "expression" : {
+            "expression" : "in0.cdm_player_id == in1.player_id and in0.season_year == in1.season_year"
+          },
+          "joinType" : "inner"
+        } ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "in0.cdm_player_id"
+          },
+          "alias" : "cdm_player_id",
+          "_row_id" : "906810368"
+        }, {
+          "expression" : {
+            "expression" : "in0.season_year"
+          },
+          "alias" : "season_year",
+          "_row_id" : "1483414863"
+        }, {
+          "expression" : {
+            "expression" : "in0.team_id"
+          },
+          "alias" : "team_id",
+          "_row_id" : "825232404"
+        }, {
+          "expression" : {
+            "expression" : "in0.salary_annual_usd"
+          },
+          "alias" : "salary_annual_usd",
+          "_row_id" : "798184975"
+        }, {
+          "expression" : {
+            "expression" : "in0.salary_total_contract_usd"
+          },
+          "alias" : "salary_total_contract_usd",
+          "_row_id" : "1486721122"
+        }, {
+          "expression" : {
+            "expression" : "in0.salary_guaranteed_usd"
+          },
+          "alias" : "salary_guaranteed_usd",
+          "_row_id" : "611123365"
+        }, {
+          "expression" : {
+            "expression" : "in0.salary_signing_bonus_usd"
+          },
+          "alias" : "salary_signing_bonus_usd",
+          "_row_id" : "1783819735"
+        }, {
+          "expression" : {
+            "expression" : "in0.salary_incentives_usd"
+          },
+          "alias" : "salary_incentives_usd",
+          "_row_id" : "477250139"
+        }, {
+          "expression" : {
+            "expression" : "in0.effective_tax_rate"
+          },
+          "alias" : "effective_tax_rate",
+          "_row_id" : "1378462326"
+        }, {
+          "expression" : {
+            "expression" : "in0.contract_id"
+          },
+          "alias" : "contract_id",
+          "_row_id" : "1286903831"
+        }, {
+          "expression" : {
+            "expression" : "in0.financial_snapshot_date"
+          },
+          "alias" : "financial_snapshot_date",
+          "_row_id" : "524523447"
+        }, {
+          "expression" : {
+            "expression" : "in1.endorsement_annual_revenue_usd"
+          },
+          "alias" : "endorsement_annual_revenue_usd",
+          "_row_id" : "150084162"
+        }, {
+          "expression" : {
+            "expression" : "in1.endorsement_total_active_deals"
+          },
+          "alias" : "endorsement_total_active_deals",
+          "_row_id" : "1363909135"
+        }, {
+          "expression" : {
+            "expression" : "in1.annual_value_usd"
+          },
+          "alias" : "annual_value_usd",
+          "_row_id" : "1447090355"
+        }, {
+          "expression" : {
+            "expression" : "in1.start_year"
+          },
+          "alias" : "start_year",
+          "_row_id" : "66753853"
+        } ],
+        "activeTab" : "conditions",
+        "columnsSelector" : [ "AKEEnYdDN_uNunXc-SLCt$$u0bKLZoPhrhxAuPG-sc5H##cdm_player_id", "sN2jm6NENGdDn2S6M5KUM$$6LquTcxnT0i8VdGYqvFmT##player_id", "AKEEnYdDN_uNunXc-SLCt$$u0bKLZoPhrhxAuPG-sc5H##season_year", "sN2jm6NENGdDn2S6M5KUM$$6LquTcxnT0i8VdGYqvFmT##season_year", "AKEEnYdDN_uNunXc-SLCt$$u0bKLZoPhrhxAuPG-sc5H##cdm_player_id", "AKEEnYdDN_uNunXc-SLCt$$u0bKLZoPhrhxAuPG-sc5H##season_year", "AKEEnYdDN_uNunXc-SLCt$$u0bKLZoPhrhxAuPG-sc5H##team_id", "AKEEnYdDN_uNunXc-SLCt$$u0bKLZoPhrhxAuPG-sc5H##salary_annual_usd", "AKEEnYdDN_uNunXc-SLCt$$u0bKLZoPhrhxAuPG-sc5H##salary_total_contract_usd", "AKEEnYdDN_uNunXc-SLCt$$u0bKLZoPhrhxAuPG-sc5H##salary_guaranteed_usd", "AKEEnYdDN_uNunXc-SLCt$$u0bKLZoPhrhxAuPG-sc5H##salary_signing_bonus_usd", "AKEEnYdDN_uNunXc-SLCt$$u0bKLZoPhrhxAuPG-sc5H##salary_incentives_usd", "AKEEnYdDN_uNunXc-SLCt$$u0bKLZoPhrhxAuPG-sc5H##effective_tax_rate", "AKEEnYdDN_uNunXc-SLCt$$u0bKLZoPhrhxAuPG-sc5H##contract_id", "AKEEnYdDN_uNunXc-SLCt$$u0bKLZoPhrhxAuPG-sc5H##financial_snapshot_date", "sN2jm6NENGdDn2S6M5KUM$$6LquTcxnT0i8VdGYqvFmT##endorsement_annual_revenue_usd", "sN2jm6NENGdDn2S6M5KUM$$6LquTcxnT0i8VdGYqvFmT##endorsement_total_active_deals", "sN2jm6NENGdDn2S6M5KUM$$6LquTcxnT0i8VdGYqvFmT##annual_value_usd", "sN2jm6NENGdDn2S6M5KUM$$6LquTcxnT0i8VdGYqvFmT##start_year" ],
+        "headAlias" : "in0"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "AKEEnYdDN_uNunXc-SLCt$$u0bKLZoPhrhxAuPG-sc5H",
+          "slug" : "in0"
+        }, {
+          "id" : "sN2jm6NENGdDn2S6M5KUM$$6LquTcxnT0i8VdGYqvFmT",
+          "slug" : "in1"
+        } ],
+        "outputs" : [ {
+          "id" : "UjroVXLx8We_q9dhWOxeJ$$ynB2WDUABOAgAOfsUaq_0",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "Srsz4_zIH3E_bNy6Uobsv$$3kxyNy5CX9NJt_gj1vfP6" : {
+      "id" : "Srsz4_zIH3E_bNy6Uobsv$$3kxyNy5CX9NJt_gj1vfP6",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "player_financials_and_compensation",
+        "phase" : 0
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM player_contract_salaries\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "HkJpSw9nusmXxSf_SI8HA$$zNK4fLXm5xUXS9rzpxefu",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "TjFScgzYW3ZwKO6UJtBYO$$5sBfAGy736bEbWSbbFtno",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "69pGx3g9yq9Cth9sV9T-L$$SMWPCCY14u9BEE4_8QTi6" : {
+      "id" : "69pGx3g9yq9Cth9sV9T-L$$SMWPCCY14u9BEE4_8QTi6",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "nba_contracts",
+        "x" : 220,
+        "y" : 20,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "nba_contracts",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_prakhar",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "08VSxiSvVWxEQvEn2J7XY$$NcvycNAUw1ZpLYvTTEa6h",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "Y5x5ndUw460NEEn0a7Iz5$$MueTv-lqoJa4GU97NMIgT" : {
+      "id" : "Y5x5ndUw460NEEn0a7Iz5$$MueTv-lqoJa4GU97NMIgT",
+      "component" : "Aggregate",
+      "metadata" : {
+        "label" : "endorsement_revenue_by_player_season",
+        "x" : 420,
+        "y" : 420,
+        "phase" : 0
+      },
+      "properties" : {
+        "aggregate" : [ {
+          "expression" : {
+            "expression" : "SUM(annual_value_usd)"
+          },
+          "alias" : "endorsement_annual_revenue_usd",
+          "_row_id" : "Cokary7RHl"
+        }, {
+          "expression" : {
+            "expression" : "COUNT(*)"
+          },
+          "alias" : "endorsement_total_active_deals",
+          "_row_id" : "vsVJ9aC78o"
+        }, {
+          "expression" : {
+            "expression" : "any_value(start_year)"
+          },
+          "alias" : "start_year",
+          "_row_id" : "2145026867"
+        }, {
+          "expression" : {
+            "expression" : "any_value(season_year)"
+          },
+          "alias" : "season_year",
+          "_row_id" : "110053478"
+        }, {
+          "expression" : {
+            "expression" : "any_value(player_id)"
+          },
+          "alias" : "player_id",
+          "_row_id" : "1510286956"
+        }, {
+          "expression" : {
+            "expression" : "any_value(annual_value_usd)"
+          },
+          "alias" : "annual_value_usd",
+          "_row_id" : "2041813889"
+        } ],
+        "allowSelection" : true,
+        "condition" : {
+          "expression" : ""
+        },
+        "activeTab" : "aggregate",
+        "columnsSelector" : [ "cof5N97BmgAJHNCq7vdr8$$rKo0ntPo6GTwtRt1SDe0G##player_id", "cof5N97BmgAJHNCq7vdr8$$rKo0ntPo6GTwtRt1SDe0G##season_year", "cof5N97BmgAJHNCq7vdr8$$rKo0ntPo6GTwtRt1SDe0G##annual_value_usd", "cof5N97BmgAJHNCq7vdr8$$rKo0ntPo6GTwtRt1SDe0G##start_year" ],
+        "groupBy" : [ {
+          "expression" : {
+            "expression" : "player_id"
+          },
+          "alias" : "",
+          "_row_id" : "gkqagym1Jo"
+        }, {
+          "expression" : {
+            "expression" : "season_year"
+          },
+          "alias" : "",
+          "_row_id" : "B6eT_vDR5M"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "cof5N97BmgAJHNCq7vdr8$$rKo0ntPo6GTwtRt1SDe0G",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "IznwYZ16wejwguHxVBH42$$-omqfGmS1dCF-nu1r31hN",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "4bxsoaQ2FVz0hzzXGQ-nU$$rBIyh_134gWE3LpYYMUe1" : {
+      "id" : "4bxsoaQ2FVz0hzzXGQ-nU$$rBIyh_134gWE3LpYYMUe1",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "partnership_yearly_values",
+        "x" : 220,
+        "y" : 420,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ "uKsYyeedhdTpDmGU4Rjj6$$B1iEP8hEQO1o6leVXuBqR##partnership_start_date", "uKsYyeedhdTpDmGU4Rjj6$$B1iEP8hEQO1o6leVXuBqR##player_id", "uKsYyeedhdTpDmGU4Rjj6$$B1iEP8hEQO1o6leVXuBqR##annual_value_usd" ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "YEAR(partnership_start_date)"
+          },
+          "alias" : "start_year",
+          "_row_id" : "Ps9k0Dbb6x"
+        }, {
+          "expression" : {
+            "expression" : "YEAR(partnership_start_date)"
+          },
+          "alias" : "season_year",
+          "_row_id" : "09EbmsGMvA"
+        }, {
+          "expression" : {
+            "expression" : "player_id"
+          },
+          "alias" : "player_id",
+          "_row_id" : "2031702547"
+        }, {
+          "expression" : {
+            "expression" : "annual_value_usd"
+          },
+          "alias" : "annual_value_usd",
+          "_row_id" : "1262121590"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "uKsYyeedhdTpDmGU4Rjj6$$B1iEP8hEQO1o6leVXuBqR",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "IaDSnRzZsPFhUxz9Y0eR0$$CQGqPgiHAMpOb0ANIwsi_",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "e712stE5_AeT7BVzovVjl$$H-UwrFa0cIZc1AXPYEjNZ" : {
+      "id" : "e712stE5_AeT7BVzovVjl$$H-UwrFa0cIZc1AXPYEjNZ",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "nba_contract_financials",
+        "x" : 420,
+        "y" : 20,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ "S5MCY8BBQbn08A9t3J7KU$$OqBa4aj_CNg4vWxPWfNo1##player_id", "S5MCY8BBQbn08A9t3J7KU$$OqBa4aj_CNg4vWxPWfNo1##season_start_year", "S5MCY8BBQbn08A9t3J7KU$$OqBa4aj_CNg4vWxPWfNo1##team_id", "S5MCY8BBQbn08A9t3J7KU$$OqBa4aj_CNg4vWxPWfNo1##annual_salary_usd", "S5MCY8BBQbn08A9t3J7KU$$OqBa4aj_CNg4vWxPWfNo1##total_value_usd", "S5MCY8BBQbn08A9t3J7KU$$OqBa4aj_CNg4vWxPWfNo1##guaranteed_amount_usd", "S5MCY8BBQbn08A9t3J7KU$$OqBa4aj_CNg4vWxPWfNo1##signing_bonus_usd", "S5MCY8BBQbn08A9t3J7KU$$OqBa4aj_CNg4vWxPWfNo1##incentives_usd", "S5MCY8BBQbn08A9t3J7KU$$OqBa4aj_CNg4vWxPWfNo1##state_tax_rate", "S5MCY8BBQbn08A9t3J7KU$$OqBa4aj_CNg4vWxPWfNo1##contract_id" ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "player_id"
+          },
+          "alias" : "cdm_player_id",
+          "_row_id" : "g_LC33pPmk"
+        }, {
+          "expression" : {
+            "expression" : "season_start_year"
+          },
+          "alias" : "season_year",
+          "_row_id" : "suoucKNW3L"
+        }, {
+          "expression" : {
+            "expression" : "team_id"
+          },
+          "alias" : "team_id",
+          "_row_id" : "821000528"
+        }, {
+          "expression" : {
+            "expression" : "annual_salary_usd"
+          },
+          "alias" : "salary_annual_usd",
+          "_row_id" : "gf59BBG33k"
+        }, {
+          "expression" : {
+            "expression" : "total_value_usd"
+          },
+          "alias" : "salary_total_contract_usd",
+          "_row_id" : "sPZrI-2o8h"
+        }, {
+          "expression" : {
+            "expression" : "guaranteed_amount_usd + signing_bonus_usd + incentives_usd"
+          },
+          "alias" : "salary_guaranteed_usd",
+          "_row_id" : "C8U-5Mv45d"
+        }, {
+          "expression" : {
+            "expression" : "annual_salary_usd + signing_bonus_usd"
+          },
+          "alias" : "salary_signing_bonus_usd",
+          "_row_id" : "3MlCFDij_Q"
+        }, {
+          "expression" : {
+            "expression" : "annual_salary_usd + incentives_usd"
+          },
+          "alias" : "salary_incentives_usd",
+          "_row_id" : "9b9R9pkS9_"
+        }, {
+          "expression" : {
+            "expression" : "state_tax_rate"
+          },
+          "alias" : "effective_tax_rate",
+          "_row_id" : "Nn_84Qgr0K"
+        }, {
+          "expression" : {
+            "expression" : "contract_id"
+          },
+          "alias" : "contract_id",
+          "_row_id" : "1731548161"
+        }, {
+          "expression" : {
+            "expression" : "current_timestamp()"
+          },
+          "alias" : "financial_snapshot_date",
+          "_row_id" : "3Z9bQIlt_2"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "S5MCY8BBQbn08A9t3J7KU$$OqBa4aj_CNg4vWxPWfNo1",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "iM3bhbmkJt5VvlhinLQBX$$8ecS9KULLIg89u7XqT0gX",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "Col9ncIINNQ2rR8ooYJj6$$ywiJYNNEsw29nozJUYhiN" : {
+      "id" : "Col9ncIINNQ2rR8ooYJj6$$ywiJYNNEsw29nozJUYhiN",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "nba_brand_patnership",
+        "x" : 20,
+        "y" : 320,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "nba_brand_patnership",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_prakhar",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "s6g4bfT-E6YqoVHASoEQr$$VkitHMWOSBx67yQkNQoWH",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "8xJIU5xo5JvTlDSjnUWhy$$IyrNcfMsI5LvAKiooD511" : {
+      "id" : "8xJIU5xo5JvTlDSjnUWhy$$IyrNcfMsI5LvAKiooD511",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "player_contract_salaries",
+        "x" : 820,
+        "y" : 220,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ "Ztvf0bWK6b4uRq4KtLQXP$$h0uDc__oJeahkdp6dY2uJ##contract_id", "Ztvf0bWK6b4uRq4KtLQXP$$h0uDc__oJeahkdp6dY2uJ##cdm_player_id", "Ztvf0bWK6b4uRq4KtLQXP$$h0uDc__oJeahkdp6dY2uJ##season_year", "Ztvf0bWK6b4uRq4KtLQXP$$h0uDc__oJeahkdp6dY2uJ##team_id", "Ztvf0bWK6b4uRq4KtLQXP$$h0uDc__oJeahkdp6dY2uJ##salary_annual_usd", "Ztvf0bWK6b4uRq4KtLQXP$$h0uDc__oJeahkdp6dY2uJ##salary_total_contract_usd", "Ztvf0bWK6b4uRq4KtLQXP$$h0uDc__oJeahkdp6dY2uJ##salary_guaranteed_usd", "Ztvf0bWK6b4uRq4KtLQXP$$h0uDc__oJeahkdp6dY2uJ##salary_signing_bonus_usd", "Ztvf0bWK6b4uRq4KtLQXP$$h0uDc__oJeahkdp6dY2uJ##salary_incentives_usd", "Ztvf0bWK6b4uRq4KtLQXP$$h0uDc__oJeahkdp6dY2uJ##endorsement_annual_revenue_usd", "Ztvf0bWK6b4uRq4KtLQXP$$h0uDc__oJeahkdp6dY2uJ##endorsement_total_active_deals", "Ztvf0bWK6b4uRq4KtLQXP$$h0uDc__oJeahkdp6dY2uJ##effective_tax_rate", "Ztvf0bWK6b4uRq4KtLQXP$$h0uDc__oJeahkdp6dY2uJ##financial_snapshot_date" ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "contract_id"
+          },
+          "alias" : "cdm_financial_id",
+          "_row_id" : "QH2C_tp5gq"
+        }, {
+          "expression" : {
+            "expression" : "cdm_player_id"
+          },
+          "alias" : "cdm_player_id",
+          "_row_id" : "zIhhdmsrIf"
+        }, {
+          "expression" : {
+            "expression" : "season_year"
+          },
+          "alias" : "season_year",
+          "_row_id" : "QY7NAtkPjD"
+        }, {
+          "expression" : {
+            "expression" : "team_id"
+          },
+          "alias" : "team_id",
+          "_row_id" : "1888668845"
+        }, {
+          "expression" : {
+            "expression" : "salary_annual_usd"
+          },
+          "alias" : "salary_annual_usd",
+          "_row_id" : "1331885536"
+        }, {
+          "expression" : {
+            "expression" : "salary_total_contract_usd"
+          },
+          "alias" : "salary_total_contract_usd",
+          "_row_id" : "87727312"
+        }, {
+          "expression" : {
+            "expression" : "salary_guaranteed_usd"
+          },
+          "alias" : "salary_guaranteed_usd",
+          "_row_id" : "915926708"
+        }, {
+          "expression" : {
+            "expression" : "salary_signing_bonus_usd"
+          },
+          "alias" : "salary_signing_bonus_usd",
+          "_row_id" : "542021158"
+        }, {
+          "expression" : {
+            "expression" : "salary_incentives_usd"
+          },
+          "alias" : "salary_incentives_usd",
+          "_row_id" : "1302486335"
+        }, {
+          "expression" : {
+            "expression" : "coalesce(endorsement_annual_revenue_usd, 0)"
+          },
+          "alias" : "endorsement_annual_revenue_usd",
+          "_row_id" : "686025160"
+        }, {
+          "expression" : {
+            "expression" : "coalesce(endorsement_total_active_deals, 0)"
+          },
+          "alias" : "endorsement_total_active_deals",
+          "_row_id" : "227174727"
+        }, {
+          "expression" : {
+            "expression" : "salary_annual_usd + salary_incentives_usd + endorsement_annual_revenue_usd"
+          },
+          "alias" : "total_compensation_usd",
+          "_row_id" : "dTmw9Sqiut"
+        }, {
+          "expression" : {
+            "expression" : "effective_tax_rate"
+          },
+          "alias" : "effective_tax_rate",
+          "_row_id" : "xnMO3bcy7h"
+        }, {
+          "expression" : {
+            "expression" : "(salary_annual_usd + salary_incentives_usd + endorsement_annual_revenue_usd) * (1 - effective_tax_rate)"
+          },
+          "alias" : "net_earnings_after_tax_usd",
+          "_row_id" : "p62zVtU6xf"
+        }, {
+          "expression" : {
+            "expression" : "salary_annual_usd"
+          },
+          "alias" : "capped_room_impact_usd",
+          "_row_id" : "CL9cmaVL_l"
+        }, {
+          "expression" : {
+            "expression" : "financial_snapshot_date"
+          },
+          "alias" : "financial_snapshot_date",
+          "_row_id" : "WejoUjUFhF"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Ztvf0bWK6b4uRq4KtLQXP$$h0uDc__oJeahkdp6dY2uJ",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "uWkEeZl26FUXNhtBl4Nte$$4Qzn3B7gsqUD_CoGSkSjz",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "q5h3bOtSQKDH1gY-J96Ll$$4GYptgSrJo2R6Kqlu02Qv",
+    "source" : "8xJIU5xo5JvTlDSjnUWhy$$IyrNcfMsI5LvAKiooD511",
+    "sourcePort" : "uWkEeZl26FUXNhtBl4Nte$$4Qzn3B7gsqUD_CoGSkSjz",
+    "target" : "Srsz4_zIH3E_bNy6Uobsv$$3kxyNy5CX9NJt_gj1vfP6",
+    "targetPort" : "HkJpSw9nusmXxSf_SI8HA$$zNK4fLXm5xUXS9rzpxefu"
+  }, {
+    "id" : "sD5jAZbBP5N8MW3cE6chh$$mZnb5pLyVbYKytXh13x8W",
+    "source" : "O_Kfe6zUlSpd7x3lDxG9i$$15uozZ3ATasn_wArrkZEw",
+    "sourcePort" : "UjroVXLx8We_q9dhWOxeJ$$ynB2WDUABOAgAOfsUaq_0",
+    "target" : "8xJIU5xo5JvTlDSjnUWhy$$IyrNcfMsI5LvAKiooD511",
+    "targetPort" : "Ztvf0bWK6b4uRq4KtLQXP$$h0uDc__oJeahkdp6dY2uJ"
+  }, {
+    "id" : "oF-OVBg4VDtiVbC4QotEF$$gk12scUqVYLhFcHiPfw7w",
+    "source" : "e712stE5_AeT7BVzovVjl$$H-UwrFa0cIZc1AXPYEjNZ",
+    "sourcePort" : "iM3bhbmkJt5VvlhinLQBX$$8ecS9KULLIg89u7XqT0gX",
+    "target" : "O_Kfe6zUlSpd7x3lDxG9i$$15uozZ3ATasn_wArrkZEw",
+    "targetPort" : "AKEEnYdDN_uNunXc-SLCt$$u0bKLZoPhrhxAuPG-sc5H"
+  }, {
+    "id" : "uLBhnYTlHAuXE_o4KxABK",
+    "source" : "Y5x5ndUw460NEEn0a7Iz5$$MueTv-lqoJa4GU97NMIgT",
+    "sourcePort" : "IznwYZ16wejwguHxVBH42$$-omqfGmS1dCF-nu1r31hN",
+    "target" : "O_Kfe6zUlSpd7x3lDxG9i$$15uozZ3ATasn_wArrkZEw",
+    "targetPort" : "sN2jm6NENGdDn2S6M5KUM$$6LquTcxnT0i8VdGYqvFmT"
+  }, {
+    "id" : "d6soQOM-MIBaIw5TwLh3F$$6u_cO2RBAZWIi1MhKzAJ-",
+    "source" : "69pGx3g9yq9Cth9sV9T-L$$SMWPCCY14u9BEE4_8QTi6",
+    "sourcePort" : "08VSxiSvVWxEQvEn2J7XY$$NcvycNAUw1ZpLYvTTEa6h",
+    "target" : "e712stE5_AeT7BVzovVjl$$H-UwrFa0cIZc1AXPYEjNZ",
+    "targetPort" : "S5MCY8BBQbn08A9t3J7KU$$OqBa4aj_CNg4vWxPWfNo1"
+  }, {
+    "id" : "aioYNPEDFvi4hF045t92H$$vDXrQM9OP0PHm1tspgYmd",
+    "source" : "4bxsoaQ2FVz0hzzXGQ-nU$$rBIyh_134gWE3LpYYMUe1",
+    "sourcePort" : "IaDSnRzZsPFhUxz9Y0eR0$$CQGqPgiHAMpOb0ANIwsi_",
+    "target" : "Y5x5ndUw460NEEn0a7Iz5$$MueTv-lqoJa4GU97NMIgT",
+    "targetPort" : "cof5N97BmgAJHNCq7vdr8$$rKo0ntPo6GTwtRt1SDe0G"
+  }, {
+    "id" : "BsC0AnaJDf8r4aPkdQwH4",
+    "source" : "Col9ncIINNQ2rR8ooYJj6$$ywiJYNNEsw29nozJUYhiN",
+    "sourcePort" : "s6g4bfT-E6YqoVHASoEQr$$VkitHMWOSBx67yQkNQoWH",
+    "target" : "4bxsoaQ2FVz0hzzXGQ-nU$$rBIyh_134gWE3LpYYMUe1",
+    "targetPort" : "uKsYyeedhdTpDmGU4Rjj6$$B1iEP8hEQO1o6leVXuBqR"
+  } ],
+  "component" : "Model"
+}

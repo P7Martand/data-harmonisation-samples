@@ -1,0 +1,102 @@
+{
+  "id" : "ref_target1",
+  "metainfo" : {
+    "label" : "ref_target1",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false,
+    "publishDiagnosticMetrics" : false
+  },
+  "processes" : {
+    "7jEREvpE40JusdWejeQOK$$PpF-E-9_JzM-dSmnCyBnt" : {
+      "id" : "7jEREvpE40JusdWejeQOK$$PpF-E-9_JzM-dSmnCyBnt",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "player_performance_summary_1",
+        "x" : -120,
+        "y" : 40,
+        "phase" : 0,
+        "comment" : "Overwrites the best batsman dataset with updated records from the QA team targets table.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "table" : {
+          "name" : "best_batsman",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_prakharTargets",
+          "alias" : ""
+        },
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "3nRtNYGQqs7wjqqyECPzK$$xIzG2Bw5bQ6gU8AyEt77X",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "Hv3sLuMkASzeaBIz0-VfO$$pWZOVkeui7HN_fF3xtT_F",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "F_0j_vdRSajej5oo1Zyht$$mlTAoR4oEUHu2On6Z_qfJ" : {
+      "id" : "F_0j_vdRSajej5oo1Zyht$$mlTAoR4oEUHu2On6Z_qfJ",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "player_performance_summary",
+        "x" : -120,
+        "y" : -180,
+        "phase" : 0,
+        "comment" : "Overwrites the best bowlers dataset in the QA team's database.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "table" : {
+          "name" : "best_bowlers",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_prakharTargets",
+          "alias" : ""
+        },
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "9eV4nRBW6b2yjNeE9OQiT$$CnIvX0He1wX4_T0r6ltY3",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "duiV9iavDweg8yw51slCu$$X37DvPL4MGM3-baKRHZA5",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Pipeline"
+}

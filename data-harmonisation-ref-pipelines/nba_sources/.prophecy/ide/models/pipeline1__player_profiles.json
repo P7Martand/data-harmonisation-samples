@@ -1,0 +1,207 @@
+{
+  "id" : "pipeline1__player_profiles",
+  "metainfo" : {
+    "label" : "pipeline1__player_profiles",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "alias" : "\"cdm_player_master\"",
+        "materialized" : "incremental",
+        "database" : "\"qa_team\"",
+        "unique_key" : [ "\"cdm_player_id\"" ],
+        "schema" : "\"prakhartargets\"",
+        "incremental_strategy" : "\"merge\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "5CqkhdwOv5UaOYIAiG-k7$$TXjyaoUSb2BfYoie3Ph_n" : {
+      "id" : "5CqkhdwOv5UaOYIAiG-k7$$TXjyaoUSb2BfYoie3Ph_n",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "player_profiles",
+        "phase" : 0
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM player_profile_extended\n\n{% if is_incremental() %}\nWHERE cdm_player_id != (\n  SELECT MAX(cdm_player_key)\n  \n  FROM {{this}}\n )\n\n{% endif %}\n",
+        "isModel" : true,
+        "incrementalKey" : true,
+        "incremental" : {
+          "expression" : "cdm_player_id != (\n  SELECT MAX(cdm_player_key)\n  \n  FROM {{this}}\n )"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "MwBn5OoKx_2J6OTRlUrXQ$$pqXoreLROR6e0hWrO5--O",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "TdJGVMSKEKmg0E2hDIfrf$$sDCwHNTffHugSVCJ8lK-Y",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "39glxtd6Mq8GtjrAa0suu$$jARBguzH2SE1xYyLQA8yz" : {
+      "id" : "39glxtd6Mq8GtjrAa0suu$$jARBguzH2SE1xYyLQA8yz",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "player_profile_extended",
+        "x" : 220,
+        "y" : 620,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ "Hd0GbCla5aFSjRzULZCV3$$zXqCqVIXKYaRYrXzQvut5##player_id", "Hd0GbCla5aFSjRzULZCV3$$zXqCqVIXKYaRYrXzQvut5##first_name", "Hd0GbCla5aFSjRzULZCV3$$zXqCqVIXKYaRYrXzQvut5##last_name", "Hd0GbCla5aFSjRzULZCV3$$zXqCqVIXKYaRYrXzQvut5##active_status", "Hd0GbCla5aFSjRzULZCV3$$zXqCqVIXKYaRYrXzQvut5##position", "Hd0GbCla5aFSjRzULZCV3$$zXqCqVIXKYaRYrXzQvut5##draft_year", "Hd0GbCla5aFSjRzULZCV3$$zXqCqVIXKYaRYrXzQvut5##country", "Hd0GbCla5aFSjRzULZCV3$$zXqCqVIXKYaRYrXzQvut5##height_cm", "Hd0GbCla5aFSjRzULZCV3$$zXqCqVIXKYaRYrXzQvut5##weight_kg" ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "player_id"
+          },
+          "alias" : "cdm_player_id",
+          "_row_id" : "evNymGVLRc"
+        }, {
+          "expression" : {
+            "expression" : "player_id"
+          },
+          "alias" : "cdm_player_key",
+          "_row_id" : "IStgBkudH0"
+        }, {
+          "expression" : {
+            "expression" : "first_name"
+          },
+          "alias" : "first_name",
+          "_row_id" : "91486799"
+        }, {
+          "expression" : {
+            "expression" : "last_name"
+          },
+          "alias" : "last_name",
+          "_row_id" : "69686440"
+        }, {
+          "expression" : {
+            "expression" : "CONCAT(first_name, ' ', last_name)"
+          },
+          "alias" : "full_name",
+          "_row_id" : "pLvAzzgsxg"
+        }, {
+          "expression" : {
+            "expression" : "active_status"
+          },
+          "alias" : "player_status",
+          "_row_id" : "9jxk-WDOKm"
+        }, {
+          "expression" : {
+            "expression" : "position"
+          },
+          "alias" : "position_code",
+          "_row_id" : "KZHR4lDTUE"
+        }, {
+          "expression" : {
+            "expression" : "draft_year"
+          },
+          "alias" : "draft_info_year",
+          "_row_id" : "I8nLXBPRtk"
+        }, {
+          "expression" : {
+            "expression" : "country"
+          },
+          "alias" : "country_of_origin",
+          "_row_id" : "8Ov1VCVnh4"
+        }, {
+          "expression" : {
+            "expression" : "height_cm"
+          },
+          "alias" : "physical_attributes_height_cm",
+          "_row_id" : "j7nHV1wquf"
+        }, {
+          "expression" : {
+            "expression" : "weight_kg"
+          },
+          "alias" : "physical_attributes_weight_kg",
+          "_row_id" : "WXScQ02v0e"
+        }, {
+          "expression" : {
+            "expression" : "CURRENT_TIMESTAMP()"
+          },
+          "alias" : "created_date",
+          "_row_id" : "LSPaAkoqya"
+        }, {
+          "expression" : {
+            "expression" : "CURRENT_TIMESTAMP()"
+          },
+          "alias" : "updated_date",
+          "_row_id" : "CwgQoUuc5u"
+        }, {
+          "expression" : {
+            "expression" : "'qa_team_prakhar.nba_players'"
+          },
+          "alias" : "data_source",
+          "_row_id" : "Ng8xs3pKmE"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Hd0GbCla5aFSjRzULZCV3$$zXqCqVIXKYaRYrXzQvut5",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "cwp29_2ahWGvvhjddNDFa$$vgmW39zK25KqJQ0laYxIO",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "IpSYdfsF76wNVnFz60mOo$$KCtRrDtQTXnIyXNCK-baq" : {
+      "id" : "IpSYdfsF76wNVnFz60mOo$$KCtRrDtQTXnIyXNCK-baq",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "nba_players",
+        "x" : 20,
+        "y" : 620,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "nba_players",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_prakhar",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "DoaF0pjSBLg0bvaomG9rB$$JxsdxB2vRNGBhteetsR9g",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "AT7Q1shq5h-REHbkdcJlP",
+    "source" : "39glxtd6Mq8GtjrAa0suu$$jARBguzH2SE1xYyLQA8yz",
+    "sourcePort" : "cwp29_2ahWGvvhjddNDFa$$vgmW39zK25KqJQ0laYxIO",
+    "target" : "5CqkhdwOv5UaOYIAiG-k7$$TXjyaoUSb2BfYoie3Ph_n",
+    "targetPort" : "MwBn5OoKx_2J6OTRlUrXQ$$pqXoreLROR6e0hWrO5--O"
+  }, {
+    "id" : "bwR81c2qWnI6yRWILeNlB$$mgWtAuRYM1PHT8gWmWmcd",
+    "source" : "IpSYdfsF76wNVnFz60mOo$$KCtRrDtQTXnIyXNCK-baq",
+    "sourcePort" : "DoaF0pjSBLg0bvaomG9rB$$JxsdxB2vRNGBhteetsR9g",
+    "target" : "39glxtd6Mq8GtjrAa0suu$$jARBguzH2SE1xYyLQA8yz",
+    "targetPort" : "Hd0GbCla5aFSjRzULZCV3$$zXqCqVIXKYaRYrXzQvut5"
+  } ],
+  "component" : "Model"
+}

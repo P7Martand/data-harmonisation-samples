@@ -1,0 +1,696 @@
+{
+  "id" : "ref1",
+  "metainfo" : {
+    "label" : "ref1",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false,
+    "publishDiagnosticMetrics" : false
+  },
+  "processes" : {
+    "vZHy-AmFiv7A3n35BxUiY$$LAYvjoL8v5Mgg73Pnh7-2" : {
+      "id" : "vZHy-AmFiv7A3n35BxUiY$$LAYvjoL8v5Mgg73Pnh7-2",
+      "component" : "OrderBy",
+      "metadata" : {
+        "label" : "ranked_bowler_stats",
+        "x" : 660,
+        "y" : 120,
+        "phase" : 0,
+        "comment" : "Ranks active bowlers by total wickets taken, highlighting top performers.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "orders" : [ {
+          "expression" : {
+            "expression" : "total_wickets"
+          },
+          "sortType" : "desc",
+          "nullsType" : "nulls last"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "lyozx0S9-EFof4Kc0caRm$$r-kUQwDBHkgJfpHLdFr9f",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "ZySH0GdKv-xPOF_4dbnxu$$VZ_lDVAuurLJ8UZV7sJPx",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "6ol9bKQY5tKZTW3YwL_90$$DPKae7UEocb7kTV4D1Dtl"
+    },
+    "BK0M8v5W3btOGqzVscJuu$$LMXLo2lE_PrqHqprbZRy3" : {
+      "id" : "BK0M8v5W3btOGqzVscJuu$$LMXLo2lE_PrqHqprbZRy3",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "ind_team",
+        "x" : -1120,
+        "y" : -140,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "ind_team",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_prakhar",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "4xtAhRMGzEDxyMWg81HHW$$vdIEvpqe1oRPyNH1urt-3",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "3XGvPNJKERxs5Qi3tm_nK$$Ggemon7qmRO_7U1lbOkXI",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "kcaRiDFVnu_2cyoGTbJe9$$oHFyFh1IyjkQNctm9mM74" : {
+      "id" : "kcaRiDFVnu_2cyoGTbJe9$$oHFyFh1IyjkQNctm9mM74",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "bowler_rankings_and_average",
+        "x" : 260,
+        "y" : 120,
+        "phase" : 0,
+        "comment" : "Ranks bowlers globally by total wickets and calculates their average wickets per match.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "*"
+          },
+          "alias" : "",
+          "_row_id" : "Y2bEOa_9qM"
+        }, {
+          "expression" : {
+            "expression" : "ROUND(total_wickets::FLOAT / NULLIF(total_matches, 0), 2)"
+          },
+          "alias" : "average",
+          "_row_id" : "eNFXHSvqYI"
+        }, {
+          "expression" : {
+            "expression" : "ROW_NUMBER() OVER (ORDER BY total_wickets DESC)"
+          },
+          "alias" : "world_ranking",
+          "_row_id" : "bhx1dE01_i"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "706P8y18h3pj4AR-vQzg0$$srwtn7mHEjy17T0f4fq8Y",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "Il4fccsJZ3CPJUwhsOIdN$$RxfGCNnSqJ6SSi6ASwVEM",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "6ol9bKQY5tKZTW3YwL_90$$DPKae7UEocb7kTV4D1Dtl"
+    },
+    "zK7Lbdlgl0ccn4Y5KrXfM$$47sJF2BzLpy-Bfis8Mrhs" : {
+      "id" : "zK7Lbdlgl0ccn4Y5KrXfM$$47sJF2BzLpy-Bfis8Mrhs",
+      "component" : "OrderBy",
+      "metadata" : {
+        "label" : "ranked_batsmen",
+        "x" : 660,
+        "y" : 120,
+        "phase" : 0,
+        "comment" : "Ranks active batsmen by their total scores, highlighting top performers.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "orders" : [ {
+          "expression" : {
+            "expression" : "total_scores"
+          },
+          "sortType" : "desc",
+          "nullsType" : ""
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "pUhBu4_BYPpvBSY4McYKJ$$D_s-oBCpZv8PZ0oOJR4x5",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "Eas5pHDEZrVHmyuAot3uU$$HIAbUAANCNOovFQpG8rHi",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "S9eR-YOCxrf1BMXtqavGt$$0x7X-_deCF2w3nK20I-x2"
+    },
+    "UohDvZAgfTjL-k95MN2Xk$$0wON6iRcYBRnlzHGkrVL5" : {
+      "id" : "UohDvZAgfTjL-k95MN2Xk$$0wON6iRcYBRnlzHGkrVL5",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "batsman_players",
+        "x" : 60,
+        "y" : 120,
+        "phase" : 0,
+        "comment" : "Selects players categorized as batsmen for focused analysis or reporting.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "category == 'Batsman'"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "gvXw-NDYPGogTbNJLG795$$dbtZ3knFNhYdW8gPyGXad",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "LzF0IfSPEePYXgJ_TkRiu$$wcizaDX-Tv1XqY1EvW3xb",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "S9eR-YOCxrf1BMXtqavGt$$0x7X-_deCF2w3nK20I-x2"
+    },
+    "6ol9bKQY5tKZTW3YwL_90$$DPKae7UEocb7kTV4D1Dtl" : {
+      "id" : "6ol9bKQY5tKZTW3YwL_90$$DPKae7UEocb7kTV4D1Dtl",
+      "component" : "VisualGroup",
+      "metadata" : {
+        "label" : "best_bowler",
+        "x" : -420,
+        "y" : -400,
+        "height" : 260,
+        "width" : 1000
+      },
+      "properties" : { },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ ]
+      }
+    },
+    "Och_18j_htLjmbT6JMR_K$$fo3Bt7d7HB33qjsL_vLsx" : {
+      "id" : "Och_18j_htLjmbT6JMR_K$$fo3Bt7d7HB33qjsL_vLsx",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "best_batsman_1",
+        "x" : 820,
+        "y" : 120,
+        "phase" : 0,
+        "comment" : "Overwrites the best batsman dataset for the QA team to keep cricket performance data up to date.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "table" : {
+          "name" : "best_batsman",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_prakhartargets",
+          "alias" : ""
+        },
+        "writeOptions" : {
+          "writeMode" : "overwrite",
+          "entityConfig" : {
+            "materialized" : "\"table\"",
+            "type" : "ModelConfig"
+          }
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "0Tvi08CMNf713FEXIm37f$$t-MLOZelT3NVpyUQqYnxT",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "hNvK_XjPASSLthSFP60sZ$$de4x_vi2eyiRA-cHYG7kN",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "6ol9bKQY5tKZTW3YwL_90$$DPKae7UEocb7kTV4D1Dtl"
+    },
+    "m-nbsGb-ysXuoSvwME16i$$wEhyvGeptg83HynyIuApB" : {
+      "id" : "m-nbsGb-ysXuoSvwME16i$$wEhyvGeptg83HynyIuApB",
+      "component" : "Union",
+      "metadata" : {
+        "label" : "combined_player_data",
+        "x" : -660,
+        "y" : -140,
+        "phase" : 0,
+        "comment" : "Consolidates player and team performance data from multiple sources for a comprehensive overview.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "operationType" : "union",
+        "preserveDuplicates" : true,
+        "useMinus" : false,
+        "inputAliases" : [ "in0", "in1", "in2", "in3", "in4" ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "PI8l1FfAd1URnkCq2h0Rf$$xwyedfb2XPZ_jeFRJlMgw",
+          "slug" : "in0"
+        }, {
+          "id" : "wtGbJmLSyJJYl7HG7DgBh$$TOHaDHLOg8u_jcw5ltxi0",
+          "slug" : "in1"
+        }, {
+          "id" : "-_HXkdaFgo2m6bvME_CAf$$IToIhAxGKcS9dNq_dcMkz",
+          "slug" : "in2"
+        }, {
+          "id" : "Yu-Nd6yMSvTH-DhKBpA8R$$57DIJ7oLIu_ijpHbfqmHf",
+          "slug" : "in3"
+        }, {
+          "id" : "R0D_icMUpj7Pwp53tiWuF$$I-x3svCGBxW3WZPc44VLA",
+          "slug" : "in4"
+        } ],
+        "outputs" : [ {
+          "id" : "3a8u7mx4AzfZ3ULwuDBdz$$hkovrPGdNdQWF6wE1jzTy",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "S9eR-YOCxrf1BMXtqavGt$$0x7X-_deCF2w3nK20I-x2" : {
+      "id" : "S9eR-YOCxrf1BMXtqavGt$$0x7X-_deCF2w3nK20I-x2",
+      "component" : "VisualGroup",
+      "metadata" : {
+        "label" : "best_batsman",
+        "x" : -420,
+        "y" : -20,
+        "height" : 279.9998779296875,
+        "width" : 1029
+      },
+      "properties" : { },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ ]
+      }
+    },
+    "pZcltK0o9vhwKWavpi4cl$$pXwt4l4vigFl1GqFL8u7h" : {
+      "id" : "pZcltK0o9vhwKWavpi4cl$$pXwt4l4vigFl1GqFL8u7h",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "eng_team",
+        "x" : -1120,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "eng_team",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_prakhar",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "eumlw2qWaY4XI8tVeg01e$$7jvFl66zkPFvu-l6yWtN2",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "eriW5tzAs80zEowNBJm8R$$Y05hbQvMuwuwbU5SxHw_u",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "tXzst3kY10fAG1mItK9AD$$pgfP0PUCr-MospX8t78fR" : {
+      "id" : "tXzst3kY10fAG1mItK9AD$$pgfP0PUCr-MospX8t78fR",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "active_batsman_rankings",
+        "x" : 460,
+        "y" : 120,
+        "phase" : 0,
+        "comment" : "Lists batsmen with non-zero scores for ranking analysis.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "total_scores > 0"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "atPQIHkJnEa_-UsNvOw3Y$$jl9mAdAHWAnbwfLSJRZcO",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "wOgkfXmxzH9ps8-jst8WB$$_Oek6BVSXnfh7jQ4Ow2PL",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "S9eR-YOCxrf1BMXtqavGt$$0x7X-_deCF2w3nK20I-x2"
+    },
+    "K7Em5MJKoYEWnujWEnd6m$$rJXPkOyGSB7QTm81UnWmP" : {
+      "id" : "K7Em5MJKoYEWnujWEnd6m$$rJXPkOyGSB7QTm81UnWmP",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "srilanka_team",
+        "x" : -1120,
+        "y" : 140,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "srilanka_team",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_prakhar",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "MyVJNaCCiVyIDuzR8_b14$$5na3NszYpdjbwEAQmBzMv",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "lc_xc_4JA8CktPdUYk_E6$$K3RCp4O9_83be3ACLMWSD",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "mXiCAzScG7dqTk_XvxG3Q$$zCJFtad6dxYTxO_oR5KH5" : {
+      "id" : "mXiCAzScG7dqTk_XvxG3Q$$zCJFtad6dxYTxO_oR5KH5",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "best_bowlers",
+        "x" : 820,
+        "y" : 120,
+        "phase" : 0,
+        "comment" : "Retrieves best bowler data from the QA team's dataset.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "table" : {
+          "name" : "best_bowlers",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_prakhartargets",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "WqBh6s25OXsNspKyv7oQd$$3ob68OhQw3UF6k-qb7hbR",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "feBpAGW13PSoft1KZmlNE$$ESenDkMgIz33cEgGJ_zOd",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "S9eR-YOCxrf1BMXtqavGt$$0x7X-_deCF2w3nK20I-x2"
+    },
+    "gNwk3fZgsyqLnFgpEuikh$$gmaE3wXIXNvkdLymqhUaO" : {
+      "id" : "gNwk3fZgsyqLnFgpEuikh$$gmaE3wXIXNvkdLymqhUaO",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "bowler_players",
+        "x" : 60,
+        "y" : 120,
+        "phase" : 0,
+        "comment" : "Identifies players categorized as bowlers for focused analysis or reporting.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "category == 'Bowler'"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "WmaIhgUi0X-pXwZPAB0X2$$uHHwgoYI9yh3p3B7hdOjM",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "Ejyr03XUnclgvZ8Ku0jVg$$_gBcADKrzTfa0rJxJjoYW",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "6ol9bKQY5tKZTW3YwL_90$$DPKae7UEocb7kTV4D1Dtl"
+    },
+    "MFE4BDVMOJRLnyNbYBH-g$$RmxtDkvgHpkQK-Kpav78q" : {
+      "id" : "MFE4BDVMOJRLnyNbYBH-g$$RmxtDkvgHpkQK-Kpav78q",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "active_bowler_rankings",
+        "x" : 460,
+        "y" : 120,
+        "phase" : 0,
+        "comment" : "Highlights bowlers with at least one wicket, focusing on active performers.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "total_wickets > 0"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "ho9-YYrPFDTKxXLao8vyv$$ISLwCqOxC1_5u99M9kKHX",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "sDqabyf4ENOT9swQTp3eT$$-DrI8wYzR1N7DSIaHYeKw",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "6ol9bKQY5tKZTW3YwL_90$$DPKae7UEocb7kTV4D1Dtl"
+    },
+    "vGpDL3HdqXAxVZ0VP_QrJ$$Pk6M746lgVCMyLOl82gsM" : {
+      "id" : "vGpDL3HdqXAxVZ0VP_QrJ$$Pk6M746lgVCMyLOl82gsM",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "nz_team",
+        "x" : -1120,
+        "y" : 0,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "nz-team",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_prakhar",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "iR0PnHN1M0ghMjApc6P11$$f904gmV07BTtkhVtuH3U_",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "gZJN-u7JTUbV9C_8vxtTI$$C8f7fYKBwuIegjmORdjvp",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "NK5IvkRrGKO9fFq4UQHVO" : {
+      "id" : "NK5IvkRrGKO9fFq4UQHVO",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "ind_team_1",
+        "x" : -1120,
+        "y" : -420,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "ind_team",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_prakhar",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "LkLGBsDVIY0q3TsJaWP3h",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "zBc79qVzAKjxi5daHOaAM",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "KF5d1OrEqkfLctVuUVHtu$$rTHMIovO_gntbHxliXBST" : {
+      "id" : "KF5d1OrEqkfLctVuUVHtu$$rTHMIovO_gntbHxliXBST",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "batsman_rankings_with_average",
+        "x" : 260,
+        "y" : 120,
+        "phase" : 0,
+        "comment" : "Ranks batsmen globally based on total scores and calculates their average performance per match.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "*"
+          },
+          "alias" : "",
+          "_row_id" : "S9sxRWZcoi"
+        }, {
+          "expression" : {
+            "expression" : "ROUND(total_scores::FLOAT / NULLIF(total_matches, 0), 2)"
+          },
+          "alias" : "average",
+          "_row_id" : "rcQNGD-yR3"
+        }, {
+          "expression" : {
+            "expression" : "ROW_NUMBER() OVER (ORDER BY total_scores DESC)"
+          },
+          "alias" : "world_ranking",
+          "_row_id" : "4dtYRa6PIA"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "x2Velk6LJ149vFpwiR8BU$$kFdg7FE2-0CFCArHdxKGl",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "nrSr4olQxl466KkwPlGA2$$ErRTBgRn2J7Iwsqybictk",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "S9eR-YOCxrf1BMXtqavGt$$0x7X-_deCF2w3nK20I-x2"
+    }
+  },
+  "connections" : [ {
+    "id" : "QChO8wYheWahCY4-SeOm5",
+    "source" : "m-nbsGb-ysXuoSvwME16i$$wEhyvGeptg83HynyIuApB",
+    "sourcePort" : "3a8u7mx4AzfZ3ULwuDBdz$$hkovrPGdNdQWF6wE1jzTy",
+    "target" : "gNwk3fZgsyqLnFgpEuikh$$gmaE3wXIXNvkdLymqhUaO",
+    "targetPort" : "WmaIhgUi0X-pXwZPAB0X2$$uHHwgoYI9yh3p3B7hdOjM"
+  }, {
+    "id" : "X7_EV_i7-g-kwe7uWPWgi",
+    "source" : "gNwk3fZgsyqLnFgpEuikh$$gmaE3wXIXNvkdLymqhUaO",
+    "sourcePort" : "Ejyr03XUnclgvZ8Ku0jVg$$_gBcADKrzTfa0rJxJjoYW",
+    "target" : "kcaRiDFVnu_2cyoGTbJe9$$oHFyFh1IyjkQNctm9mM74",
+    "targetPort" : "706P8y18h3pj4AR-vQzg0$$srwtn7mHEjy17T0f4fq8Y"
+  }, {
+    "id" : "S9YYenEZAyhGQUjUrxpGc",
+    "source" : "kcaRiDFVnu_2cyoGTbJe9$$oHFyFh1IyjkQNctm9mM74",
+    "sourcePort" : "Il4fccsJZ3CPJUwhsOIdN$$RxfGCNnSqJ6SSi6ASwVEM",
+    "target" : "MFE4BDVMOJRLnyNbYBH-g$$RmxtDkvgHpkQK-Kpav78q",
+    "targetPort" : "ho9-YYrPFDTKxXLao8vyv$$ISLwCqOxC1_5u99M9kKHX"
+  }, {
+    "id" : "BY1PiZEHP1wYyI-7xNZl8",
+    "source" : "MFE4BDVMOJRLnyNbYBH-g$$RmxtDkvgHpkQK-Kpav78q",
+    "sourcePort" : "sDqabyf4ENOT9swQTp3eT$$-DrI8wYzR1N7DSIaHYeKw",
+    "target" : "vZHy-AmFiv7A3n35BxUiY$$LAYvjoL8v5Mgg73Pnh7-2",
+    "targetPort" : "lyozx0S9-EFof4Kc0caRm$$r-kUQwDBHkgJfpHLdFr9f"
+  }, {
+    "id" : "uLWcUo3sHMd1lZ1TlYlgH",
+    "source" : "m-nbsGb-ysXuoSvwME16i$$wEhyvGeptg83HynyIuApB",
+    "sourcePort" : "3a8u7mx4AzfZ3ULwuDBdz$$hkovrPGdNdQWF6wE1jzTy",
+    "target" : "UohDvZAgfTjL-k95MN2Xk$$0wON6iRcYBRnlzHGkrVL5",
+    "targetPort" : "gvXw-NDYPGogTbNJLG795$$dbtZ3knFNhYdW8gPyGXad"
+  }, {
+    "id" : "rOIYm0C0En6IZncBSi9pd",
+    "source" : "UohDvZAgfTjL-k95MN2Xk$$0wON6iRcYBRnlzHGkrVL5",
+    "sourcePort" : "LzF0IfSPEePYXgJ_TkRiu$$wcizaDX-Tv1XqY1EvW3xb",
+    "target" : "KF5d1OrEqkfLctVuUVHtu$$rTHMIovO_gntbHxliXBST",
+    "targetPort" : "x2Velk6LJ149vFpwiR8BU$$kFdg7FE2-0CFCArHdxKGl"
+  }, {
+    "id" : "p9oKUdzhjYZX4wgP503AI",
+    "source" : "KF5d1OrEqkfLctVuUVHtu$$rTHMIovO_gntbHxliXBST",
+    "sourcePort" : "nrSr4olQxl466KkwPlGA2$$ErRTBgRn2J7Iwsqybictk",
+    "target" : "tXzst3kY10fAG1mItK9AD$$pgfP0PUCr-MospX8t78fR",
+    "targetPort" : "atPQIHkJnEa_-UsNvOw3Y$$jl9mAdAHWAnbwfLSJRZcO"
+  }, {
+    "id" : "6t6b50oahuEC-7aDEKE3C",
+    "source" : "tXzst3kY10fAG1mItK9AD$$pgfP0PUCr-MospX8t78fR",
+    "sourcePort" : "wOgkfXmxzH9ps8-jst8WB$$_Oek6BVSXnfh7jQ4Ow2PL",
+    "target" : "zK7Lbdlgl0ccn4Y5KrXfM$$47sJF2BzLpy-Bfis8Mrhs",
+    "targetPort" : "pUhBu4_BYPpvBSY4McYKJ$$D_s-oBCpZv8PZ0oOJR4x5"
+  }, {
+    "id" : "0_yHaXmLyMqYKl6T-gl6U",
+    "source" : "pZcltK0o9vhwKWavpi4cl$$pXwt4l4vigFl1GqFL8u7h",
+    "sourcePort" : "eriW5tzAs80zEowNBJm8R$$Y05hbQvMuwuwbU5SxHw_u",
+    "target" : "m-nbsGb-ysXuoSvwME16i$$wEhyvGeptg83HynyIuApB",
+    "targetPort" : "PI8l1FfAd1URnkCq2h0Rf$$xwyedfb2XPZ_jeFRJlMgw"
+  }, {
+    "id" : "_3BNslhR5AcZAXw4naHCp",
+    "source" : "BK0M8v5W3btOGqzVscJuu$$LMXLo2lE_PrqHqprbZRy3",
+    "sourcePort" : "3XGvPNJKERxs5Qi3tm_nK$$Ggemon7qmRO_7U1lbOkXI",
+    "target" : "m-nbsGb-ysXuoSvwME16i$$wEhyvGeptg83HynyIuApB",
+    "targetPort" : "Yu-Nd6yMSvTH-DhKBpA8R$$57DIJ7oLIu_ijpHbfqmHf"
+  }, {
+    "id" : "uGdzRlB3XBu15Qg_fpW2W",
+    "source" : "vGpDL3HdqXAxVZ0VP_QrJ$$Pk6M746lgVCMyLOl82gsM",
+    "sourcePort" : "gZJN-u7JTUbV9C_8vxtTI$$C8f7fYKBwuIegjmORdjvp",
+    "target" : "m-nbsGb-ysXuoSvwME16i$$wEhyvGeptg83HynyIuApB",
+    "targetPort" : "-_HXkdaFgo2m6bvME_CAf$$IToIhAxGKcS9dNq_dcMkz"
+  }, {
+    "id" : "d40B22cuRA5Vj6nHayd-b",
+    "source" : "K7Em5MJKoYEWnujWEnd6m$$rJXPkOyGSB7QTm81UnWmP",
+    "sourcePort" : "lc_xc_4JA8CktPdUYk_E6$$K3RCp4O9_83be3ACLMWSD",
+    "target" : "m-nbsGb-ysXuoSvwME16i$$wEhyvGeptg83HynyIuApB",
+    "targetPort" : "R0D_icMUpj7Pwp53tiWuF$$I-x3svCGBxW3WZPc44VLA"
+  }, {
+    "id" : "1Q2DoRclr1kuMpsa-zlEJ",
+    "source" : "vZHy-AmFiv7A3n35BxUiY$$LAYvjoL8v5Mgg73Pnh7-2",
+    "sourcePort" : "ZySH0GdKv-xPOF_4dbnxu$$VZ_lDVAuurLJ8UZV7sJPx",
+    "target" : "Och_18j_htLjmbT6JMR_K$$fo3Bt7d7HB33qjsL_vLsx",
+    "targetPort" : "0Tvi08CMNf713FEXIm37f$$t-MLOZelT3NVpyUQqYnxT"
+  }, {
+    "id" : "tvK49aPT7i_SXSOj_et7G",
+    "source" : "zK7Lbdlgl0ccn4Y5KrXfM$$47sJF2BzLpy-Bfis8Mrhs",
+    "sourcePort" : "Eas5pHDEZrVHmyuAot3uU$$HIAbUAANCNOovFQpG8rHi",
+    "target" : "mXiCAzScG7dqTk_XvxG3Q$$zCJFtad6dxYTxO_oR5KH5",
+    "targetPort" : "WqBh6s25OXsNspKyv7oQd$$3ob68OhQw3UF6k-qb7hbR"
+  }, {
+    "id" : "T-mwcsJzEAF_qwQwtbQVt",
+    "source" : "NK5IvkRrGKO9fFq4UQHVO",
+    "sourcePort" : "zBc79qVzAKjxi5daHOaAM",
+    "target" : "m-nbsGb-ysXuoSvwME16i$$wEhyvGeptg83HynyIuApB",
+    "targetPort" : "wtGbJmLSyJJYl7HG7DgBh$$TOHaDHLOg8u_jcw5ltxi0"
+  } ],
+  "component" : "Pipeline"
+}
