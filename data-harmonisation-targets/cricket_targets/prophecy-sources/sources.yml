@@ -1,0 +1,98 @@
+---
+version: 2
+sources:
+- name: "qa_team_prakharTargets"
+  database: "qa_team"
+  schema: "prakharTargets"
+  tables:
+  - name: "best_bowlers"
+    config:
+      tags:
+      - "pipeline:ref_target1"
+    columns:
+    - name: "id"
+      dataType:
+        type: "Integer"
+      mappings:
+      - type: "foreign"
+        columnName: "id"
+        datasetId: "table/qa_team_prakharTargets/best_batsman"
+        datasetName: "qa_team_prakharTargets"
+    - name: "player_name"
+      dataType:
+        type: "String"
+      mappings: []
+    - name: "total_matches"
+      dataType:
+        type: "Integer"
+      mappings: []
+    - name: "total_scores"
+      dataType:
+        type: "Integer"
+      mappings: []
+    - name: "category"
+      dataType:
+        type: "String"
+      mappings: []
+    - name: "total_wickets"
+      dataType:
+        type: "Integer"
+      mappings: []
+    - name: "best_wicket_performance"
+      dataType:
+        type: "String"
+      mappings: []
+    - name: "average"
+      dataType:
+        type: "Double"
+      mappings: []
+    - name: "world_ranking"
+      dataType:
+        type: "Integer"
+      mappings: []
+    type: "table"
+  - name: "best_batsman"
+    description: "Profiles top-performing batsmen, highlighting their match participation,\
+      \ scores, averages, rankings, and wicket achievements for performance assessment."
+    config:
+      tags:
+      - "pipeline:ref_target1"
+    columns:
+    - name: "id"
+      description: "Unique identifier for each player."
+      dataType:
+        type: "Integer"
+    - name: "player_name"
+      description: "Name of the cricket player."
+      dataType:
+        type: "String"
+    - name: "total_matches"
+      description: "Total number of matches played by the player."
+      dataType:
+        type: "Integer"
+    - name: "total_scores"
+      description: "Total runs scored by the player across all matches."
+      dataType:
+        type: "Integer"
+    - name: "category"
+      description: "Type of player based on their role or performance in cricket."
+      dataType:
+        type: "String"
+    - name: "total_wickets"
+      description: "Total number of wickets taken by the batsman in their career."
+      dataType:
+        type: "Integer"
+    - name: "best_wicket_performance"
+      description: "The batsman's most outstanding wicket-taking achievement in a\
+        \ single match."
+      dataType:
+        type: "String"
+    - name: "average"
+      description: "The batsman's average score per match, reflecting overall performance."
+      dataType:
+        type: "Double"
+    - name: "world_ranking"
+      description: "The batsman's current global ranking based on performance."
+      dataType:
+        type: "Integer"
+    type: "table"
