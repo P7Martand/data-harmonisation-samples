@@ -322,53 +322,6 @@ sqlSources:
       author: prakharmartand@prophecy.io
       createdAt: '2025-11-25 06:16:20'
       tableType: table
-  .prophecy/metadata/sqlsources/qa_team_qa_database:
-    name: qa_team_qa_database
-    description: null
-    author: prakharmartand@prophecy.io
-    files:
-    - prophecy-sources/sources.yml
-    createdAt: '2025-11-30 21:38:47'
-    tables:
-    - name: data_with_spaces
-      schema:
-        entityType: ''
-        providerType: databricks
-        fields:
-        - name: First Name
-          dataType:
-            type: String
-        - name: Last Name
-          dataType:
-            type: String
-        - name: Street Address
-          dataType:
-            type: String
-        - name: City Name
-          dataType:
-            type: String
-        - name: State Code
-          dataType:
-            type: String
-        - name: Zip Code
-          dataType:
-            type: Bigint
-        - name: Phone Number
-          dataType:
-            type: String
-        - name: Email Address
-          dataType:
-            type: String
-        - name: Job Title
-          dataType:
-            type: String
-        - name: Company Name
-          dataType:
-            type: String
-      description: null
-      author: prakharmartand@prophecy.io
-      createdAt: '2025-11-30 21:38:47'
-      tableType: table
 sqlUnreferencedSources: {}
 sqlPipeline:
   name: sqlPipeline
