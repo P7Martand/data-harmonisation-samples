@@ -13,6 +13,11 @@ with DAG(Schedule = Schedule, SensorSchedule = SensorSchedule):
           "alias": ""
         }
     )
+    data_with_spaces = Task(
+        task_id = "data_with_spaces", 
+        component = "Dataset", 
+        table = {"name" : "data_with_spaces", "sourceType" : "Table", "sourceName" : "qa_team_qa_database", "alias" : ""}
+    )
     cdm_player_performance_aggregate = Task(
         task_id = "cdm_player_performance_aggregate", 
         component = "Dataset", 

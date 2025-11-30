@@ -340,3 +340,43 @@ sources:
       dataType:
         type: "Timestamp"
     type: "table"
+- name: "qa_team_qa_database"
+  database: "qa_team"
+  schema: "qa_database"
+  tables:
+  - name: "data_with_spaces"
+    config:
+      tags:
+      - "pipeline:pipeline1"
+    columns:
+    - name: "First Name"
+      dataType:
+        type: "String"
+    - name: "Last Name"
+      dataType:
+        type: "String"
+    - name: "Street Address"
+      dataType:
+        type: "String"
+    - name: "City Name"
+      dataType:
+        type: "String"
+    - name: "State Code"
+      dataType:
+        type: "String"
+    - name: "Zip Code"
+      dataType:
+        type: "Bigint"
+    - name: "Phone Number"
+      dataType:
+        type: "String"
+    - name: "Email Address"
+      dataType:
+        type: "String"
+    - name: "Job Title"
+      dataType:
+        type: "String"
+    - name: "Company Name"
+      dataType:
+        type: "String"
+    type: "table"

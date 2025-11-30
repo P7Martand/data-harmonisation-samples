@@ -60,6 +60,37 @@
         "isCustomOutputSchema" : false
       }
     },
+    "gMqBaZfnWGv1PRIUQKsiL$$fFsApdvOgO0bXCKzykQri" : {
+      "id" : "gMqBaZfnWGv1PRIUQKsiL$$fFsApdvOgO0bXCKzykQri",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "data_with_spaces",
+        "x" : -1640,
+        "y" : -280,
+        "phase" : 0,
+        "comment" : "Retrieves data with spaces from the QA team's database for further processing.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "table" : {
+          "name" : "data_with_spaces",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_qa_database",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "CndRGHA522ii2X5KbAsIx$$01MWdW9I8MeVpEPFANVBl",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "MZ8X7fnKfwQgDpjp_7dpV$$xLE-NA8v_wTxLT-ZAqJam",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
     "bmvFW9xte5Qm7vjrVYgdM" : {
       "id" : "bmvFW9xte5Qm7vjrVYgdM",
       "component" : "Dataset",
