@@ -1,0 +1,12 @@
+---
+version: 2
+models:
+- name: "pipeline1__player_profiles"
+  tags:
+  - "prophecy_temp"
+- name: "pipeline1__player_financials_and_compensation"
+  tags:
+  - "prophecy_temp"
+- name: "pipeline1__basketball_player_performance"
+  tags:
+  - "prophecy_temp"

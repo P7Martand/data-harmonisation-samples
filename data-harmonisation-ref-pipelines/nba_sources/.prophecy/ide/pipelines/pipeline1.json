@@ -1,0 +1,1602 @@
+{
+  "id" : "pipeline1",
+  "metainfo" : {
+    "label" : "pipeline1",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false,
+    "publishDiagnosticMetrics" : false
+  },
+  "processes" : {
+    "39glxtd6Mq8GtjrAa0suu$$jARBguzH2SE1xYyLQA8yz" : {
+      "id" : "39glxtd6Mq8GtjrAa0suu$$jARBguzH2SE1xYyLQA8yz",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "player_profile_extended",
+        "x" : 220,
+        "y" : 620,
+        "phase" : 0,
+        "comment" : "Creates detailed player profiles including personal details, physical attributes, and draft information for basketball players.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ "Hd0GbCla5aFSjRzULZCV3$$zXqCqVIXKYaRYrXzQvut5##player_id", "Hd0GbCla5aFSjRzULZCV3$$zXqCqVIXKYaRYrXzQvut5##first_name", "Hd0GbCla5aFSjRzULZCV3$$zXqCqVIXKYaRYrXzQvut5##last_name", "Hd0GbCla5aFSjRzULZCV3$$zXqCqVIXKYaRYrXzQvut5##active_status", "Hd0GbCla5aFSjRzULZCV3$$zXqCqVIXKYaRYrXzQvut5##position", "Hd0GbCla5aFSjRzULZCV3$$zXqCqVIXKYaRYrXzQvut5##draft_year", "Hd0GbCla5aFSjRzULZCV3$$zXqCqVIXKYaRYrXzQvut5##country", "Hd0GbCla5aFSjRzULZCV3$$zXqCqVIXKYaRYrXzQvut5##height_cm", "Hd0GbCla5aFSjRzULZCV3$$zXqCqVIXKYaRYrXzQvut5##weight_kg" ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "player_id"
+          },
+          "alias" : "cdm_player_id",
+          "_row_id" : "evNymGVLRc"
+        }, {
+          "expression" : {
+            "expression" : "player_id"
+          },
+          "alias" : "cdm_player_key",
+          "_row_id" : "IStgBkudH0"
+        }, {
+          "expression" : {
+            "expression" : "first_name"
+          },
+          "alias" : "first_name",
+          "_row_id" : "91486799"
+        }, {
+          "expression" : {
+            "expression" : "last_name"
+          },
+          "alias" : "last_name",
+          "_row_id" : "69686440"
+        }, {
+          "expression" : {
+            "expression" : "CONCAT(first_name, ' ', last_name)"
+          },
+          "alias" : "full_name",
+          "_row_id" : "pLvAzzgsxg"
+        }, {
+          "expression" : {
+            "expression" : "active_status"
+          },
+          "alias" : "player_status",
+          "_row_id" : "9jxk-WDOKm"
+        }, {
+          "expression" : {
+            "expression" : "position"
+          },
+          "alias" : "position_code",
+          "_row_id" : "KZHR4lDTUE"
+        }, {
+          "expression" : {
+            "expression" : "draft_year"
+          },
+          "alias" : "draft_info_year",
+          "_row_id" : "I8nLXBPRtk"
+        }, {
+          "expression" : {
+            "expression" : "country"
+          },
+          "alias" : "country_of_origin",
+          "_row_id" : "8Ov1VCVnh4"
+        }, {
+          "expression" : {
+            "expression" : "height_cm"
+          },
+          "alias" : "physical_attributes_height_cm",
+          "_row_id" : "j7nHV1wquf"
+        }, {
+          "expression" : {
+            "expression" : "weight_kg"
+          },
+          "alias" : "physical_attributes_weight_kg",
+          "_row_id" : "WXScQ02v0e"
+        }, {
+          "expression" : {
+            "expression" : "CURRENT_TIMESTAMP()"
+          },
+          "alias" : "created_date",
+          "_row_id" : "LSPaAkoqya"
+        }, {
+          "expression" : {
+            "expression" : "CURRENT_TIMESTAMP()"
+          },
+          "alias" : "updated_date",
+          "_row_id" : "CwgQoUuc5u"
+        }, {
+          "expression" : {
+            "expression" : "'qa_team_prakhar.nba_players'"
+          },
+          "alias" : "data_source",
+          "_row_id" : "Ng8xs3pKmE"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Hd0GbCla5aFSjRzULZCV3$$zXqCqVIXKYaRYrXzQvut5",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "cwp29_2ahWGvvhjddNDFa$$vgmW39zK25KqJQ0laYxIO",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "O_Kfe6zUlSpd7x3lDxG9i$$15uozZ3ATasn_wArrkZEw" : {
+      "id" : "O_Kfe6zUlSpd7x3lDxG9i$$15uozZ3ATasn_wArrkZEw",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "player_contracts_with_endorsements",
+        "x" : 620,
+        "y" : 220,
+        "phase" : 0,
+        "comment" : "Combines player contract details with endorsement revenues for each season to provide a complete view of player earnings and deals.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "in1",
+          "expression" : {
+            "expression" : "in0.cdm_player_id == in1.player_id and in0.season_year == in1.season_year"
+          },
+          "joinType" : "inner"
+        } ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "in0.cdm_player_id"
+          },
+          "alias" : "cdm_player_id",
+          "_row_id" : "906810368"
+        }, {
+          "expression" : {
+            "expression" : "in0.season_year"
+          },
+          "alias" : "season_year",
+          "_row_id" : "1483414863"
+        }, {
+          "expression" : {
+            "expression" : "in0.team_id"
+          },
+          "alias" : "team_id",
+          "_row_id" : "825232404"
+        }, {
+          "expression" : {
+            "expression" : "in0.salary_annual_usd"
+          },
+          "alias" : "salary_annual_usd",
+          "_row_id" : "798184975"
+        }, {
+          "expression" : {
+            "expression" : "in0.salary_total_contract_usd"
+          },
+          "alias" : "salary_total_contract_usd",
+          "_row_id" : "1486721122"
+        }, {
+          "expression" : {
+            "expression" : "in0.salary_guaranteed_usd"
+          },
+          "alias" : "salary_guaranteed_usd",
+          "_row_id" : "611123365"
+        }, {
+          "expression" : {
+            "expression" : "in0.salary_signing_bonus_usd"
+          },
+          "alias" : "salary_signing_bonus_usd",
+          "_row_id" : "1783819735"
+        }, {
+          "expression" : {
+            "expression" : "in0.salary_incentives_usd"
+          },
+          "alias" : "salary_incentives_usd",
+          "_row_id" : "477250139"
+        }, {
+          "expression" : {
+            "expression" : "in0.effective_tax_rate"
+          },
+          "alias" : "effective_tax_rate",
+          "_row_id" : "1378462326"
+        }, {
+          "expression" : {
+            "expression" : "in0.contract_id"
+          },
+          "alias" : "contract_id",
+          "_row_id" : "1286903831"
+        }, {
+          "expression" : {
+            "expression" : "in0.financial_snapshot_date"
+          },
+          "alias" : "financial_snapshot_date",
+          "_row_id" : "524523447"
+        }, {
+          "expression" : {
+            "expression" : "in1.endorsement_annual_revenue_usd"
+          },
+          "alias" : "endorsement_annual_revenue_usd",
+          "_row_id" : "150084162"
+        }, {
+          "expression" : {
+            "expression" : "in1.endorsement_total_active_deals"
+          },
+          "alias" : "endorsement_total_active_deals",
+          "_row_id" : "1363909135"
+        }, {
+          "expression" : {
+            "expression" : "in1.annual_value_usd"
+          },
+          "alias" : "annual_value_usd",
+          "_row_id" : "1447090355"
+        }, {
+          "expression" : {
+            "expression" : "in1.start_year"
+          },
+          "alias" : "start_year",
+          "_row_id" : "66753853"
+        } ],
+        "activeTab" : "conditions",
+        "columnsSelector" : [ "AKEEnYdDN_uNunXc-SLCt$$u0bKLZoPhrhxAuPG-sc5H##cdm_player_id", "sN2jm6NENGdDn2S6M5KUM$$6LquTcxnT0i8VdGYqvFmT##player_id", "AKEEnYdDN_uNunXc-SLCt$$u0bKLZoPhrhxAuPG-sc5H##season_year", "sN2jm6NENGdDn2S6M5KUM$$6LquTcxnT0i8VdGYqvFmT##season_year", "AKEEnYdDN_uNunXc-SLCt$$u0bKLZoPhrhxAuPG-sc5H##cdm_player_id", "AKEEnYdDN_uNunXc-SLCt$$u0bKLZoPhrhxAuPG-sc5H##season_year", "AKEEnYdDN_uNunXc-SLCt$$u0bKLZoPhrhxAuPG-sc5H##team_id", "AKEEnYdDN_uNunXc-SLCt$$u0bKLZoPhrhxAuPG-sc5H##salary_annual_usd", "AKEEnYdDN_uNunXc-SLCt$$u0bKLZoPhrhxAuPG-sc5H##salary_total_contract_usd", "AKEEnYdDN_uNunXc-SLCt$$u0bKLZoPhrhxAuPG-sc5H##salary_guaranteed_usd", "AKEEnYdDN_uNunXc-SLCt$$u0bKLZoPhrhxAuPG-sc5H##salary_signing_bonus_usd", "AKEEnYdDN_uNunXc-SLCt$$u0bKLZoPhrhxAuPG-sc5H##salary_incentives_usd", "AKEEnYdDN_uNunXc-SLCt$$u0bKLZoPhrhxAuPG-sc5H##effective_tax_rate", "AKEEnYdDN_uNunXc-SLCt$$u0bKLZoPhrhxAuPG-sc5H##contract_id", "AKEEnYdDN_uNunXc-SLCt$$u0bKLZoPhrhxAuPG-sc5H##financial_snapshot_date", "sN2jm6NENGdDn2S6M5KUM$$6LquTcxnT0i8VdGYqvFmT##endorsement_annual_revenue_usd", "sN2jm6NENGdDn2S6M5KUM$$6LquTcxnT0i8VdGYqvFmT##endorsement_total_active_deals", "sN2jm6NENGdDn2S6M5KUM$$6LquTcxnT0i8VdGYqvFmT##annual_value_usd", "sN2jm6NENGdDn2S6M5KUM$$6LquTcxnT0i8VdGYqvFmT##start_year" ],
+        "headAlias" : "in0"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "AKEEnYdDN_uNunXc-SLCt$$u0bKLZoPhrhxAuPG-sc5H",
+          "slug" : "in0"
+        }, {
+          "id" : "sN2jm6NENGdDn2S6M5KUM$$6LquTcxnT0i8VdGYqvFmT",
+          "slug" : "in1"
+        } ],
+        "outputs" : [ {
+          "id" : "UjroVXLx8We_q9dhWOxeJ$$ynB2WDUABOAgAOfsUaq_0",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "Srsz4_zIH3E_bNy6Uobsv$$3kxyNy5CX9NJt_gj1vfP6" : {
+      "id" : "Srsz4_zIH3E_bNy6Uobsv$$3kxyNy5CX9NJt_gj1vfP6",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "player_financials_and_compensation",
+        "x" : 1020,
+        "y" : 220,
+        "phase" : 0,
+        "comment" : "Loads player financial snapshot data from the QA team source for further processing.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "table" : {
+          "name" : "cdm_player_financial_snapshot",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_prakhartargets",
+          "alias" : ""
+        },
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "HkJpSw9nusmXxSf_SI8HA$$zNK4fLXm5xUXS9rzpxefu",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "TjFScgzYW3ZwKO6UJtBYO$$5sBfAGy736bEbWSbbFtno",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "69pGx3g9yq9Cth9sV9T-L$$SMWPCCY14u9BEE4_8QTi6" : {
+      "id" : "69pGx3g9yq9Cth9sV9T-L$$SMWPCCY14u9BEE4_8QTi6",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "nba_contracts",
+        "x" : 220,
+        "y" : 20,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "nba_contracts",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_prakhar",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "fB8e6rSZrw2jgDw87PtZW$$PMAyHF_8BJCk_AwqGhpBX",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "08VSxiSvVWxEQvEn2J7XY$$NcvycNAUw1ZpLYvTTEa6h",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "Y5x5ndUw460NEEn0a7Iz5$$MueTv-lqoJa4GU97NMIgT" : {
+      "id" : "Y5x5ndUw460NEEn0a7Iz5$$MueTv-lqoJa4GU97NMIgT",
+      "component" : "Aggregate",
+      "metadata" : {
+        "label" : "endorsement_revenue_by_player_season",
+        "x" : 420,
+        "y" : 420,
+        "phase" : 0,
+        "comment" : "Summarizes total endorsement revenue and number of active deals per player for each season.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "aggregate" : [ {
+          "expression" : {
+            "expression" : "SUM(annual_value_usd)"
+          },
+          "alias" : "endorsement_annual_revenue_usd",
+          "_row_id" : "Cokary7RHl"
+        }, {
+          "expression" : {
+            "expression" : "COUNT(*)"
+          },
+          "alias" : "endorsement_total_active_deals",
+          "_row_id" : "vsVJ9aC78o"
+        }, {
+          "expression" : {
+            "expression" : "any_value(start_year)"
+          },
+          "alias" : "start_year",
+          "_row_id" : "2145026867"
+        }, {
+          "expression" : {
+            "expression" : "any_value(season_year)"
+          },
+          "alias" : "season_year",
+          "_row_id" : "110053478"
+        }, {
+          "expression" : {
+            "expression" : "any_value(player_id)"
+          },
+          "alias" : "player_id",
+          "_row_id" : "1510286956"
+        }, {
+          "expression" : {
+            "expression" : "any_value(annual_value_usd)"
+          },
+          "alias" : "annual_value_usd",
+          "_row_id" : "2041813889"
+        } ],
+        "allowSelection" : true,
+        "condition" : {
+          "expression" : ""
+        },
+        "activeTab" : "aggregate",
+        "columnsSelector" : [ "cof5N97BmgAJHNCq7vdr8$$rKo0ntPo6GTwtRt1SDe0G##player_id", "cof5N97BmgAJHNCq7vdr8$$rKo0ntPo6GTwtRt1SDe0G##season_year", "cof5N97BmgAJHNCq7vdr8$$rKo0ntPo6GTwtRt1SDe0G##annual_value_usd", "cof5N97BmgAJHNCq7vdr8$$rKo0ntPo6GTwtRt1SDe0G##start_year" ],
+        "groupBy" : [ {
+          "expression" : {
+            "expression" : "player_id"
+          },
+          "alias" : "",
+          "_row_id" : "gkqagym1Jo"
+        }, {
+          "expression" : {
+            "expression" : "season_year"
+          },
+          "alias" : "",
+          "_row_id" : "B6eT_vDR5M"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "cof5N97BmgAJHNCq7vdr8$$rKo0ntPo6GTwtRt1SDe0G",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "IznwYZ16wejwguHxVBH42$$-omqfGmS1dCF-nu1r31hN",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "4bxsoaQ2FVz0hzzXGQ-nU$$rBIyh_134gWE3LpYYMUe1" : {
+      "id" : "4bxsoaQ2FVz0hzzXGQ-nU$$rBIyh_134gWE3LpYYMUe1",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "partnership_yearly_values",
+        "x" : 220,
+        "y" : 420,
+        "phase" : 0,
+        "comment" : "Summarizes annual partnership values for each player by the year the partnership began.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ "uKsYyeedhdTpDmGU4Rjj6$$B1iEP8hEQO1o6leVXuBqR##partnership_start_date", "uKsYyeedhdTpDmGU4Rjj6$$B1iEP8hEQO1o6leVXuBqR##player_id", "uKsYyeedhdTpDmGU4Rjj6$$B1iEP8hEQO1o6leVXuBqR##annual_value_usd" ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "YEAR(partnership_start_date)"
+          },
+          "alias" : "start_year",
+          "_row_id" : "Ps9k0Dbb6x"
+        }, {
+          "expression" : {
+            "expression" : "YEAR(partnership_start_date)"
+          },
+          "alias" : "season_year",
+          "_row_id" : "09EbmsGMvA"
+        }, {
+          "expression" : {
+            "expression" : "player_id"
+          },
+          "alias" : "player_id",
+          "_row_id" : "2031702547"
+        }, {
+          "expression" : {
+            "expression" : "annual_value_usd"
+          },
+          "alias" : "annual_value_usd",
+          "_row_id" : "1262121590"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "uKsYyeedhdTpDmGU4Rjj6$$B1iEP8hEQO1o6leVXuBqR",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "IaDSnRzZsPFhUxz9Y0eR0$$CQGqPgiHAMpOb0ANIwsi_",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "IpSYdfsF76wNVnFz60mOo$$KCtRrDtQTXnIyXNCK-baq" : {
+      "id" : "IpSYdfsF76wNVnFz60mOo$$KCtRrDtQTXnIyXNCK-baq",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "nba_players",
+        "x" : 20,
+        "y" : 620,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "nba_players",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_prakhar",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "eT1038eqi7wQW_WCh7XRs$$QrYpBBJdNULAq5KT0WmCV",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "DoaF0pjSBLg0bvaomG9rB$$JxsdxB2vRNGBhteetsR9g",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "sjYPePeN9h1YKI16y0XEa$$wRajRXZqiPvKKLbjfmJqf" : {
+      "id" : "sjYPePeN9h1YKI16y0XEa$$wRajRXZqiPvKKLbjfmJqf",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "player_season_stats",
+        "x" : 620,
+        "y" : 920,
+        "phase" : 0,
+        "comment" : "Combines player performance and playing time for each season and team, enabling comprehensive analysis of player contributions.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "in1",
+          "expression" : {
+            "expression" : "in0.player_id == in1.player_id and in0.season_year_int == in1.season_year and in0.team_id == in1.team_id"
+          },
+          "joinType" : "inner"
+        } ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "in0.player_id"
+          },
+          "alias" : "player_id",
+          "_row_id" : "2125494477"
+        }, {
+          "expression" : {
+            "expression" : "in0.season_year_int"
+          },
+          "alias" : "season_year_int",
+          "_row_id" : "1968060082"
+        }, {
+          "expression" : {
+            "expression" : "in0.team_id"
+          },
+          "alias" : "team_id",
+          "_row_id" : "988644141"
+        }, {
+          "expression" : {
+            "expression" : "in0.games_played"
+          },
+          "alias" : "games_played",
+          "_row_id" : "1835882948"
+        }, {
+          "expression" : {
+            "expression" : "in0.total_points"
+          },
+          "alias" : "total_points",
+          "_row_id" : "956064356"
+        }, {
+          "expression" : {
+            "expression" : "in0.total_assists"
+          },
+          "alias" : "total_assists",
+          "_row_id" : "1379065601"
+        }, {
+          "expression" : {
+            "expression" : "in0.total_rebounds"
+          },
+          "alias" : "total_rebounds",
+          "_row_id" : "1719757098"
+        }, {
+          "expression" : {
+            "expression" : "in0.field_goal_percentage"
+          },
+          "alias" : "field_goal_percentage",
+          "_row_id" : "1252364319"
+        }, {
+          "expression" : {
+            "expression" : "in0.three_point_percentage"
+          },
+          "alias" : "three_point_percentage",
+          "_row_id" : "283186375"
+        }, {
+          "expression" : {
+            "expression" : "in0.free_throw_percentage"
+          },
+          "alias" : "free_throw_percentage",
+          "_row_id" : "1529192117"
+        }, {
+          "expression" : {
+            "expression" : "in0.steals"
+          },
+          "alias" : "steals",
+          "_row_id" : "1756629280"
+        }, {
+          "expression" : {
+            "expression" : "in0.blocks"
+          },
+          "alias" : "blocks",
+          "_row_id" : "1775145234"
+        }, {
+          "expression" : {
+            "expression" : "in0.turnovers"
+          },
+          "alias" : "turnovers",
+          "_row_id" : "327936904"
+        }, {
+          "expression" : {
+            "expression" : "in1.minutes_played"
+          },
+          "alias" : "minutes_played",
+          "_row_id" : "1676538479"
+        }, {
+          "expression" : {
+            "expression" : "in0.performance_id"
+          },
+          "alias" : "performance_id",
+          "_row_id" : "2063265338"
+        } ],
+        "activeTab" : "conditions",
+        "columnsSelector" : [ "mG7OTzAn1eSKfpd_sn1Mn$$0JppUK-MCtHpMsHH1k3Ev##player_id", "zGKarSfZJBjkPaGC6Xarj$$e-b_DyrFQ0uOvIHjjcwFK##player_id", "mG7OTzAn1eSKfpd_sn1Mn$$0JppUK-MCtHpMsHH1k3Ev##season_year_int", "zGKarSfZJBjkPaGC6Xarj$$e-b_DyrFQ0uOvIHjjcwFK##season_year", "mG7OTzAn1eSKfpd_sn1Mn$$0JppUK-MCtHpMsHH1k3Ev##team_id", "zGKarSfZJBjkPaGC6Xarj$$e-b_DyrFQ0uOvIHjjcwFK##team_id", "mG7OTzAn1eSKfpd_sn1Mn$$0JppUK-MCtHpMsHH1k3Ev##player_id", "mG7OTzAn1eSKfpd_sn1Mn$$0JppUK-MCtHpMsHH1k3Ev##season_year_int", "mG7OTzAn1eSKfpd_sn1Mn$$0JppUK-MCtHpMsHH1k3Ev##team_id", "mG7OTzAn1eSKfpd_sn1Mn$$0JppUK-MCtHpMsHH1k3Ev##games_played", "mG7OTzAn1eSKfpd_sn1Mn$$0JppUK-MCtHpMsHH1k3Ev##total_points", "mG7OTzAn1eSKfpd_sn1Mn$$0JppUK-MCtHpMsHH1k3Ev##total_assists", "mG7OTzAn1eSKfpd_sn1Mn$$0JppUK-MCtHpMsHH1k3Ev##total_rebounds", "mG7OTzAn1eSKfpd_sn1Mn$$0JppUK-MCtHpMsHH1k3Ev##field_goal_percentage", "mG7OTzAn1eSKfpd_sn1Mn$$0JppUK-MCtHpMsHH1k3Ev##three_point_percentage", "mG7OTzAn1eSKfpd_sn1Mn$$0JppUK-MCtHpMsHH1k3Ev##free_throw_percentage", "mG7OTzAn1eSKfpd_sn1Mn$$0JppUK-MCtHpMsHH1k3Ev##steals", "mG7OTzAn1eSKfpd_sn1Mn$$0JppUK-MCtHpMsHH1k3Ev##blocks", "mG7OTzAn1eSKfpd_sn1Mn$$0JppUK-MCtHpMsHH1k3Ev##turnovers", "zGKarSfZJBjkPaGC6Xarj$$e-b_DyrFQ0uOvIHjjcwFK##minutes_played", "mG7OTzAn1eSKfpd_sn1Mn$$0JppUK-MCtHpMsHH1k3Ev##performance_id" ],
+        "headAlias" : "in0"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "mG7OTzAn1eSKfpd_sn1Mn$$0JppUK-MCtHpMsHH1k3Ev",
+          "slug" : "in0"
+        }, {
+          "id" : "zGKarSfZJBjkPaGC6Xarj$$e-b_DyrFQ0uOvIHjjcwFK",
+          "slug" : "in1"
+        } ],
+        "outputs" : [ {
+          "id" : "YdZNK1p4v8IvlE3W_W9zc$$8kXXxKrgNm7hKaTf7nyuE",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "PQQXPr8EKedS4HUSDCWmG$$Xiw9pS1F3Tr25I1ICY63P" : {
+      "id" : "PQQXPr8EKedS4HUSDCWmG$$Xiw9pS1F3Tr25I1ICY63P",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "player_season_performance_stats",
+        "x" : 820,
+        "y" : 920,
+        "phase" : 0,
+        "comment" : "Summarizes each player's seasonal performance, including key statistics and efficiency ratings, to support player evaluation and team strategy decisions.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ "jPGVyXF4ecoVNmk7V_50M$$cskRrz089fd1uBKrUTku7##performance_id", "jPGVyXF4ecoVNmk7V_50M$$cskRrz089fd1uBKrUTku7##player_id", "jPGVyXF4ecoVNmk7V_50M$$cskRrz089fd1uBKrUTku7##season_year_int", "jPGVyXF4ecoVNmk7V_50M$$cskRrz089fd1uBKrUTku7##team_id", "jPGVyXF4ecoVNmk7V_50M$$cskRrz089fd1uBKrUTku7##games_played", "jPGVyXF4ecoVNmk7V_50M$$cskRrz089fd1uBKrUTku7##minutes_played", "jPGVyXF4ecoVNmk7V_50M$$cskRrz089fd1uBKrUTku7##total_points", "jPGVyXF4ecoVNmk7V_50M$$cskRrz089fd1uBKrUTku7##total_assists", "jPGVyXF4ecoVNmk7V_50M$$cskRrz089fd1uBKrUTku7##total_rebounds", "jPGVyXF4ecoVNmk7V_50M$$cskRrz089fd1uBKrUTku7##blocks", "jPGVyXF4ecoVNmk7V_50M$$cskRrz089fd1uBKrUTku7##steals", "jPGVyXF4ecoVNmk7V_50M$$cskRrz089fd1uBKrUTku7##turnovers", "jPGVyXF4ecoVNmk7V_50M$$cskRrz089fd1uBKrUTku7##field_goal_percentage", "jPGVyXF4ecoVNmk7V_50M$$cskRrz089fd1uBKrUTku7##three_point_percentage", "jPGVyXF4ecoVNmk7V_50M$$cskRrz089fd1uBKrUTku7##free_throw_percentage" ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "performance_id"
+          },
+          "alias" : "cdm_performance_id",
+          "_row_id" : "7XT3ZhXRzY"
+        }, {
+          "expression" : {
+            "expression" : "player_id"
+          },
+          "alias" : "cdm_player_id",
+          "_row_id" : "PPXjRGBjY-"
+        }, {
+          "expression" : {
+            "expression" : "season_year_int"
+          },
+          "alias" : "season_year",
+          "_row_id" : "81Dv06Sn8K"
+        }, {
+          "expression" : {
+            "expression" : "team_id"
+          },
+          "alias" : "team_id",
+          "_row_id" : "301990653"
+        }, {
+          "expression" : {
+            "expression" : "games_played"
+          },
+          "alias" : "stat_games_played",
+          "_row_id" : "gjdDyGydAX"
+        }, {
+          "expression" : {
+            "expression" : "minutes_played"
+          },
+          "alias" : "stat_minutes_total",
+          "_row_id" : "qMdEBImnyw"
+        }, {
+          "expression" : {
+            "expression" : "total_points"
+          },
+          "alias" : "stat_points_total",
+          "_row_id" : "k7A9wSNADA"
+        }, {
+          "expression" : {
+            "expression" : "total_assists"
+          },
+          "alias" : "stat_assists_total",
+          "_row_id" : "0UF4kxiVrK"
+        }, {
+          "expression" : {
+            "expression" : "total_rebounds"
+          },
+          "alias" : "stat_rebounds_total",
+          "_row_id" : "QxzujroID6"
+        }, {
+          "expression" : {
+            "expression" : "blocks"
+          },
+          "alias" : "stat_blocks_total",
+          "_row_id" : "p8THZlg14C"
+        }, {
+          "expression" : {
+            "expression" : "steals"
+          },
+          "alias" : "stat_steals_total",
+          "_row_id" : "WNV1ZTmUBH"
+        }, {
+          "expression" : {
+            "expression" : "turnovers"
+          },
+          "alias" : "stat_turnovers_total",
+          "_row_id" : "_kBwlo4jLs"
+        }, {
+          "expression" : {
+            "expression" : "field_goal_percentage"
+          },
+          "alias" : "efficiency_field_goal_pct",
+          "_row_id" : "2X9rev1Iyb"
+        }, {
+          "expression" : {
+            "expression" : "three_point_percentage"
+          },
+          "alias" : "efficiency_three_point_pct",
+          "_row_id" : "fyW1qZDEG7"
+        }, {
+          "expression" : {
+            "expression" : "free_throw_percentage"
+          },
+          "alias" : "efficiency_free_throw_pct",
+          "_row_id" : "77y9EtIJnD"
+        }, {
+          "expression" : {
+            "expression" : "field_goal_percentage * 0.5"
+          },
+          "alias" : "efficiency_player_efficiency_rating",
+          "_row_id" : "xqVpnLK9uC"
+        }, {
+          "expression" : {
+            "expression" : "current_timestamp()"
+          },
+          "alias" : "stat_capture_date",
+          "_row_id" : "l3-JrgtLKn"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "jPGVyXF4ecoVNmk7V_50M$$cskRrz089fd1uBKrUTku7",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "Oov0VWOgBPTMCAkyPPZKi$$5lGvukkM11ZiLm_TFIVd0",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "3jB_g97rb0urf1S70z49M$$WrB2o0ph2gkQ4AHQWT47R" : {
+      "id" : "3jB_g97rb0urf1S70z49M$$WrB2o0ph2gkQ4AHQWT47R",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "brand_partnership_engagements",
+        "x" : 240,
+        "y" : 220,
+        "phase" : 0,
+        "comment" : "Tracks brand partnership deals with players, including engagement status, value, and duration, to assess brand collaboration impact.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ "kHXclnGBFPWsDGT9Yigvh$$vqOQ46Y7jHc2AWehfZXZC##partnership_id", "kHXclnGBFPWsDGT9Yigvh$$vqOQ46Y7jHc2AWehfZXZC##player_id", "kHXclnGBFPWsDGT9Yigvh$$vqOQ46Y7jHc2AWehfZXZC##brand_name", "kHXclnGBFPWsDGT9Yigvh$$vqOQ46Y7jHc2AWehfZXZC##partnership_start_date", "kHXclnGBFPWsDGT9Yigvh$$vqOQ46Y7jHc2AWehfZXZC##partnership_end_date", "kHXclnGBFPWsDGT9Yigvh$$vqOQ46Y7jHc2AWehfZXZC##status", "kHXclnGBFPWsDGT9Yigvh$$vqOQ46Y7jHc2AWehfZXZC##deal_value_usd", "kHXclnGBFPWsDGT9Yigvh$$vqOQ46Y7jHc2AWehfZXZC##annual_value_usd", "kHXclnGBFPWsDGT9Yigvh$$vqOQ46Y7jHc2AWehfZXZC##deal_type" ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "partnership_id"
+          },
+          "alias" : "cdm_brand_engagement_id",
+          "_row_id" : "ZYDyNDxix0"
+        }, {
+          "expression" : {
+            "expression" : "player_id"
+          },
+          "alias" : "cdm_player_id",
+          "_row_id" : "wbM0OZphwh"
+        }, {
+          "expression" : {
+            "expression" : "upper(trim(brand_name))"
+          },
+          "alias" : "brand_name_normalized",
+          "_row_id" : "T_Y5zBOejL"
+        }, {
+          "expression" : {
+            "expression" : "brand_name"
+          },
+          "alias" : "brand_category",
+          "_row_id" : "rVxu8cmFUv"
+        }, {
+          "expression" : {
+            "expression" : "partnership_start_date"
+          },
+          "alias" : "engagement_start_date",
+          "_row_id" : "6YUnEYGh-g"
+        }, {
+          "expression" : {
+            "expression" : "partnership_end_date"
+          },
+          "alias" : "engagement_end_date",
+          "_row_id" : "3xAmEPefRC"
+        }, {
+          "expression" : {
+            "expression" : "status"
+          },
+          "alias" : "engagement_status",
+          "_row_id" : "OJlPAXVfVj"
+        }, {
+          "expression" : {
+            "expression" : "deal_value_usd"
+          },
+          "alias" : "deal_value_total_usd",
+          "_row_id" : "6j2eBKtUHq"
+        }, {
+          "expression" : {
+            "expression" : "annual_value_usd"
+          },
+          "alias" : "deal_value_annual_usd",
+          "_row_id" : "td8_o4cOor"
+        }, {
+          "expression" : {
+            "expression" : "deal_type"
+          },
+          "alias" : "engagement_type",
+          "_row_id" : "gzN1KJsnhG"
+        }, {
+          "expression" : {
+            "expression" : "current_timestamp()"
+          },
+          "alias" : "created_timestamp",
+          "_row_id" : "HlfErQG3Mg"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "kHXclnGBFPWsDGT9Yigvh$$vqOQ46Y7jHc2AWehfZXZC",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "Uy9eApXw_5VdSA89rQzl3$$iUfZh_Ik_u9-7r2hcq1O3",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "e712stE5_AeT7BVzovVjl$$H-UwrFa0cIZc1AXPYEjNZ" : {
+      "id" : "e712stE5_AeT7BVzovVjl$$H-UwrFa0cIZc1AXPYEjNZ",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "nba_contract_financials",
+        "x" : 420,
+        "y" : 20,
+        "phase" : 0,
+        "comment" : "Summarizes NBA player contract financials, including annual and total salary, guaranteed amounts, and tax rates for each season and team.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ "S5MCY8BBQbn08A9t3J7KU$$OqBa4aj_CNg4vWxPWfNo1##player_id", "S5MCY8BBQbn08A9t3J7KU$$OqBa4aj_CNg4vWxPWfNo1##season_start_year", "S5MCY8BBQbn08A9t3J7KU$$OqBa4aj_CNg4vWxPWfNo1##team_id", "S5MCY8BBQbn08A9t3J7KU$$OqBa4aj_CNg4vWxPWfNo1##annual_salary_usd", "S5MCY8BBQbn08A9t3J7KU$$OqBa4aj_CNg4vWxPWfNo1##total_value_usd", "S5MCY8BBQbn08A9t3J7KU$$OqBa4aj_CNg4vWxPWfNo1##guaranteed_amount_usd", "S5MCY8BBQbn08A9t3J7KU$$OqBa4aj_CNg4vWxPWfNo1##signing_bonus_usd", "S5MCY8BBQbn08A9t3J7KU$$OqBa4aj_CNg4vWxPWfNo1##incentives_usd", "S5MCY8BBQbn08A9t3J7KU$$OqBa4aj_CNg4vWxPWfNo1##state_tax_rate", "S5MCY8BBQbn08A9t3J7KU$$OqBa4aj_CNg4vWxPWfNo1##contract_id" ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "player_id"
+          },
+          "alias" : "cdm_player_id",
+          "_row_id" : "g_LC33pPmk"
+        }, {
+          "expression" : {
+            "expression" : "season_start_year"
+          },
+          "alias" : "season_year",
+          "_row_id" : "suoucKNW3L"
+        }, {
+          "expression" : {
+            "expression" : "team_id"
+          },
+          "alias" : "team_id",
+          "_row_id" : "821000528"
+        }, {
+          "expression" : {
+            "expression" : "annual_salary_usd"
+          },
+          "alias" : "salary_annual_usd",
+          "_row_id" : "gf59BBG33k"
+        }, {
+          "expression" : {
+            "expression" : "total_value_usd"
+          },
+          "alias" : "salary_total_contract_usd",
+          "_row_id" : "sPZrI-2o8h"
+        }, {
+          "expression" : {
+            "expression" : "guaranteed_amount_usd + signing_bonus_usd + incentives_usd"
+          },
+          "alias" : "salary_guaranteed_usd",
+          "_row_id" : "C8U-5Mv45d"
+        }, {
+          "expression" : {
+            "expression" : "annual_salary_usd + signing_bonus_usd"
+          },
+          "alias" : "salary_signing_bonus_usd",
+          "_row_id" : "3MlCFDij_Q"
+        }, {
+          "expression" : {
+            "expression" : "annual_salary_usd + incentives_usd"
+          },
+          "alias" : "salary_incentives_usd",
+          "_row_id" : "9b9R9pkS9_"
+        }, {
+          "expression" : {
+            "expression" : "state_tax_rate"
+          },
+          "alias" : "effective_tax_rate",
+          "_row_id" : "Nn_84Qgr0K"
+        }, {
+          "expression" : {
+            "expression" : "contract_id"
+          },
+          "alias" : "contract_id",
+          "_row_id" : "1731548161"
+        }, {
+          "expression" : {
+            "expression" : "current_timestamp()"
+          },
+          "alias" : "financial_snapshot_date",
+          "_row_id" : "3Z9bQIlt_2"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "S5MCY8BBQbn08A9t3J7KU$$OqBa4aj_CNg4vWxPWfNo1",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "iM3bhbmkJt5VvlhinLQBX$$8ecS9KULLIg89u7XqT0gX",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "1o7e7sl2cpm8jpn9eBmoi$$jH8i9GBI6XyerUfKIgJTP" : {
+      "id" : "1o7e7sl2cpm8jpn9eBmoi$$jH8i9GBI6XyerUfKIgJTP",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "nba_player_performance",
+        "x" : 20,
+        "y" : 820,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "nba_player_performance",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_prakhar",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "NpccW1lOfh675Hk1ytXt3$$qpZAU5HYNn8YB-MtiRbpZ",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "oYW-_JRyxyHa4xde37yIz$$WGutMgkOGlDz_HQiqsec-",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "Col9ncIINNQ2rR8ooYJj6$$ywiJYNNEsw29nozJUYhiN" : {
+      "id" : "Col9ncIINNQ2rR8ooYJj6$$ywiJYNNEsw29nozJUYhiN",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "nba_brand_patnership",
+        "x" : 20,
+        "y" : 320,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "nba_brand_patnership",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_prakhar",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "e06Sglpcr_77C2H8U546A$$snd7LMEZoYabPJCLfhLFz",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "s6g4bfT-E6YqoVHASoEQr$$VkitHMWOSBx67yQkNQoWH",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "8xJIU5xo5JvTlDSjnUWhy$$IyrNcfMsI5LvAKiooD511" : {
+      "id" : "8xJIU5xo5JvTlDSjnUWhy$$IyrNcfMsI5LvAKiooD511",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "player_contract_salaries",
+        "x" : 820,
+        "y" : 220,
+        "phase" : 0,
+        "comment" : "Summarizes player contracts, including salaries, incentives, endorsements, and calculates total and after-tax earnings for each season and team.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ "Ztvf0bWK6b4uRq4KtLQXP$$h0uDc__oJeahkdp6dY2uJ##contract_id", "Ztvf0bWK6b4uRq4KtLQXP$$h0uDc__oJeahkdp6dY2uJ##cdm_player_id", "Ztvf0bWK6b4uRq4KtLQXP$$h0uDc__oJeahkdp6dY2uJ##season_year", "Ztvf0bWK6b4uRq4KtLQXP$$h0uDc__oJeahkdp6dY2uJ##team_id", "Ztvf0bWK6b4uRq4KtLQXP$$h0uDc__oJeahkdp6dY2uJ##salary_annual_usd", "Ztvf0bWK6b4uRq4KtLQXP$$h0uDc__oJeahkdp6dY2uJ##salary_total_contract_usd", "Ztvf0bWK6b4uRq4KtLQXP$$h0uDc__oJeahkdp6dY2uJ##salary_guaranteed_usd", "Ztvf0bWK6b4uRq4KtLQXP$$h0uDc__oJeahkdp6dY2uJ##salary_signing_bonus_usd", "Ztvf0bWK6b4uRq4KtLQXP$$h0uDc__oJeahkdp6dY2uJ##salary_incentives_usd", "Ztvf0bWK6b4uRq4KtLQXP$$h0uDc__oJeahkdp6dY2uJ##endorsement_annual_revenue_usd", "Ztvf0bWK6b4uRq4KtLQXP$$h0uDc__oJeahkdp6dY2uJ##endorsement_total_active_deals", "Ztvf0bWK6b4uRq4KtLQXP$$h0uDc__oJeahkdp6dY2uJ##effective_tax_rate", "Ztvf0bWK6b4uRq4KtLQXP$$h0uDc__oJeahkdp6dY2uJ##financial_snapshot_date" ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "contract_id"
+          },
+          "alias" : "cdm_financial_id",
+          "_row_id" : "QH2C_tp5gq"
+        }, {
+          "expression" : {
+            "expression" : "cdm_player_id"
+          },
+          "alias" : "cdm_player_id",
+          "_row_id" : "zIhhdmsrIf"
+        }, {
+          "expression" : {
+            "expression" : "season_year"
+          },
+          "alias" : "season_year",
+          "_row_id" : "QY7NAtkPjD"
+        }, {
+          "expression" : {
+            "expression" : "team_id"
+          },
+          "alias" : "team_id",
+          "_row_id" : "1888668845"
+        }, {
+          "expression" : {
+            "expression" : "salary_annual_usd"
+          },
+          "alias" : "salary_annual_usd",
+          "_row_id" : "1331885536"
+        }, {
+          "expression" : {
+            "expression" : "salary_total_contract_usd"
+          },
+          "alias" : "salary_total_contract_usd",
+          "_row_id" : "87727312"
+        }, {
+          "expression" : {
+            "expression" : "salary_guaranteed_usd"
+          },
+          "alias" : "salary_guaranteed_usd",
+          "_row_id" : "915926708"
+        }, {
+          "expression" : {
+            "expression" : "salary_signing_bonus_usd"
+          },
+          "alias" : "salary_signing_bonus_usd",
+          "_row_id" : "542021158"
+        }, {
+          "expression" : {
+            "expression" : "salary_incentives_usd"
+          },
+          "alias" : "salary_incentives_usd",
+          "_row_id" : "1302486335"
+        }, {
+          "expression" : {
+            "expression" : "coalesce(endorsement_annual_revenue_usd, 0)"
+          },
+          "alias" : "endorsement_annual_revenue_usd",
+          "_row_id" : "686025160"
+        }, {
+          "expression" : {
+            "expression" : "coalesce(endorsement_total_active_deals, 0)"
+          },
+          "alias" : "endorsement_total_active_deals",
+          "_row_id" : "227174727"
+        }, {
+          "expression" : {
+            "expression" : "salary_annual_usd + salary_incentives_usd + endorsement_annual_revenue_usd"
+          },
+          "alias" : "total_compensation_usd",
+          "_row_id" : "dTmw9Sqiut"
+        }, {
+          "expression" : {
+            "expression" : "effective_tax_rate"
+          },
+          "alias" : "effective_tax_rate",
+          "_row_id" : "xnMO3bcy7h"
+        }, {
+          "expression" : {
+            "expression" : "(salary_annual_usd + salary_incentives_usd + endorsement_annual_revenue_usd) * (1 - effective_tax_rate)"
+          },
+          "alias" : "net_earnings_after_tax_usd",
+          "_row_id" : "p62zVtU6xf"
+        }, {
+          "expression" : {
+            "expression" : "salary_annual_usd"
+          },
+          "alias" : "capped_room_impact_usd",
+          "_row_id" : "CL9cmaVL_l"
+        }, {
+          "expression" : {
+            "expression" : "financial_snapshot_date"
+          },
+          "alias" : "financial_snapshot_date",
+          "_row_id" : "WejoUjUFhF"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Ztvf0bWK6b4uRq4KtLQXP$$h0uDc__oJeahkdp6dY2uJ",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "uWkEeZl26FUXNhtBl4Nte$$4Qzn3B7gsqUD_CoGSkSjz",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "rf56nZQ1EZXmMmVAI8rEy$$g_7CIgXlXHnpAZ8zGupj5" : {
+      "id" : "rf56nZQ1EZXmMmVAI8rEy$$g_7CIgXlXHnpAZ8zGupj5",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "season_years",
+        "x" : 220,
+        "y" : 820,
+        "phase" : 0,
+        "comment" : "Summarizes key performance statistics for basketball players by season.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ "vkaEqwQIof7wwTbyUnml5$$WmcQCbB6BUj0ToZO_m3rE##season_year", "vkaEqwQIof7wwTbyUnml5$$WmcQCbB6BUj0ToZO_m3rE##performance_id", "vkaEqwQIof7wwTbyUnml5$$WmcQCbB6BUj0ToZO_m3rE##player_id", "vkaEqwQIof7wwTbyUnml5$$WmcQCbB6BUj0ToZO_m3rE##team_id", "vkaEqwQIof7wwTbyUnml5$$WmcQCbB6BUj0ToZO_m3rE##games_played", "vkaEqwQIof7wwTbyUnml5$$WmcQCbB6BUj0ToZO_m3rE##total_points", "vkaEqwQIof7wwTbyUnml5$$WmcQCbB6BUj0ToZO_m3rE##total_assists", "vkaEqwQIof7wwTbyUnml5$$WmcQCbB6BUj0ToZO_m3rE##total_rebounds", "vkaEqwQIof7wwTbyUnml5$$WmcQCbB6BUj0ToZO_m3rE##field_goal_percentage", "vkaEqwQIof7wwTbyUnml5$$WmcQCbB6BUj0ToZO_m3rE##three_point_percentage", "vkaEqwQIof7wwTbyUnml5$$WmcQCbB6BUj0ToZO_m3rE##free_throw_percentage", "vkaEqwQIof7wwTbyUnml5$$WmcQCbB6BUj0ToZO_m3rE##steals", "vkaEqwQIof7wwTbyUnml5$$WmcQCbB6BUj0ToZO_m3rE##blocks", "vkaEqwQIof7wwTbyUnml5$$WmcQCbB6BUj0ToZO_m3rE##turnovers" ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "season_year"
+          },
+          "alias" : "season_year",
+          "_row_id" : "RKK2fQX3rg"
+        }, {
+          "expression" : {
+            "expression" : "performance_id"
+          },
+          "alias" : "performance_id",
+          "_row_id" : "352956175"
+        }, {
+          "expression" : {
+            "expression" : "player_id"
+          },
+          "alias" : "player_id",
+          "_row_id" : "787480009"
+        }, {
+          "expression" : {
+            "expression" : "team_id"
+          },
+          "alias" : "team_id",
+          "_row_id" : "1982184884"
+        }, {
+          "expression" : {
+            "expression" : "games_played"
+          },
+          "alias" : "games_played",
+          "_row_id" : "478394712"
+        }, {
+          "expression" : {
+            "expression" : "total_points"
+          },
+          "alias" : "total_points",
+          "_row_id" : "1954825058"
+        }, {
+          "expression" : {
+            "expression" : "total_assists"
+          },
+          "alias" : "total_assists",
+          "_row_id" : "1010251257"
+        }, {
+          "expression" : {
+            "expression" : "total_rebounds"
+          },
+          "alias" : "total_rebounds",
+          "_row_id" : "978413280"
+        }, {
+          "expression" : {
+            "expression" : "field_goal_percentage"
+          },
+          "alias" : "field_goal_percentage",
+          "_row_id" : "1453920913"
+        }, {
+          "expression" : {
+            "expression" : "three_point_percentage"
+          },
+          "alias" : "three_point_percentage",
+          "_row_id" : "1680195027"
+        }, {
+          "expression" : {
+            "expression" : "free_throw_percentage"
+          },
+          "alias" : "free_throw_percentage",
+          "_row_id" : "516828305"
+        }, {
+          "expression" : {
+            "expression" : "steals"
+          },
+          "alias" : "steals",
+          "_row_id" : "1374639714"
+        }, {
+          "expression" : {
+            "expression" : "blocks"
+          },
+          "alias" : "blocks",
+          "_row_id" : "2076249364"
+        }, {
+          "expression" : {
+            "expression" : "turnovers"
+          },
+          "alias" : "turnovers",
+          "_row_id" : "100695826"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "vkaEqwQIof7wwTbyUnml5$$WmcQCbB6BUj0ToZO_m3rE",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "GFQOLBqWmm_JeBEd_ta0b$$PmyhoIARcgZ8DcsVaENrv",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "iJsfmklg73T96XRHfoHgm$$YBcdfN6PjqfQQOwj434Vx" : {
+      "id" : "iJsfmklg73T96XRHfoHgm$$YBcdfN6PjqfQQOwj434Vx",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "basketball_player_performance",
+        "x" : 1000,
+        "y" : 920,
+        "phase" : 0,
+        "comment" : "Appends new player performance data to the existing aggregate dataset for ongoing analysis.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "table" : {
+          "name" : "cdm_player_performance_aggregate",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_prakhartargets",
+          "alias" : ""
+        },
+        "writeOptions" : {
+          "writeMode" : "append",
+          "entityConfig" : {
+            "materialized" : "\"incremental\"",
+            "incremental_strategy" : "\"append\"",
+            "type" : "ModelConfig"
+          }
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "B3gQqg5FdySDiwOLMphs-$$kPnSbVPv-R4zvyLyk8YtL",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "doPGQcPH4PJejuKNR0Bim$$J_SVrGuvB6BHJg3plqGLs",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "G1C05uNtCO-MzdweIKDeW$$Y09mwFPELTjm6d8bAu9iG" : {
+      "id" : "G1C05uNtCO-MzdweIKDeW$$Y09mwFPELTjm6d8bAu9iG",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "new_cdm_brand_summary",
+        "x" : 400,
+        "y" : 220,
+        "phase" : 0,
+        "comment" : "Updates the brand summary dataset with incremental changes for each player, maintaining a historical record of updates.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "table" : {
+          "name" : "new_cdm_brand_summary",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_prakhartargets",
+          "alias" : ""
+        },
+        "writeOptions" : {
+          "writeMode" : "merge",
+          "mergeApproach" : "scd2",
+          "entityConfig" : {
+            "unique_key" : "\"cdm_player_id\"",
+            "strategy" : "\"timestamp\"",
+            "type" : "SnapshotConfig",
+            "updated_at" : "\"created_timestamp\"",
+            "materialized" : "\"incremental\""
+          }
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "5FVpYtBHzDB0aUZOu7mMW$$3xFW8WsWiYGVyu99yXJnN",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "OUFunriZxIrAOvbIcCZPs$$SsyvScoBRjMF4s3x5BjO4",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "5CqkhdwOv5UaOYIAiG-k7$$TXjyaoUSb2BfYoie3Ph_n" : {
+      "id" : "5CqkhdwOv5UaOYIAiG-k7$$TXjyaoUSb2BfYoie3Ph_n",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "player_profiles",
+        "x" : 420,
+        "y" : 620,
+        "phase" : 0,
+        "comment" : "Loads new player records into the master player table by merging only unique entries.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "table" : {
+          "name" : "cdm_player_master",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_prakhartargets",
+          "alias" : ""
+        },
+        "writeOptions" : {
+          "writeMode" : "merge",
+          "mergeApproach" : "columns",
+          "entityConfig" : {
+            "materialized" : "\"incremental\"",
+            "incremental_strategy" : "\"merge\"",
+            "type" : "ModelConfig",
+            "unique_key" : [ "\"cdm_player_id\"" ]
+          }
+        },
+        "incrementalKey" : true,
+        "incremental" : {
+          "expression" : "cdm_player_id != (\n  SELECT MAX(cdm_player_key)\n  \n  FROM {{this}}\n )"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "MwBn5OoKx_2J6OTRlUrXQ$$pqXoreLROR6e0hWrO5--O",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "TdJGVMSKEKmg0E2hDIfrf$$sDCwHNTffHugSVCJ8lK-Y",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "9wxHKDt-rqTCNTVfyYQsH$$xCJv0uAuGy7x9q_HbDMLh" : {
+      "id" : "9wxHKDt-rqTCNTVfyYQsH$$xCJv0uAuGy7x9q_HbDMLh",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "nba_team_roaster",
+        "x" : 420,
+        "y" : 1020,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "nba_team_roaster",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_prakhar",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "rVEyTHFnsNfzZ4obculwG$$OmDvVBz2Nytxw2hUsGm-O",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "3frOYT2HQ5Z5l8y-XJsGJ$$T-XV-nshUNyFslrOMpD0P",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "DLoLn_4RpJUqi6rVRyB9r$$IS8yMU7K2JY5WVVtS_8Mk" : {
+      "id" : "DLoLn_4RpJUqi6rVRyB9r$$IS8yMU7K2JY5WVVtS_8Mk",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "season_year_cast_int",
+        "x" : 420,
+        "y" : 820,
+        "phase" : 0,
+        "comment" : "Standardizes season year for player performance records to support consistent sports analytics.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ "Bcxtk_EMOZshW2R0j4liA$$Cn0RyiZmkDU-DxQHfKLl1##season_year", "Bcxtk_EMOZshW2R0j4liA$$Cn0RyiZmkDU-DxQHfKLl1##performance_id", "Bcxtk_EMOZshW2R0j4liA$$Cn0RyiZmkDU-DxQHfKLl1##player_id", "Bcxtk_EMOZshW2R0j4liA$$Cn0RyiZmkDU-DxQHfKLl1##team_id", "Bcxtk_EMOZshW2R0j4liA$$Cn0RyiZmkDU-DxQHfKLl1##games_played", "Bcxtk_EMOZshW2R0j4liA$$Cn0RyiZmkDU-DxQHfKLl1##total_points", "Bcxtk_EMOZshW2R0j4liA$$Cn0RyiZmkDU-DxQHfKLl1##total_assists", "Bcxtk_EMOZshW2R0j4liA$$Cn0RyiZmkDU-DxQHfKLl1##total_rebounds", "Bcxtk_EMOZshW2R0j4liA$$Cn0RyiZmkDU-DxQHfKLl1##field_goal_percentage", "Bcxtk_EMOZshW2R0j4liA$$Cn0RyiZmkDU-DxQHfKLl1##three_point_percentage", "Bcxtk_EMOZshW2R0j4liA$$Cn0RyiZmkDU-DxQHfKLl1##free_throw_percentage", "Bcxtk_EMOZshW2R0j4liA$$Cn0RyiZmkDU-DxQHfKLl1##steals", "Bcxtk_EMOZshW2R0j4liA$$Cn0RyiZmkDU-DxQHfKLl1##blocks", "Bcxtk_EMOZshW2R0j4liA$$Cn0RyiZmkDU-DxQHfKLl1##turnovers" ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "CAST(season_year AS bigint)"
+          },
+          "alias" : "season_year_int",
+          "_row_id" : "PTHxQCwTRX"
+        }, {
+          "expression" : {
+            "expression" : "performance_id"
+          },
+          "alias" : "performance_id",
+          "_row_id" : "565137308"
+        }, {
+          "expression" : {
+            "expression" : "player_id"
+          },
+          "alias" : "player_id",
+          "_row_id" : "990358539"
+        }, {
+          "expression" : {
+            "expression" : "team_id"
+          },
+          "alias" : "team_id",
+          "_row_id" : "1993848881"
+        }, {
+          "expression" : {
+            "expression" : "games_played"
+          },
+          "alias" : "games_played",
+          "_row_id" : "1148896230"
+        }, {
+          "expression" : {
+            "expression" : "total_points"
+          },
+          "alias" : "total_points",
+          "_row_id" : "283979556"
+        }, {
+          "expression" : {
+            "expression" : "total_assists"
+          },
+          "alias" : "total_assists",
+          "_row_id" : "729502007"
+        }, {
+          "expression" : {
+            "expression" : "total_rebounds"
+          },
+          "alias" : "total_rebounds",
+          "_row_id" : "1537387441"
+        }, {
+          "expression" : {
+            "expression" : "field_goal_percentage"
+          },
+          "alias" : "field_goal_percentage",
+          "_row_id" : "1257981814"
+        }, {
+          "expression" : {
+            "expression" : "three_point_percentage"
+          },
+          "alias" : "three_point_percentage",
+          "_row_id" : "928504887"
+        }, {
+          "expression" : {
+            "expression" : "free_throw_percentage"
+          },
+          "alias" : "free_throw_percentage",
+          "_row_id" : "2007507516"
+        }, {
+          "expression" : {
+            "expression" : "steals"
+          },
+          "alias" : "steals",
+          "_row_id" : "1764508621"
+        }, {
+          "expression" : {
+            "expression" : "blocks"
+          },
+          "alias" : "blocks",
+          "_row_id" : "1991862400"
+        }, {
+          "expression" : {
+            "expression" : "turnovers"
+          },
+          "alias" : "turnovers",
+          "_row_id" : "2006185125"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Bcxtk_EMOZshW2R0j4liA$$Cn0RyiZmkDU-DxQHfKLl1",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "8peFPJWBmvvZbK0xyRO-U$$gla5mEN6jUBZ2yldNLF9Y",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "bwR81c2qWnI6yRWILeNlB$$mgWtAuRYM1PHT8gWmWmcd",
+    "source" : "IpSYdfsF76wNVnFz60mOo$$KCtRrDtQTXnIyXNCK-baq",
+    "sourcePort" : "DoaF0pjSBLg0bvaomG9rB$$JxsdxB2vRNGBhteetsR9g",
+    "target" : "39glxtd6Mq8GtjrAa0suu$$jARBguzH2SE1xYyLQA8yz",
+    "targetPort" : "Hd0GbCla5aFSjRzULZCV3$$zXqCqVIXKYaRYrXzQvut5"
+  }, {
+    "id" : "AT7Q1shq5h-REHbkdcJlP",
+    "source" : "39glxtd6Mq8GtjrAa0suu$$jARBguzH2SE1xYyLQA8yz",
+    "sourcePort" : "cwp29_2ahWGvvhjddNDFa$$vgmW39zK25KqJQ0laYxIO",
+    "target" : "5CqkhdwOv5UaOYIAiG-k7$$TXjyaoUSb2BfYoie3Ph_n",
+    "targetPort" : "MwBn5OoKx_2J6OTRlUrXQ$$pqXoreLROR6e0hWrO5--O"
+  }, {
+    "id" : "f-cyXdruwRdHSI2D0zcy2$$-Ig4isOh6cObioqXIOB31",
+    "source" : "Col9ncIINNQ2rR8ooYJj6$$ywiJYNNEsw29nozJUYhiN",
+    "sourcePort" : "s6g4bfT-E6YqoVHASoEQr$$VkitHMWOSBx67yQkNQoWH",
+    "target" : "3jB_g97rb0urf1S70z49M$$WrB2o0ph2gkQ4AHQWT47R",
+    "targetPort" : "kHXclnGBFPWsDGT9Yigvh$$vqOQ46Y7jHc2AWehfZXZC"
+  }, {
+    "id" : "mWXOPwMOpz7As2K0jVWQu$$VqyV_IaR5al4pUVAb8Ay7",
+    "source" : "1o7e7sl2cpm8jpn9eBmoi$$jH8i9GBI6XyerUfKIgJTP",
+    "sourcePort" : "oYW-_JRyxyHa4xde37yIz$$WGutMgkOGlDz_HQiqsec-",
+    "target" : "rf56nZQ1EZXmMmVAI8rEy$$g_7CIgXlXHnpAZ8zGupj5",
+    "targetPort" : "vkaEqwQIof7wwTbyUnml5$$WmcQCbB6BUj0ToZO_m3rE"
+  }, {
+    "id" : "kFEn8cf-18Nn-X9FdDbWI$$nwVntUEgcZIXJEzQq_-fN",
+    "source" : "rf56nZQ1EZXmMmVAI8rEy$$g_7CIgXlXHnpAZ8zGupj5",
+    "sourcePort" : "GFQOLBqWmm_JeBEd_ta0b$$PmyhoIARcgZ8DcsVaENrv",
+    "target" : "DLoLn_4RpJUqi6rVRyB9r$$IS8yMU7K2JY5WVVtS_8Mk",
+    "targetPort" : "Bcxtk_EMOZshW2R0j4liA$$Cn0RyiZmkDU-DxQHfKLl1"
+  }, {
+    "id" : "MLKXjyIPNEFvpoJG3UTmG$$uerQoc6gyd9bFzj-6u448",
+    "source" : "DLoLn_4RpJUqi6rVRyB9r$$IS8yMU7K2JY5WVVtS_8Mk",
+    "sourcePort" : "8peFPJWBmvvZbK0xyRO-U$$gla5mEN6jUBZ2yldNLF9Y",
+    "target" : "sjYPePeN9h1YKI16y0XEa$$wRajRXZqiPvKKLbjfmJqf",
+    "targetPort" : "mG7OTzAn1eSKfpd_sn1Mn$$0JppUK-MCtHpMsHH1k3Ev"
+  }, {
+    "id" : "zpoD8U-1rveBFZmQkDoWl",
+    "source" : "9wxHKDt-rqTCNTVfyYQsH$$xCJv0uAuGy7x9q_HbDMLh",
+    "sourcePort" : "3frOYT2HQ5Z5l8y-XJsGJ$$T-XV-nshUNyFslrOMpD0P",
+    "target" : "sjYPePeN9h1YKI16y0XEa$$wRajRXZqiPvKKLbjfmJqf",
+    "targetPort" : "zGKarSfZJBjkPaGC6Xarj$$e-b_DyrFQ0uOvIHjjcwFK"
+  }, {
+    "id" : "ZHqVtD8spHX25TkqzEhsI$$QNqRUEIyDtO2ktCcSwRKi",
+    "source" : "sjYPePeN9h1YKI16y0XEa$$wRajRXZqiPvKKLbjfmJqf",
+    "sourcePort" : "YdZNK1p4v8IvlE3W_W9zc$$8kXXxKrgNm7hKaTf7nyuE",
+    "target" : "PQQXPr8EKedS4HUSDCWmG$$Xiw9pS1F3Tr25I1ICY63P",
+    "targetPort" : "jPGVyXF4ecoVNmk7V_50M$$cskRrz089fd1uBKrUTku7"
+  }, {
+    "id" : "d6soQOM-MIBaIw5TwLh3F$$6u_cO2RBAZWIi1MhKzAJ-",
+    "source" : "69pGx3g9yq9Cth9sV9T-L$$SMWPCCY14u9BEE4_8QTi6",
+    "sourcePort" : "08VSxiSvVWxEQvEn2J7XY$$NcvycNAUw1ZpLYvTTEa6h",
+    "target" : "e712stE5_AeT7BVzovVjl$$H-UwrFa0cIZc1AXPYEjNZ",
+    "targetPort" : "S5MCY8BBQbn08A9t3J7KU$$OqBa4aj_CNg4vWxPWfNo1"
+  }, {
+    "id" : "BsC0AnaJDf8r4aPkdQwH4",
+    "source" : "Col9ncIINNQ2rR8ooYJj6$$ywiJYNNEsw29nozJUYhiN",
+    "sourcePort" : "s6g4bfT-E6YqoVHASoEQr$$VkitHMWOSBx67yQkNQoWH",
+    "target" : "4bxsoaQ2FVz0hzzXGQ-nU$$rBIyh_134gWE3LpYYMUe1",
+    "targetPort" : "uKsYyeedhdTpDmGU4Rjj6$$B1iEP8hEQO1o6leVXuBqR"
+  }, {
+    "id" : "aioYNPEDFvi4hF045t92H$$vDXrQM9OP0PHm1tspgYmd",
+    "source" : "4bxsoaQ2FVz0hzzXGQ-nU$$rBIyh_134gWE3LpYYMUe1",
+    "sourcePort" : "IaDSnRzZsPFhUxz9Y0eR0$$CQGqPgiHAMpOb0ANIwsi_",
+    "target" : "Y5x5ndUw460NEEn0a7Iz5$$MueTv-lqoJa4GU97NMIgT",
+    "targetPort" : "cof5N97BmgAJHNCq7vdr8$$rKo0ntPo6GTwtRt1SDe0G"
+  }, {
+    "id" : "oF-OVBg4VDtiVbC4QotEF$$gk12scUqVYLhFcHiPfw7w",
+    "source" : "e712stE5_AeT7BVzovVjl$$H-UwrFa0cIZc1AXPYEjNZ",
+    "sourcePort" : "iM3bhbmkJt5VvlhinLQBX$$8ecS9KULLIg89u7XqT0gX",
+    "target" : "O_Kfe6zUlSpd7x3lDxG9i$$15uozZ3ATasn_wArrkZEw",
+    "targetPort" : "AKEEnYdDN_uNunXc-SLCt$$u0bKLZoPhrhxAuPG-sc5H"
+  }, {
+    "id" : "uLBhnYTlHAuXE_o4KxABK",
+    "source" : "Y5x5ndUw460NEEn0a7Iz5$$MueTv-lqoJa4GU97NMIgT",
+    "sourcePort" : "IznwYZ16wejwguHxVBH42$$-omqfGmS1dCF-nu1r31hN",
+    "target" : "O_Kfe6zUlSpd7x3lDxG9i$$15uozZ3ATasn_wArrkZEw",
+    "targetPort" : "sN2jm6NENGdDn2S6M5KUM$$6LquTcxnT0i8VdGYqvFmT"
+  }, {
+    "id" : "sD5jAZbBP5N8MW3cE6chh$$mZnb5pLyVbYKytXh13x8W",
+    "source" : "O_Kfe6zUlSpd7x3lDxG9i$$15uozZ3ATasn_wArrkZEw",
+    "sourcePort" : "UjroVXLx8We_q9dhWOxeJ$$ynB2WDUABOAgAOfsUaq_0",
+    "target" : "8xJIU5xo5JvTlDSjnUWhy$$IyrNcfMsI5LvAKiooD511",
+    "targetPort" : "Ztvf0bWK6b4uRq4KtLQXP$$h0uDc__oJeahkdp6dY2uJ"
+  }, {
+    "id" : "q5h3bOtSQKDH1gY-J96Ll$$4GYptgSrJo2R6Kqlu02Qv",
+    "source" : "8xJIU5xo5JvTlDSjnUWhy$$IyrNcfMsI5LvAKiooD511",
+    "sourcePort" : "uWkEeZl26FUXNhtBl4Nte$$4Qzn3B7gsqUD_CoGSkSjz",
+    "target" : "Srsz4_zIH3E_bNy6Uobsv$$3kxyNy5CX9NJt_gj1vfP6",
+    "targetPort" : "HkJpSw9nusmXxSf_SI8HA$$zNK4fLXm5xUXS9rzpxefu"
+  }, {
+    "id" : "IijtfplL4_ueDwfJfW9Vj$$ZBH1JOAx_tC_6eMsgJrp4",
+    "source" : "PQQXPr8EKedS4HUSDCWmG$$Xiw9pS1F3Tr25I1ICY63P",
+    "sourcePort" : "Oov0VWOgBPTMCAkyPPZKi$$5lGvukkM11ZiLm_TFIVd0",
+    "target" : "iJsfmklg73T96XRHfoHgm$$YBcdfN6PjqfQQOwj434Vx",
+    "targetPort" : "B3gQqg5FdySDiwOLMphs-$$kPnSbVPv-R4zvyLyk8YtL"
+  }, {
+    "id" : "kdYu2-9s7xwrKcXWb1cyH$$n7tgXxKbgXeaeNLZlxPbp",
+    "source" : "3jB_g97rb0urf1S70z49M$$WrB2o0ph2gkQ4AHQWT47R",
+    "sourcePort" : "Uy9eApXw_5VdSA89rQzl3$$iUfZh_Ik_u9-7r2hcq1O3",
+    "target" : "G1C05uNtCO-MzdweIKDeW$$Y09mwFPELTjm6d8bAu9iG",
+    "targetPort" : "5FVpYtBHzDB0aUZOu7mMW$$3xFW8WsWiYGVyu99yXJnN"
+  } ],
+  "component" : "Pipeline"
+}

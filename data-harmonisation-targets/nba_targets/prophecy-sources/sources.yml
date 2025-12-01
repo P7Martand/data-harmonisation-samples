@@ -1,0 +1,342 @@
+---
+version: 2
+sources:
+- name: "qa_team_prakhartargets"
+  database: "qa_team"
+  schema: "prakhartargets"
+  config:
+    tags:
+    - "source:qa_team_prakhartargets"
+  tables:
+  - name: "cdm_player_brand_engagement"
+    config:
+      tags:
+      - "table:cdm_player_brand_engagement"
+    columns:
+    - name: "cdm_brand_engagement_id"
+      tests:
+      - unique:
+          config:
+            fail_calc: "count(*)"
+            severity: "error"
+            store_failures: true
+            limit: 1
+            tags:
+            - "test:unique"
+      tags:
+      - "column:cdm_brand_engagement_id"
+      dataType:
+        type: "String"
+    - mappings:
+      - type: "foreign"
+        columnName: "cdm_player_id"
+        datasetId: "table/qa_team_prakhartargets/cdm_player_financial_snapshot"
+        datasetName: "qa_team_prakhartargets"
+      name: "cdm_player_id"
+      tags:
+      - "column:cdm_player_id"
+      tests:
+      - not_null:
+          config:
+            fail_calc: "count(*)"
+            severity: "error"
+            store_failures: true
+            limit: 5
+            tags:
+            - "test:not_null"
+      dataType:
+        type: "String"
+    - name: "brand_name_normalized"
+      dataType:
+        type: "String"
+    - name: "brand_category"
+      dataType:
+        type: "String"
+    - name: "engagement_start_date"
+      dataType:
+        type: "Date"
+    - name: "engagement_end_date"
+      dataType:
+        type: "Date"
+    - name: "engagement_status"
+      dataType:
+        type: "String"
+    - name: "deal_value_total_usd"
+      dataType:
+        type: "Bigint"
+    - name: "deal_value_annual_usd"
+      dataType:
+        type: "Bigint"
+    - name: "engagement_type"
+      dataType:
+        type: "String"
+    - name: "created_timestamp"
+      dataType:
+        type: "Timestamp"
+    type: "table"
+  - name: "cdm_player_financial_snapshot"
+    description: "Provides a comprehensive view of player earnings, including salaries,\
+      \ endorsements, and net income, supporting financial analysis of athletes and\
+      \ teams."
+    config:
+      tags:
+      - "pipeline:pipeline1"
+    columns:
+    - name: "cdm_financial_id"
+      description: "Unique identifier for each financial record of a player."
+      dataType:
+        type: "String"
+    - name: "cdm_player_id"
+      description: "Unique identifier for the player associated with the financial\
+        \ record."
+      dataType:
+        type: "String"
+      mappings:
+      - type: "foreign"
+        columnName: "cdm_player_id"
+        datasetId: "table/qa_team_prakhartargets/cdm_player_performance_aggregate"
+        datasetName: "qa_team_prakhartargets"
+    - name: "season_year"
+      description: "Year of the sports season for which the financial data applies."
+      dataType:
+        type: "Bigint"
+    - name: "team_id"
+      description: "Identifier for the team the player is associated with during the\
+        \ season."
+      dataType:
+        type: "String"
+    - name: "salary_annual_usd"
+      description: "Annual salary paid to the player in US dollars for the season."
+      dataType:
+        type: "Bigint"
+    - name: "salary_total_contract_usd"
+      description: "Total value of the player's contract over its entire duration\
+        \ in US dollars."
+      dataType:
+        type: "Bigint"
+    - name: "salary_guaranteed_usd"
+      description: "Amount of the player's salary that is guaranteed to be paid in\
+        \ US dollars."
+      dataType:
+        type: "Bigint"
+    - name: "salary_signing_bonus_usd"
+      description: "One-time signing bonus paid to the player in US dollars."
+      dataType:
+        type: "Bigint"
+    - name: "salary_incentives_usd"
+      description: "Potential additional earnings for the player based on performance\
+        \ incentives in US dollars."
+      dataType:
+        type: "Bigint"
+    - name: "endorsement_annual_revenue_usd"
+      description: "Total annual revenue the player earns from endorsement deals in\
+        \ US dollars."
+      dataType:
+        type: "Bigint"
+    - name: "endorsement_total_active_deals"
+      description: "Total number of active endorsement deals for the player at the\
+        \ time of the financial snapshot."
+      dataType:
+        type: "Bigint"
+    - name: "total_compensation_usd"
+      description: "Total earnings received by the player from all sources before\
+        \ tax, measured in USD."
+      dataType:
+        type: "Bigint"
+    - name: "effective_tax_rate"
+      description: "Overall tax rate applied to the player's earnings during the financial\
+        \ snapshot period."
+      dataType:
+        type: "Double"
+    - name: "net_earnings_after_tax_usd"
+      description: "Total amount the player takes home after taxes are deducted, measured\
+        \ in USD."
+      dataType:
+        type: "Bigint"
+    - name: "capped_room_impact_usd"
+      description: "Portion of the player's compensation that counts toward the team's\
+        \ salary cap, measured in USD."
+      dataType:
+        type: "Bigint"
+    - name: "financial_snapshot_date"
+      description: "Date and time when the player's financial snapshot was recorded."
+      dataType:
+        type: "Timestamp"
+    type: "table"
+  - name: "cdm_player_master"
+    description: "Comprehensive player profiles supporting player identification,\
+      \ status tracking, and talent management."
+    config:
+      tags:
+      - "pipeline:pipeline1"
+    columns:
+    - name: "cdm_player_id"
+      description: "Unique identifier assigned to each player in the system."
+      dataType:
+        type: "String"
+      mappings:
+      - type: "foreign"
+        columnName: "cdm_player_id"
+        datasetId: "table/qa_team_prakhartargets/cdm_player_brand_engagement"
+        datasetName: "qa_team_prakhartargets"
+    - name: "cdm_player_key"
+      description: "Alternate unique key used to reference the player across systems."
+      dataType:
+        type: "String"
+    - name: "first_name"
+      description: "Player's given first name."
+      dataType:
+        type: "String"
+    - name: "last_name"
+      description: "Player's family or surname."
+      dataType:
+        type: "String"
+    - name: "full_name"
+      description: "Complete name of the player, combining first and last names."
+      dataType:
+        type: "String"
+    - name: "player_status"
+      description: "Current status of the player, such as active, retired, or injured."
+      dataType:
+        type: "String"
+    - name: "position_code"
+      description: "Code representing the player's position on the team."
+      dataType:
+        type: "String"
+    - name: "draft_info_year"
+      description: "Year in which the player was drafted."
+      dataType:
+        type: "Bigint"
+    - name: "country_of_origin"
+      description: "Country where the player was born or represents."
+      dataType:
+        type: "String"
+    - name: "physical_attributes_height_cm"
+      description: "Player's height measured in centimeters."
+      dataType:
+        type: "Bigint"
+    - name: "physical_attributes_weight_kg"
+      description: "Player's weight in kilograms as recorded in official records."
+      dataType:
+        type: "Bigint"
+    - name: "created_date"
+      description: "Date and time when the player's record was first added."
+      dataType:
+        type: "Timestamp"
+    - name: "updated_date"
+      description: "Date and time when the player's record was last updated."
+      dataType:
+        type: "Timestamp"
+    - name: "data_source"
+      description: "Origin or system from which the player's information was obtained."
+      dataType:
+        type: "String"
+    type: "table"
+  - name: "cdm_player_performance_aggregate"
+    config:
+      tags:
+      - "pipeline:pipeline1"
+    columns:
+    - name: "cdm_performance_id"
+      dataType:
+        type: "String"
+    - name: "cdm_player_id"
+      dataType:
+        type: "String"
+    - name: "season_year"
+      dataType:
+        type: "Bigint"
+    - name: "team_id"
+      dataType:
+        type: "String"
+    - name: "stat_games_played"
+      dataType:
+        type: "Bigint"
+    - name: "stat_minutes_total"
+      dataType:
+        type: "Bigint"
+    - name: "stat_points_total"
+      dataType:
+        type: "Bigint"
+    - name: "stat_assists_total"
+      dataType:
+        type: "Bigint"
+    - name: "stat_rebounds_total"
+      dataType:
+        type: "Bigint"
+    - name: "stat_blocks_total"
+      dataType:
+        type: "Bigint"
+    - name: "stat_steals_total"
+      dataType:
+        type: "Bigint"
+    - name: "stat_turnovers_total"
+      dataType:
+        type: "Bigint"
+    - name: "efficiency_field_goal_pct"
+      dataType:
+        type: "Double"
+    - name: "efficiency_three_point_pct"
+      dataType:
+        type: "Double"
+    - name: "efficiency_free_throw_pct"
+      dataType:
+        type: "Double"
+    - name: "efficiency_player_efficiency_rating"
+      dataType:
+        type: "Double"
+    - name: "stat_capture_date"
+      dataType:
+        type: "Timestamp"
+    type: "table"
+  - name: "new_cdm_brand_summary"
+    config:
+      tags:
+      - "pipeline:pipeline1"
+    columns:
+    - name: "cdm_brand_engagement_id"
+      dataType:
+        type: "String"
+    - name: "cdm_player_id"
+      dataType:
+        type: "String"
+    - name: "brand_name_normalized"
+      dataType:
+        type: "String"
+    - name: "brand_category"
+      dataType:
+        type: "String"
+    - name: "engagement_start_date"
+      dataType:
+        type: "Date"
+    - name: "engagement_end_date"
+      dataType:
+        type: "Date"
+    - name: "engagement_status"
+      dataType:
+        type: "String"
+    - name: "deal_value_total_usd"
+      dataType:
+        type: "Bigint"
+    - name: "deal_value_annual_usd"
+      dataType:
+        type: "Bigint"
+    - name: "engagement_type"
+      dataType:
+        type: "String"
+    - name: "created_timestamp"
+      dataType:
+        type: "Timestamp"
+    - name: "dbt_scd_id"
+      dataType:
+        type: "String"
+    - name: "dbt_updated_at"
+      dataType:
+        type: "Timestamp"
+    - name: "dbt_valid_from"
+      dataType:
+        type: "Timestamp"
+    - name: "dbt_valid_to"
+      dataType:
+        type: "Timestamp"
+    type: "table"

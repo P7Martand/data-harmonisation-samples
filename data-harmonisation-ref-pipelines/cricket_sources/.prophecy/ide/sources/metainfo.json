@@ -1,0 +1,35 @@
+{
+  "name" : "harmonize_sources",
+  "fileSystem" : {
+    "type" : "Folder",
+    "name" : "",
+    "children" : { },
+    "path" : "",
+    "editable" : true
+  },
+  "providerType" : "databricks",
+  "prophecyIDEFolder" : {
+    "name" : "",
+    "children" : { },
+    "path" : "",
+    "editable" : true
+  },
+  "dependenciesContainer" : {
+    "dependencies" : { },
+    "lastError" : "Server Error: Error occurred: Clone failed with an error: Error accessing remote repository, please check repository url and access token at line 1 and column 7 at path /getGitRdc",
+    "prophecyProjectDependencies" : {
+      "https://github.com/prophecy-io/prophecy-basics" : "64560",
+      "http://gitserver:3000/oIW7hWw9_team_1070/WJNVlyUa_project_67826.git" : "67826"
+    },
+    "dependenciesMetadata" : {
+      "https://github.com/prophecy-io/prophecy-basics" : {
+        "autoUpgrade" : true
+      },
+      "http://gitserver:3000/oIW7hWw9_team_1070/WJNVlyUa_project_67826.git" : {
+        "autoUpgrade" : true
+      }
+    }
+  },
+  "entitiesToSync" : [ ],
+  "frontEndLanguage" : "sql"
+}

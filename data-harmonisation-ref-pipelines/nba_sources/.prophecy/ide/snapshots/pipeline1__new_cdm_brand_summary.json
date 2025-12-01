@@ -1,0 +1,189 @@
+{
+  "id" : "pipeline1__new_cdm_brand_summary",
+  "metainfo" : {
+    "label" : "pipeline1__new_cdm_brand_summary",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "alias" : "\"new_cdm_brand_summary\"",
+        "strategy" : "\"timestamp\"",
+        "updated_at" : "\"created_timestamp\"",
+        "target_schema" : "\"prakhartargets\"",
+        "database" : "\"qa_team\"",
+        "unique_key" : "\"cdm_player_id\"",
+        "type" : "SnapshotConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "G1C05uNtCO-MzdweIKDeW$$Y09mwFPELTjm6d8bAu9iG" : {
+      "id" : "G1C05uNtCO-MzdweIKDeW$$Y09mwFPELTjm6d8bAu9iG",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "new_cdm_brand_summary",
+        "phase" : 0
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM brand_partnership_engagements\n\n",
+        "isModel" : false,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "5FVpYtBHzDB0aUZOu7mMW$$3xFW8WsWiYGVyu99yXJnN",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "OUFunriZxIrAOvbIcCZPs$$SsyvScoBRjMF4s3x5BjO4",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "3jB_g97rb0urf1S70z49M$$WrB2o0ph2gkQ4AHQWT47R" : {
+      "id" : "3jB_g97rb0urf1S70z49M$$WrB2o0ph2gkQ4AHQWT47R",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "brand_partnership_engagements",
+        "x" : 240,
+        "y" : 220,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ "kHXclnGBFPWsDGT9Yigvh$$vqOQ46Y7jHc2AWehfZXZC##partnership_id", "kHXclnGBFPWsDGT9Yigvh$$vqOQ46Y7jHc2AWehfZXZC##player_id", "kHXclnGBFPWsDGT9Yigvh$$vqOQ46Y7jHc2AWehfZXZC##brand_name", "kHXclnGBFPWsDGT9Yigvh$$vqOQ46Y7jHc2AWehfZXZC##partnership_start_date", "kHXclnGBFPWsDGT9Yigvh$$vqOQ46Y7jHc2AWehfZXZC##partnership_end_date", "kHXclnGBFPWsDGT9Yigvh$$vqOQ46Y7jHc2AWehfZXZC##status", "kHXclnGBFPWsDGT9Yigvh$$vqOQ46Y7jHc2AWehfZXZC##deal_value_usd", "kHXclnGBFPWsDGT9Yigvh$$vqOQ46Y7jHc2AWehfZXZC##annual_value_usd", "kHXclnGBFPWsDGT9Yigvh$$vqOQ46Y7jHc2AWehfZXZC##deal_type" ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "partnership_id"
+          },
+          "alias" : "cdm_brand_engagement_id",
+          "_row_id" : "ZYDyNDxix0"
+        }, {
+          "expression" : {
+            "expression" : "player_id"
+          },
+          "alias" : "cdm_player_id",
+          "_row_id" : "wbM0OZphwh"
+        }, {
+          "expression" : {
+            "expression" : "upper(trim(brand_name))"
+          },
+          "alias" : "brand_name_normalized",
+          "_row_id" : "T_Y5zBOejL"
+        }, {
+          "expression" : {
+            "expression" : "brand_name"
+          },
+          "alias" : "brand_category",
+          "_row_id" : "rVxu8cmFUv"
+        }, {
+          "expression" : {
+            "expression" : "partnership_start_date"
+          },
+          "alias" : "engagement_start_date",
+          "_row_id" : "6YUnEYGh-g"
+        }, {
+          "expression" : {
+            "expression" : "partnership_end_date"
+          },
+          "alias" : "engagement_end_date",
+          "_row_id" : "3xAmEPefRC"
+        }, {
+          "expression" : {
+            "expression" : "status"
+          },
+          "alias" : "engagement_status",
+          "_row_id" : "OJlPAXVfVj"
+        }, {
+          "expression" : {
+            "expression" : "deal_value_usd"
+          },
+          "alias" : "deal_value_total_usd",
+          "_row_id" : "6j2eBKtUHq"
+        }, {
+          "expression" : {
+            "expression" : "annual_value_usd"
+          },
+          "alias" : "deal_value_annual_usd",
+          "_row_id" : "td8_o4cOor"
+        }, {
+          "expression" : {
+            "expression" : "deal_type"
+          },
+          "alias" : "engagement_type",
+          "_row_id" : "gzN1KJsnhG"
+        }, {
+          "expression" : {
+            "expression" : "current_timestamp()"
+          },
+          "alias" : "created_timestamp",
+          "_row_id" : "HlfErQG3Mg"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "kHXclnGBFPWsDGT9Yigvh$$vqOQ46Y7jHc2AWehfZXZC",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "Uy9eApXw_5VdSA89rQzl3$$iUfZh_Ik_u9-7r2hcq1O3",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "Col9ncIINNQ2rR8ooYJj6$$ywiJYNNEsw29nozJUYhiN" : {
+      "id" : "Col9ncIINNQ2rR8ooYJj6$$ywiJYNNEsw29nozJUYhiN",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "nba_brand_patnership",
+        "x" : 20,
+        "y" : 320,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "nba_brand_patnership",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_prakhar",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "s6g4bfT-E6YqoVHASoEQr$$VkitHMWOSBx67yQkNQoWH",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "kdYu2-9s7xwrKcXWb1cyH$$n7tgXxKbgXeaeNLZlxPbp",
+    "source" : "3jB_g97rb0urf1S70z49M$$WrB2o0ph2gkQ4AHQWT47R",
+    "sourcePort" : "Uy9eApXw_5VdSA89rQzl3$$iUfZh_Ik_u9-7r2hcq1O3",
+    "target" : "G1C05uNtCO-MzdweIKDeW$$Y09mwFPELTjm6d8bAu9iG",
+    "targetPort" : "5FVpYtBHzDB0aUZOu7mMW$$3xFW8WsWiYGVyu99yXJnN"
+  }, {
+    "id" : "f-cyXdruwRdHSI2D0zcy2$$-Ig4isOh6cObioqXIOB31",
+    "source" : "Col9ncIINNQ2rR8ooYJj6$$ywiJYNNEsw29nozJUYhiN",
+    "sourcePort" : "s6g4bfT-E6YqoVHASoEQr$$VkitHMWOSBx67yQkNQoWH",
+    "target" : "3jB_g97rb0urf1S70z49M$$WrB2o0ph2gkQ4AHQWT47R",
+    "targetPort" : "kHXclnGBFPWsDGT9Yigvh$$vqOQ46Y7jHc2AWehfZXZC"
+  } ],
+  "component" : "Snapshot"
+}
