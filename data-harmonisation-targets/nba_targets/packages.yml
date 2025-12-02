@@ -1,5 +1,5 @@
 ---
 packages:
-- revision: "1.0.4.dev3"
+- revision: "1.0.4.dev5"
   git: "https://github.com/prophecy-io/prophecy-basics"
   subdirectory: ""
