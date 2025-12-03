@@ -647,17 +647,4 @@ sqlOrchestratorPipelines:
     - models/pipeline1/pipeline1__player_financials_and_compensation.sql
     - models/pipeline1/pipeline1__basketball_player_performance.sql
     createdAt: '2025-11-24 07:20:37'
-  .prophecy/metadata/sqlorchestratorpipeline/pipeline_with_models:
-    name: pipeline_with_models
-    schema: null
-    description: null
-    author: prakharmartand@prophecy.io
-    files:
-    - .prophecy/ide/pipelines/pipeline_with_models.json
-    - pipelines/pipeline_with_models.py
-    - models/pipeline_with_models/pipeline_with_models__player_financials_and_compensation.sql
-    - models/pipeline_with_models/pipeline_with_models__basketball_player_performance.sql
-    - models/pipeline_with_models/schema.yml
-    - models/pipeline_with_models/pipeline_with_models__player_profiles.sql
-    createdAt: '2025-12-03 03:19:41'
 sqlBusinessApps: {}
