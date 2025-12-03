@@ -57,6 +57,11 @@ sources:
     - name: "player_id"
       dataType:
         type: "String"
+      mappings:
+      - type: "foreign"
+        columnName: "partnership_id"
+        datasetId: "table/qa_team_prakhar/nba_brand_patnership"
+        datasetName: "qa_team_prakhar"
     - name: "first_name"
       dataType:
         type: "String"
@@ -200,6 +205,11 @@ sources:
     - name: "partnership_id"
       dataType:
         type: "String"
+      mappings:
+      - type: "foreign"
+        columnName: "player_id"
+        datasetId: "table/qa_team_prakhar/nba_players"
+        datasetName: "qa_team_prakhar"
     - name: "player_id"
       dataType:
         type: "String"
