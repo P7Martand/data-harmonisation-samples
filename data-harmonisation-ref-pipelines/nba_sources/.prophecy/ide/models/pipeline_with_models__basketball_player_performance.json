@@ -1,0 +1,389 @@
+{
+  "id" : "pipeline_with_models__basketball_player_performance",
+  "metainfo" : {
+    "label" : "pipeline_with_models__basketball_player_performance",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "alias" : "\"cdm_player_performance_aggregate\"",
+        "materialized" : "incremental",
+        "database" : "\"qa_team\"",
+        "schema" : "\"prakhartargets\"",
+        "incremental_strategy" : "\"append\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "7sr_RWsxq2Chu2-VG5Slg$$o1PcDq9bthIjiVv04bxPN" : {
+      "id" : "7sr_RWsxq2Chu2-VG5Slg$$o1PcDq9bthIjiVv04bxPN",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "model1_1",
+        "x" : -200,
+        "y" : 280
+      },
+      "properties" : {
+        "table" : {
+          "name" : "model1",
+          "sourceType" : "Model",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "E3oWII7JOsF_aRheGP2ol$$48PbkKQnSpPNsbPBFTgV5",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "eHHWqgmds1qxUaDqa4MXM$$1z7Qy6q1Q-aWaKqTGBq5w" : {
+      "id" : "eHHWqgmds1qxUaDqa4MXM$$1z7Qy6q1Q-aWaKqTGBq5w",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "player_season_stats",
+        "x" : 60,
+        "y" : 360,
+        "phase" : 0
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "in1",
+          "expression" : {
+            "expression" : "in0.player_id == in1.player_id and in0.season_year_int == in1.season_year and in0.team_id == in1.team_id"
+          },
+          "joinType" : "inner"
+        } ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "in0.player_id"
+          },
+          "alias" : "player_id",
+          "_row_id" : "2125494477"
+        }, {
+          "expression" : {
+            "expression" : "in0.season_year_int"
+          },
+          "alias" : "season_year_int",
+          "_row_id" : "1968060082"
+        }, {
+          "expression" : {
+            "expression" : "in0.team_id"
+          },
+          "alias" : "team_id",
+          "_row_id" : "988644141"
+        }, {
+          "expression" : {
+            "expression" : "in0.games_played"
+          },
+          "alias" : "games_played",
+          "_row_id" : "1835882948"
+        }, {
+          "expression" : {
+            "expression" : "in0.total_points"
+          },
+          "alias" : "total_points",
+          "_row_id" : "956064356"
+        }, {
+          "expression" : {
+            "expression" : "in0.total_assists"
+          },
+          "alias" : "total_assists",
+          "_row_id" : "1379065601"
+        }, {
+          "expression" : {
+            "expression" : "in0.total_rebounds"
+          },
+          "alias" : "total_rebounds",
+          "_row_id" : "1719757098"
+        }, {
+          "expression" : {
+            "expression" : "in0.field_goal_percentage"
+          },
+          "alias" : "field_goal_percentage",
+          "_row_id" : "1252364319"
+        }, {
+          "expression" : {
+            "expression" : "in0.three_point_percentage"
+          },
+          "alias" : "three_point_percentage",
+          "_row_id" : "283186375"
+        }, {
+          "expression" : {
+            "expression" : "in0.free_throw_percentage"
+          },
+          "alias" : "free_throw_percentage",
+          "_row_id" : "1529192117"
+        }, {
+          "expression" : {
+            "expression" : "in0.steals"
+          },
+          "alias" : "steals",
+          "_row_id" : "1756629280"
+        }, {
+          "expression" : {
+            "expression" : "in0.blocks"
+          },
+          "alias" : "blocks",
+          "_row_id" : "1775145234"
+        }, {
+          "expression" : {
+            "expression" : "in0.turnovers"
+          },
+          "alias" : "turnovers",
+          "_row_id" : "327936904"
+        }, {
+          "expression" : {
+            "expression" : "in1.minutes_played"
+          },
+          "alias" : "minutes_played",
+          "_row_id" : "1676538479"
+        }, {
+          "expression" : {
+            "expression" : "in0.performance_id"
+          },
+          "alias" : "performance_id",
+          "_row_id" : "2063265338"
+        } ],
+        "activeTab" : "conditions",
+        "columnsSelector" : [ "70k1DneAqqASUeG-U0amI$$CQfSvTLXMzCa4xOF-4dKc##player_id", "0Kixr6y2wEDmoiZxPlEfq$$hq7vuSmz1BmoXKNz22b84##player_id", "70k1DneAqqASUeG-U0amI$$CQfSvTLXMzCa4xOF-4dKc##season_year_int", "0Kixr6y2wEDmoiZxPlEfq$$hq7vuSmz1BmoXKNz22b84##season_year", "70k1DneAqqASUeG-U0amI$$CQfSvTLXMzCa4xOF-4dKc##team_id", "0Kixr6y2wEDmoiZxPlEfq$$hq7vuSmz1BmoXKNz22b84##team_id", "70k1DneAqqASUeG-U0amI$$CQfSvTLXMzCa4xOF-4dKc##player_id", "70k1DneAqqASUeG-U0amI$$CQfSvTLXMzCa4xOF-4dKc##season_year_int", "70k1DneAqqASUeG-U0amI$$CQfSvTLXMzCa4xOF-4dKc##team_id", "70k1DneAqqASUeG-U0amI$$CQfSvTLXMzCa4xOF-4dKc##games_played", "70k1DneAqqASUeG-U0amI$$CQfSvTLXMzCa4xOF-4dKc##total_points", "70k1DneAqqASUeG-U0amI$$CQfSvTLXMzCa4xOF-4dKc##total_assists", "70k1DneAqqASUeG-U0amI$$CQfSvTLXMzCa4xOF-4dKc##total_rebounds", "70k1DneAqqASUeG-U0amI$$CQfSvTLXMzCa4xOF-4dKc##field_goal_percentage", "70k1DneAqqASUeG-U0amI$$CQfSvTLXMzCa4xOF-4dKc##three_point_percentage", "70k1DneAqqASUeG-U0amI$$CQfSvTLXMzCa4xOF-4dKc##free_throw_percentage", "70k1DneAqqASUeG-U0amI$$CQfSvTLXMzCa4xOF-4dKc##steals", "70k1DneAqqASUeG-U0amI$$CQfSvTLXMzCa4xOF-4dKc##blocks", "70k1DneAqqASUeG-U0amI$$CQfSvTLXMzCa4xOF-4dKc##turnovers", "0Kixr6y2wEDmoiZxPlEfq$$hq7vuSmz1BmoXKNz22b84##minutes_played", "70k1DneAqqASUeG-U0amI$$CQfSvTLXMzCa4xOF-4dKc##performance_id" ],
+        "headAlias" : "in0"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "70k1DneAqqASUeG-U0amI$$CQfSvTLXMzCa4xOF-4dKc",
+          "slug" : "in0"
+        }, {
+          "id" : "0Kixr6y2wEDmoiZxPlEfq$$hq7vuSmz1BmoXKNz22b84",
+          "slug" : "in1"
+        } ],
+        "outputs" : [ {
+          "id" : "sX-YdT1xs7KWJyDFEz9n_$$atWIh33-i9f2eiv_8Eb_p",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "8MyN0ovTeV8t7L8tfn24P$$7pG7VyAwljJ3xTv_foHhU" : {
+      "id" : "8MyN0ovTeV8t7L8tfn24P$$7pG7VyAwljJ3xTv_foHhU",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "nba_team_roaster",
+        "x" : -140,
+        "y" : 460,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "nba_team_roaster",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_prakhar",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "KiQYc-WUzp97z16d_QCfd$$mIgVU0n2kK_-OAaTs2oP_",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "aSS4PZ9Au3ffcFCJL0_MR$$mMUsv5ZhzTV21KWJqPXvR" : {
+      "id" : "aSS4PZ9Au3ffcFCJL0_MR$$mMUsv5ZhzTV21KWJqPXvR",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "basketball_player_performance",
+        "phase" : 0
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM player_season_performance_stats\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "3Xs_okPecpYmGYw3I2lUe$$giqEg8sGoOlibwcqdAet8",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "qaTW3X6mle6eiz3ZPwykN$$QZ4EuEGYUqr9CJ0DrhJN0",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "HwkVDqEA6XZno_UpjR4JE$$xlaA-wYKp5wo4V7e9gvDy" : {
+      "id" : "HwkVDqEA6XZno_UpjR4JE$$xlaA-wYKp5wo4V7e9gvDy",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "player_season_performance_stats",
+        "x" : 260,
+        "y" : 360,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ "uh08XVvbrY3Ghnft3306e$$P8vbM4mLK3f4RfFx2LHP5##performance_id", "uh08XVvbrY3Ghnft3306e$$P8vbM4mLK3f4RfFx2LHP5##player_id", "uh08XVvbrY3Ghnft3306e$$P8vbM4mLK3f4RfFx2LHP5##season_year_int", "uh08XVvbrY3Ghnft3306e$$P8vbM4mLK3f4RfFx2LHP5##team_id", "uh08XVvbrY3Ghnft3306e$$P8vbM4mLK3f4RfFx2LHP5##games_played", "uh08XVvbrY3Ghnft3306e$$P8vbM4mLK3f4RfFx2LHP5##minutes_played", "uh08XVvbrY3Ghnft3306e$$P8vbM4mLK3f4RfFx2LHP5##total_points", "uh08XVvbrY3Ghnft3306e$$P8vbM4mLK3f4RfFx2LHP5##total_assists", "uh08XVvbrY3Ghnft3306e$$P8vbM4mLK3f4RfFx2LHP5##total_rebounds", "uh08XVvbrY3Ghnft3306e$$P8vbM4mLK3f4RfFx2LHP5##blocks", "uh08XVvbrY3Ghnft3306e$$P8vbM4mLK3f4RfFx2LHP5##steals", "uh08XVvbrY3Ghnft3306e$$P8vbM4mLK3f4RfFx2LHP5##turnovers", "uh08XVvbrY3Ghnft3306e$$P8vbM4mLK3f4RfFx2LHP5##field_goal_percentage", "uh08XVvbrY3Ghnft3306e$$P8vbM4mLK3f4RfFx2LHP5##three_point_percentage", "uh08XVvbrY3Ghnft3306e$$P8vbM4mLK3f4RfFx2LHP5##free_throw_percentage" ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "performance_id"
+          },
+          "alias" : "cdm_performance_id",
+          "_row_id" : "7XT3ZhXRzY"
+        }, {
+          "expression" : {
+            "expression" : "player_id"
+          },
+          "alias" : "cdm_player_id",
+          "_row_id" : "PPXjRGBjY-"
+        }, {
+          "expression" : {
+            "expression" : "season_year_int"
+          },
+          "alias" : "season_year",
+          "_row_id" : "81Dv06Sn8K"
+        }, {
+          "expression" : {
+            "expression" : "team_id"
+          },
+          "alias" : "team_id",
+          "_row_id" : "301990653"
+        }, {
+          "expression" : {
+            "expression" : "games_played"
+          },
+          "alias" : "stat_games_played",
+          "_row_id" : "gjdDyGydAX"
+        }, {
+          "expression" : {
+            "expression" : "minutes_played"
+          },
+          "alias" : "stat_minutes_total",
+          "_row_id" : "qMdEBImnyw"
+        }, {
+          "expression" : {
+            "expression" : "total_points"
+          },
+          "alias" : "stat_points_total",
+          "_row_id" : "k7A9wSNADA"
+        }, {
+          "expression" : {
+            "expression" : "total_assists"
+          },
+          "alias" : "stat_assists_total",
+          "_row_id" : "0UF4kxiVrK"
+        }, {
+          "expression" : {
+            "expression" : "total_rebounds"
+          },
+          "alias" : "stat_rebounds_total",
+          "_row_id" : "QxzujroID6"
+        }, {
+          "expression" : {
+            "expression" : "blocks"
+          },
+          "alias" : "stat_blocks_total",
+          "_row_id" : "p8THZlg14C"
+        }, {
+          "expression" : {
+            "expression" : "steals"
+          },
+          "alias" : "stat_steals_total",
+          "_row_id" : "WNV1ZTmUBH"
+        }, {
+          "expression" : {
+            "expression" : "turnovers"
+          },
+          "alias" : "stat_turnovers_total",
+          "_row_id" : "_kBwlo4jLs"
+        }, {
+          "expression" : {
+            "expression" : "field_goal_percentage"
+          },
+          "alias" : "efficiency_field_goal_pct",
+          "_row_id" : "2X9rev1Iyb"
+        }, {
+          "expression" : {
+            "expression" : "three_point_percentage"
+          },
+          "alias" : "efficiency_three_point_pct",
+          "_row_id" : "fyW1qZDEG7"
+        }, {
+          "expression" : {
+            "expression" : "free_throw_percentage"
+          },
+          "alias" : "efficiency_free_throw_pct",
+          "_row_id" : "77y9EtIJnD"
+        }, {
+          "expression" : {
+            "expression" : "field_goal_percentage * 0.5"
+          },
+          "alias" : "efficiency_player_efficiency_rating",
+          "_row_id" : "xqVpnLK9uC"
+        }, {
+          "expression" : {
+            "expression" : "current_timestamp()"
+          },
+          "alias" : "stat_capture_date",
+          "_row_id" : "l3-JrgtLKn"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "uh08XVvbrY3Ghnft3306e$$P8vbM4mLK3f4RfFx2LHP5",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "Ckq0mEPsIuJJOab-qclNM$$8v8CXuTaEePHCPZdMLM4K",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "tZLxa8XYUUP5l6a_2j00C",
+    "source" : "HwkVDqEA6XZno_UpjR4JE$$xlaA-wYKp5wo4V7e9gvDy",
+    "sourcePort" : "Ckq0mEPsIuJJOab-qclNM$$8v8CXuTaEePHCPZdMLM4K",
+    "target" : "aSS4PZ9Au3ffcFCJL0_MR$$mMUsv5ZhzTV21KWJqPXvR",
+    "targetPort" : "3Xs_okPecpYmGYw3I2lUe$$giqEg8sGoOlibwcqdAet8"
+  }, {
+    "id" : "7zbbglhbL8sGTVyUK2S5V",
+    "source" : "eHHWqgmds1qxUaDqa4MXM$$1z7Qy6q1Q-aWaKqTGBq5w",
+    "sourcePort" : "sX-YdT1xs7KWJyDFEz9n_$$atWIh33-i9f2eiv_8Eb_p",
+    "target" : "HwkVDqEA6XZno_UpjR4JE$$xlaA-wYKp5wo4V7e9gvDy",
+    "targetPort" : "uh08XVvbrY3Ghnft3306e$$P8vbM4mLK3f4RfFx2LHP5"
+  }, {
+    "id" : "yzl8MuKMAtd9EuETylli9",
+    "source" : "8MyN0ovTeV8t7L8tfn24P$$7pG7VyAwljJ3xTv_foHhU",
+    "sourcePort" : "KiQYc-WUzp97z16d_QCfd$$mIgVU0n2kK_-OAaTs2oP_",
+    "target" : "eHHWqgmds1qxUaDqa4MXM$$1z7Qy6q1Q-aWaKqTGBq5w",
+    "targetPort" : "0Kixr6y2wEDmoiZxPlEfq$$hq7vuSmz1BmoXKNz22b84"
+  }, {
+    "id" : "lb6LtczEREL4c7wI1y_ph$$XRgKDjQoqbp0s9AthSgjU",
+    "source" : "7sr_RWsxq2Chu2-VG5Slg$$o1PcDq9bthIjiVv04bxPN",
+    "sourcePort" : "E3oWII7JOsF_aRheGP2ol$$48PbkKQnSpPNsbPBFTgV5",
+    "target" : "eHHWqgmds1qxUaDqa4MXM$$1z7Qy6q1Q-aWaKqTGBq5w",
+    "targetPort" : "70k1DneAqqASUeG-U0amI$$CQfSvTLXMzCa4xOF-4dKc"
+  } ],
+  "component" : "Model"
+}

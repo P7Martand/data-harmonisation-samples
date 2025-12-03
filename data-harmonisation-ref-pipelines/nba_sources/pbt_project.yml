@@ -1,6 +1,6 @@
 name: nba_sources
 description: ''
-version: '1'
+version: '2'
 author: prakharmartand@prophecy.io
 language: sql
 buildSystem: ''
@@ -23,7 +23,67 @@ functions:
   airflowFunctions: {}
   businessRules: {}
 subgraphs: {}
-sqlModels: {}
+sqlModels:
+  .prophecy/metadata/sqlmodels/model1:
+    name: model1
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: season_year_int
+        dataType:
+          type: Bigint
+      - name: performance_id
+        dataType:
+          type: String
+      - name: player_id
+        dataType:
+          type: String
+      - name: team_id
+        dataType:
+          type: String
+      - name: games_played
+        dataType:
+          type: Bigint
+      - name: total_points
+        dataType:
+          type: Bigint
+      - name: total_assists
+        dataType:
+          type: Bigint
+      - name: total_rebounds
+        dataType:
+          type: Double
+      - name: field_goal_percentage
+        dataType:
+          type: Double
+      - name: three_point_percentage
+        dataType:
+          type: Double
+      - name: free_throw_percentage
+        dataType:
+          type: Double
+      - name: steals
+        dataType:
+          type: Bigint
+      - name: blocks
+        dataType:
+          type: Bigint
+      - name: turnovers
+        dataType:
+          type: Bigint
+    description: null
+    author: prakharmartand@prophecy.io
+    files:
+    - models/model1.sql
+    - .prophecy/ide/models/model1.json
+    sqlDependencies:
+      models: []
+      datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
+    createdAt: '2025-12-03 03:18:31'
 sqlSnapshots: {}
 sqlTests: {}
 sqlMacros:
@@ -587,4 +647,17 @@ sqlOrchestratorPipelines:
     - models/pipeline1/pipeline1__player_financials_and_compensation.sql
     - models/pipeline1/pipeline1__basketball_player_performance.sql
     createdAt: '2025-11-24 07:20:37'
+  .prophecy/metadata/sqlorchestratorpipeline/pipeline_with_models:
+    name: pipeline_with_models
+    schema: null
+    description: null
+    author: prakharmartand@prophecy.io
+    files:
+    - .prophecy/ide/pipelines/pipeline_with_models.json
+    - pipelines/pipeline_with_models.py
+    - models/pipeline_with_models/pipeline_with_models__player_financials_and_compensation.sql
+    - models/pipeline_with_models/pipeline_with_models__basketball_player_performance.sql
+    - models/pipeline_with_models/schema.yml
+    - models/pipeline_with_models/pipeline_with_models__player_profiles.sql
+    createdAt: '2025-12-03 03:19:41'
 sqlBusinessApps: {}

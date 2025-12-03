@@ -9,6 +9,7 @@ sources:
     config:
       tags:
       - "pipeline:pipeline1"
+      - "pipeline:pipeline_with_models"
     columns:
     - name: "roster_id"
       dataType:
@@ -51,10 +52,16 @@ sources:
     config:
       tags:
       - "pipeline:pipeline1"
+      - "pipeline:pipeline_with_models"
     columns:
     - name: "player_id"
       dataType:
         type: "String"
+      mappings:
+      - type: "foreign"
+        columnName: "partnership_id"
+        datasetId: "table/qa_team_prakhar/nba_brand_patnership"
+        datasetName: "qa_team_prakhar"
     - name: "first_name"
       dataType:
         type: "String"
@@ -147,6 +154,7 @@ sources:
     config:
       tags:
       - "pipeline:pipeline1"
+      - "pipeline:pipeline_with_models"
     columns:
     - name: "contract_id"
       dataType:
@@ -192,10 +200,16 @@ sources:
     config:
       tags:
       - "pipeline:pipeline1"
+      - "pipeline:pipeline_with_models"
     columns:
     - name: "partnership_id"
       dataType:
         type: "String"
+      mappings:
+      - type: "foreign"
+        columnName: "player_id"
+        datasetId: "table/qa_team_prakhar/nba_players"
+        datasetName: "qa_team_prakhar"
     - name: "player_id"
       dataType:
         type: "String"
@@ -232,6 +246,7 @@ sources:
     config:
       tags:
       - "pipeline:pipeline1"
+      - "pipeline:pipeline_with_models"
     columns:
     - name: "cdm_player_id"
       dataType:
@@ -344,6 +359,7 @@ sources:
     config:
       tags:
       - "pipeline:pipeline1"
+      - "pipeline:pipeline_with_models"
     columns:
     - name: "cdm_financial_id"
       dataType:
@@ -398,6 +414,7 @@ sources:
     config:
       tags:
       - "pipeline:pipeline1"
+      - "pipeline:pipeline_with_models"
     columns:
     - name: "cdm_performance_id"
       dataType:
@@ -458,6 +475,7 @@ sources:
     config:
       tags:
       - "pipeline:pipeline1"
+      - "pipeline:pipeline_with_models"
     columns:
     - name: "cdm_brand_engagement_id"
       description: "Unique identifier for each brand engagement instance."

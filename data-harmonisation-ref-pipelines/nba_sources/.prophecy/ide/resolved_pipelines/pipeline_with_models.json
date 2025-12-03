@@ -1,0 +1,292 @@
+{
+  "id" : "pipeline_with_models",
+  "metainfo" : {
+    "label" : "pipeline_with_models",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false,
+    "publishDiagnosticMetrics" : false
+  },
+  "processes" : {
+    "Pipeline_1_YAAv8k3_6j6oZl51dx5Kc$$Unkdi8dt7ya9PQSbsj0X4" : {
+      "id" : "Pipeline_1_YAAv8k3_6j6oZl51dx5Kc$$Unkdi8dt7ya9PQSbsj0X4",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "Pipeline_1"
+      },
+      "properties" : {
+        "label" : "Pipeline_1",
+        "table" : {
+          "name" : "{{ prophecy_tmp_source('pipeline_with_models', 'Pipeline_1') }}",
+          "sourceType" : "UnreferencedSource"
+        }
+      },
+      "visualMetaInfo" : {
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "7sr_RWsxq2Chu2-VG5Slg$$o1PcDq9bthIjiVv04bxPN" : {
+      "id" : "7sr_RWsxq2Chu2-VG5Slg$$o1PcDq9bthIjiVv04bxPN",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "model1_1",
+        "x" : -200,
+        "y" : 280
+      },
+      "properties" : {
+        "modelName" : "model1"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "aKoYOAAoPcVMPb7nV4j5B$$gHpwT5MOE0S2w3TKRhL1M",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "E3oWII7JOsF_aRheGP2ol$$48PbkKQnSpPNsbPBFTgV5",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "tv3AmNt8D4V19aYEDSdJw$$mwrDwopJa8iaWg3lgQX8E" : {
+      "id" : "tv3AmNt8D4V19aYEDSdJw$$mwrDwopJa8iaWg3lgQX8E",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "pipeline_with_models__new_cdm_brand_summary",
+        "phase" : 0
+      },
+      "properties" : {
+        "snapshotName" : "pipeline_with_models__new_cdm_brand_summary",
+        "modelName" : ""
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "tv3AmNt8D4V19aYEDSdJw$$mwrDwopJa8iaWg3lgQX8E", "4IkAl3K81caIaEaFZZ-Tg$$icNbHfsz76px3obZXFHHq", "mx77b15Y4nc3mNssamt1k$$atQaaT8og_o4tsrDDzUAC" ],
+        "type" : "table",
+        "isTemporaryTable" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "pipeline_with_models__new_cdm_brand_summary_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "pipeline_with_models__new_cdm_brand_summary_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "I2FtfNcz1zGtUajIN3Uh3$$ZcKgDVmA8tL5cUgGxODgH" : {
+      "id" : "I2FtfNcz1zGtUajIN3Uh3$$ZcKgDVmA8tL5cUgGxODgH",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "pipeline_with_models__player_financials_and_compensation",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "pipeline_with_models__player_financials_and_compensation"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "I2FtfNcz1zGtUajIN3Uh3$$ZcKgDVmA8tL5cUgGxODgH", "7bVBWbLHtqK7C6shyjSqh$$LnHR6OEClopcR6dQy9V0h", "C_Ls1NM7Z4ry8V_ZuiYHg$$Y_stmAZ93jNlwI4Z_Pt4Y", "avbZE__zitu9WJ0ONhwYW$$-9cqDWY5P29FEBEC1D-uw", "qYZTzKD_6HucA1G-T68bT$$ViMJwbSz0efUOgfqGEE8M", "Vs9U1SR3VNcFGDrlkmy-n$$oZx_wfLOFDuiS4u6vJzFy", "4Aw7X1zTrMQevnAp_LIl1$$qArR1nvRNPql7VXePmMQm", "mx77b15Y4nc3mNssamt1k$$atQaaT8og_o4tsrDDzUAC" ],
+        "type" : "table",
+        "isTemporaryTable" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "pipeline_with_models__player_financials_and_compensation_in_0",
+          "slug" : "in_0"
+        }, {
+          "id" : "pipeline_with_models__player_financials_and_compensation_in_1",
+          "slug" : "in_1"
+        } ],
+        "outputs" : [ {
+          "id" : "pipeline_with_models__player_financials_and_compensation_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "aSS4PZ9Au3ffcFCJL0_MR$$mMUsv5ZhzTV21KWJqPXvR" : {
+      "id" : "aSS4PZ9Au3ffcFCJL0_MR$$mMUsv5ZhzTV21KWJqPXvR",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "pipeline_with_models__basketball_player_performance",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "pipeline_with_models__basketball_player_performance"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "aSS4PZ9Au3ffcFCJL0_MR$$mMUsv5ZhzTV21KWJqPXvR", "HwkVDqEA6XZno_UpjR4JE$$xlaA-wYKp5wo4V7e9gvDy", "eHHWqgmds1qxUaDqa4MXM$$1z7Qy6q1Q-aWaKqTGBq5w", "8MyN0ovTeV8t7L8tfn24P$$7pG7VyAwljJ3xTv_foHhU", "7sr_RWsxq2Chu2-VG5Slg$$o1PcDq9bthIjiVv04bxPN" ],
+        "type" : "incremental",
+        "isTemporaryTable" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "pipeline_with_models__basketball_player_performance_in_0",
+          "slug" : "in_0"
+        }, {
+          "id" : "pipeline_with_models__basketball_player_performance_in_1",
+          "slug" : "in_1"
+        } ],
+        "outputs" : [ {
+          "id" : "pipeline_with_models__basketball_player_performance_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "Lxs8VIWRw0eBofV5cqBYz$$ol-9zObF1VTseSAxQjVFb" : {
+      "id" : "Lxs8VIWRw0eBofV5cqBYz$$ol-9zObF1VTseSAxQjVFb",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "Pipeline_1",
+        "x" : -500,
+        "y" : 260,
+        "phase" : 0
+      },
+      "properties" : {
+        "maxTriggers" : 10000,
+        "triggerCondition" : "Always",
+        "enableMaxTriggers" : false,
+        "pipelineName" : "pipeline1",
+        "parameters" : { }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "GjpNH1DvPSsyG2Z_v3lVG$$zwX97oTDGE9ltUCm6e-uK",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "YAAv8k3_6j6oZl51dx5Kc$$Unkdi8dt7ya9PQSbsj0X4",
+          "slug" : "out0"
+        } ]
+      }
+    },
+    "p4DI9_JXgPgf3SJMVDT_k$$zBHEKJ155t8AaZhY19X6A" : {
+      "id" : "p4DI9_JXgPgf3SJMVDT_k$$zBHEKJ155t8AaZhY19X6A",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "pipeline_with_models__player_profiles",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "pipeline_with_models__player_profiles"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "p4DI9_JXgPgf3SJMVDT_k$$zBHEKJ155t8AaZhY19X6A", "45FQTuJBkSSRQJkvpTPyK$$Q6eC45LZMdIfw3mVcxqY9", "Pipeline_1_YAAv8k3_6j6oZl51dx5Kc$$Unkdi8dt7ya9PQSbsj0X4", "x9nsLt23tFKxYDIPN5uMB$$1hlqHyR6_l-WXtEyt6ekT", "niO4Q9GpbYFsOorbvTiPX$$-hj4CpBParpfzngS1ZPLW" ],
+        "type" : "incremental",
+        "isTemporaryTable" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "pipeline_with_models__player_profiles_in_0",
+          "slug" : "in_0"
+        }, {
+          "id" : "pipeline_with_models__player_profiles_in_1",
+          "slug" : "in_1"
+        }, {
+          "id" : "pipeline_with_models__player_profiles_in_2",
+          "slug" : "in_2"
+        } ],
+        "outputs" : [ {
+          "id" : "pipeline_with_models__player_profiles_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "mx77b15Y4nc3mNssamt1k$$atQaaT8og_o4tsrDDzUAC" : {
+      "id" : "mx77b15Y4nc3mNssamt1k$$atQaaT8og_o4tsrDDzUAC",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "nba_brand_patnership",
+        "x" : -540,
+        "y" : -240,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "nba_brand_patnership",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_prakhar",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "8OngMkOXzZw2463WmYZDz$$OmwENYn4hjzpsfMCNzZMa",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "Awyb13Q-CiuZIaSZoiFed$$eI-KbZwsXCTqf7pEr0W8L",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_Lxs8VIWRw0eBofV5cqBYz$$ol-9zObF1VTseSAxQjVFb_YAAv8k3_6j6oZl51dx5Kc$$Unkdi8dt7ya9PQSbsj0X4_Pipeline_1_YAAv8k3_6j6oZl51dx5Kc$$Unkdi8dt7ya9PQSbsj0X4",
+    "source" : "Lxs8VIWRw0eBofV5cqBYz$$ol-9zObF1VTseSAxQjVFb",
+    "sourcePort" : "YAAv8k3_6j6oZl51dx5Kc$$Unkdi8dt7ya9PQSbsj0X4",
+    "target" : "Pipeline_1_YAAv8k3_6j6oZl51dx5Kc$$Unkdi8dt7ya9PQSbsj0X4",
+    "targetPort" : "input_port_0"
+  }, {
+    "id" : "QlgfdfOJ1F1glGQUmZ7wn",
+    "source" : "Pipeline_1_YAAv8k3_6j6oZl51dx5Kc$$Unkdi8dt7ya9PQSbsj0X4",
+    "sourcePort" : "output_port_0",
+    "target" : "p4DI9_JXgPgf3SJMVDT_k$$zBHEKJ155t8AaZhY19X6A",
+    "targetPort" : "pipeline_with_models__player_profiles_in_2"
+  }, {
+    "id" : "xXDNy1hTclKCNZTFcJnGa",
+    "source" : "mx77b15Y4nc3mNssamt1k$$atQaaT8og_o4tsrDDzUAC",
+    "sourcePort" : "Awyb13Q-CiuZIaSZoiFed$$eI-KbZwsXCTqf7pEr0W8L",
+    "target" : "I2FtfNcz1zGtUajIN3Uh3$$ZcKgDVmA8tL5cUgGxODgH",
+    "targetPort" : "pipeline_with_models__player_financials_and_compensation_in_1"
+  }, {
+    "id" : "lb6LtczEREL4c7wI1y_ph$$XRgKDjQoqbp0s9AthSgjU",
+    "source" : "7sr_RWsxq2Chu2-VG5Slg$$o1PcDq9bthIjiVv04bxPN",
+    "sourcePort" : "E3oWII7JOsF_aRheGP2ol$$48PbkKQnSpPNsbPBFTgV5",
+    "target" : "aSS4PZ9Au3ffcFCJL0_MR$$mMUsv5ZhzTV21KWJqPXvR",
+    "targetPort" : "pipeline_with_models__basketball_player_performance_in_1"
+  }, {
+    "id" : "eme6jm8fD02eVWgxEbyeu",
+    "source" : "mx77b15Y4nc3mNssamt1k$$atQaaT8og_o4tsrDDzUAC",
+    "sourcePort" : "Awyb13Q-CiuZIaSZoiFed$$eI-KbZwsXCTqf7pEr0W8L",
+    "target" : "tv3AmNt8D4V19aYEDSdJw$$mwrDwopJa8iaWg3lgQX8E",
+    "targetPort" : "pipeline_with_models__new_cdm_brand_summary_in_0"
+  } ],
+  "component" : "Pipeline"
+}

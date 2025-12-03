@@ -1,0 +1,322 @@
+{
+  "id" : "model1",
+  "metainfo" : {
+    "label" : "model1",
+    "autoLayout" : false,
+    "staleState" : "file",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "model1##u3ZJnOVO" : {
+      "id" : "model1##u3ZJnOVO",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "model1",
+        "x" : 280,
+        "y" : -20,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT * \n\nFROM season_year_cast_int\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "BimkujTr",
+          "slug" : "season_year_cast_int"
+        } ],
+        "outputs" : [ {
+          "id" : "X3oYjA1o",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "kJPByO7Andgp8agW0qCN8$$Azr0RtfsH7YOhe3c0WG4H" : {
+      "id" : "kJPByO7Andgp8agW0qCN8$$Azr0RtfsH7YOhe3c0WG4H",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "season_years",
+        "x" : -80,
+        "y" : -20,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Summarizes key performance statistics for basketball players by season.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "season_year"
+          },
+          "alias" : "season_year",
+          "_row_id" : "RKK2fQX3rg"
+        }, {
+          "expression" : {
+            "expression" : "performance_id"
+          },
+          "alias" : "performance_id",
+          "_row_id" : "352956175"
+        }, {
+          "expression" : {
+            "expression" : "player_id"
+          },
+          "alias" : "player_id",
+          "_row_id" : "787480009"
+        }, {
+          "expression" : {
+            "expression" : "team_id"
+          },
+          "alias" : "team_id",
+          "_row_id" : "1982184884"
+        }, {
+          "expression" : {
+            "expression" : "games_played"
+          },
+          "alias" : "games_played",
+          "_row_id" : "478394712"
+        }, {
+          "expression" : {
+            "expression" : "total_points"
+          },
+          "alias" : "total_points",
+          "_row_id" : "1954825058"
+        }, {
+          "expression" : {
+            "expression" : "total_assists"
+          },
+          "alias" : "total_assists",
+          "_row_id" : "1010251257"
+        }, {
+          "expression" : {
+            "expression" : "total_rebounds"
+          },
+          "alias" : "total_rebounds",
+          "_row_id" : "978413280"
+        }, {
+          "expression" : {
+            "expression" : "field_goal_percentage"
+          },
+          "alias" : "field_goal_percentage",
+          "_row_id" : "1453920913"
+        }, {
+          "expression" : {
+            "expression" : "three_point_percentage"
+          },
+          "alias" : "three_point_percentage",
+          "_row_id" : "1680195027"
+        }, {
+          "expression" : {
+            "expression" : "free_throw_percentage"
+          },
+          "alias" : "free_throw_percentage",
+          "_row_id" : "516828305"
+        }, {
+          "expression" : {
+            "expression" : "steals"
+          },
+          "alias" : "steals",
+          "_row_id" : "1374639714"
+        }, {
+          "expression" : {
+            "expression" : "blocks"
+          },
+          "alias" : "blocks",
+          "_row_id" : "2076249364"
+        }, {
+          "expression" : {
+            "expression" : "turnovers"
+          },
+          "alias" : "turnovers",
+          "_row_id" : "100695826"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "YS3HrwCzxOKSVqqJBeBDE$$khquw0YgaNY15TteS_157",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "vRmyTL9HCFHTw6WPlcGQP$$MJoL-8HjBxWB_NSVYE0ea",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "EByx9nue5xPaT6ApBrGKa$$mZ0R3TdOC-cOw0ateIeGS" : {
+      "id" : "EByx9nue5xPaT6ApBrGKa$$mZ0R3TdOC-cOw0ateIeGS",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "season_year_cast_int",
+        "x" : 120,
+        "y" : -20,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Standardizes season year for player performance records to support consistent sports analytics.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "CAST(season_year AS bigint)"
+          },
+          "alias" : "season_year_int",
+          "_row_id" : "PTHxQCwTRX"
+        }, {
+          "expression" : {
+            "expression" : "performance_id"
+          },
+          "alias" : "performance_id",
+          "_row_id" : "565137308"
+        }, {
+          "expression" : {
+            "expression" : "player_id"
+          },
+          "alias" : "player_id",
+          "_row_id" : "990358539"
+        }, {
+          "expression" : {
+            "expression" : "team_id"
+          },
+          "alias" : "team_id",
+          "_row_id" : "1993848881"
+        }, {
+          "expression" : {
+            "expression" : "games_played"
+          },
+          "alias" : "games_played",
+          "_row_id" : "1148896230"
+        }, {
+          "expression" : {
+            "expression" : "total_points"
+          },
+          "alias" : "total_points",
+          "_row_id" : "283979556"
+        }, {
+          "expression" : {
+            "expression" : "total_assists"
+          },
+          "alias" : "total_assists",
+          "_row_id" : "729502007"
+        }, {
+          "expression" : {
+            "expression" : "total_rebounds"
+          },
+          "alias" : "total_rebounds",
+          "_row_id" : "1537387441"
+        }, {
+          "expression" : {
+            "expression" : "field_goal_percentage"
+          },
+          "alias" : "field_goal_percentage",
+          "_row_id" : "1257981814"
+        }, {
+          "expression" : {
+            "expression" : "three_point_percentage"
+          },
+          "alias" : "three_point_percentage",
+          "_row_id" : "928504887"
+        }, {
+          "expression" : {
+            "expression" : "free_throw_percentage"
+          },
+          "alias" : "free_throw_percentage",
+          "_row_id" : "2007507516"
+        }, {
+          "expression" : {
+            "expression" : "steals"
+          },
+          "alias" : "steals",
+          "_row_id" : "1764508621"
+        }, {
+          "expression" : {
+            "expression" : "blocks"
+          },
+          "alias" : "blocks",
+          "_row_id" : "1991862400"
+        }, {
+          "expression" : {
+            "expression" : "turnovers"
+          },
+          "alias" : "turnovers",
+          "_row_id" : "2006185125"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "U_qWehRH24M9Z2I72tRys$$VE3R64YIQTtQjq2Fws2Vg",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "Yc8fB2MekPMHqJxGEyqEY$$_2fPozbHYNr5d74GIjTHq",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "PYhB6itBf4CBFHXK7iyfR" : {
+      "id" : "PYhB6itBf4CBFHXK7iyfR",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "nba_player_performance",
+        "slug" : "nba_player_performance",
+        "x" : -280,
+        "y" : 0,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "nba_player_performance",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team_prakhar",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "47rR-TxI7-lyzQikRqfEj",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "JWyr82RFPQSw_01pwp15q",
+    "source" : "kJPByO7Andgp8agW0qCN8$$Azr0RtfsH7YOhe3c0WG4H",
+    "sourcePort" : "vRmyTL9HCFHTw6WPlcGQP$$MJoL-8HjBxWB_NSVYE0ea",
+    "target" : "EByx9nue5xPaT6ApBrGKa$$mZ0R3TdOC-cOw0ateIeGS",
+    "targetPort" : "U_qWehRH24M9Z2I72tRys$$VE3R64YIQTtQjq2Fws2Vg"
+  }, {
+    "id" : "UCCrJy88lNrON0IZvA0cQ$$hXAtqv6kOGVAza4jPABOJ",
+    "source" : "EByx9nue5xPaT6ApBrGKa$$mZ0R3TdOC-cOw0ateIeGS",
+    "sourcePort" : "Yc8fB2MekPMHqJxGEyqEY$$_2fPozbHYNr5d74GIjTHq",
+    "target" : "model1##u3ZJnOVO",
+    "targetPort" : "BimkujTr"
+  }, {
+    "id" : "hA_nsNE8FIywBD24_2U-y$$dIELe7P0WhqIpYN0A72NS",
+    "source" : "PYhB6itBf4CBFHXK7iyfR",
+    "sourcePort" : "47rR-TxI7-lyzQikRqfEj",
+    "target" : "kJPByO7Andgp8agW0qCN8$$Azr0RtfsH7YOhe3c0WG4H",
+    "targetPort" : "YS3HrwCzxOKSVqqJBeBDE$$khquw0YgaNY15TteS_157"
+  } ],
+  "component" : "Model"
+}
