@@ -9,6 +9,7 @@ sources:
     config:
       tags:
       - "pipeline:pipeline1"
+      - "pipeline:pipeline_with_models"
     columns:
     - name: "roster_id"
       dataType:
@@ -51,6 +52,7 @@ sources:
     config:
       tags:
       - "pipeline:pipeline1"
+      - "pipeline:pipeline_with_models"
     columns:
     - name: "player_id"
       dataType:
@@ -147,6 +149,7 @@ sources:
     config:
       tags:
       - "pipeline:pipeline1"
+      - "pipeline:pipeline_with_models"
     columns:
     - name: "contract_id"
       dataType:
@@ -192,6 +195,7 @@ sources:
     config:
       tags:
       - "pipeline:pipeline1"
+      - "pipeline:pipeline_with_models"
     columns:
     - name: "partnership_id"
       dataType:
@@ -232,6 +236,7 @@ sources:
     config:
       tags:
       - "pipeline:pipeline1"
+      - "pipeline:pipeline_with_models"
     columns:
     - name: "cdm_player_id"
       dataType:
@@ -344,6 +349,7 @@ sources:
     config:
       tags:
       - "pipeline:pipeline1"
+      - "pipeline:pipeline_with_models"
     columns:
     - name: "cdm_financial_id"
       dataType:
@@ -398,6 +404,7 @@ sources:
     config:
       tags:
       - "pipeline:pipeline1"
+      - "pipeline:pipeline_with_models"
     columns:
     - name: "cdm_performance_id"
       dataType:
@@ -458,6 +465,7 @@ sources:
     config:
       tags:
       - "pipeline:pipeline1"
+      - "pipeline:pipeline_with_models"
     columns:
     - name: "cdm_brand_engagement_id"
       description: "Unique identifier for each brand engagement instance."
