@@ -1,6 +1,6 @@
 name: nba_targets
 description: ''
-version: '10'
+version: '11'
 author: prakharmartand@prophecy.io
 language: sql
 buildSystem: ''
