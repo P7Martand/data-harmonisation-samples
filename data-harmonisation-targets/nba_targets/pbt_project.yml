@@ -105,51 +105,78 @@ sqlSources:
         - name: cdm_financial_id
           dataType:
             type: String
+          description: Unique identifier for each financial record of a player.
         - name: cdm_player_id
           dataType:
             type: String
+          description: Unique identifier for the player associated with the financial
+            record.
         - name: season_year
           dataType:
             type: Bigint
+          description: Year of the sports season for which the financial data applies.
         - name: team_id
           dataType:
             type: String
+          description: Identifier for the team the player is associated with during
+            the season.
         - name: salary_annual_usd
           dataType:
             type: Bigint
+          description: Annual salary paid to the player in US dollars for the season.
         - name: salary_total_contract_usd
           dataType:
             type: Bigint
+          description: Total value of the player's contract over its entire duration
+            in US dollars.
         - name: salary_guaranteed_usd
           dataType:
             type: Bigint
+          description: Amount of the player's salary that is guaranteed to be paid
+            in US dollars.
         - name: salary_signing_bonus_usd
           dataType:
             type: Bigint
+          description: One-time signing bonus paid to the player in US dollars.
         - name: salary_incentives_usd
           dataType:
             type: Bigint
+          description: Potential additional earnings for the player based on performance
+            incentives in US dollars.
         - name: endorsement_annual_revenue_usd
           dataType:
             type: Bigint
+          description: Total annual revenue the player earns from endorsement deals
+            in US dollars.
         - name: endorsement_total_active_deals
           dataType:
             type: Bigint
+          description: Total number of active endorsement deals for the player at
+            the time of the financial snapshot.
         - name: total_compensation_usd
           dataType:
             type: Bigint
+          description: Total earnings received by the player from all sources before
+            tax, measured in USD.
         - name: effective_tax_rate
           dataType:
             type: Double
+          description: Overall tax rate applied to the player's earnings during the
+            financial snapshot period.
         - name: net_earnings_after_tax_usd
           dataType:
             type: Bigint
+          description: Total amount the player takes home after taxes are deducted,
+            measured in USD.
         - name: capped_room_impact_usd
           dataType:
             type: Bigint
+          description: Portion of the player's compensation that counts toward the
+            team's salary cap, measured in USD.
         - name: financial_snapshot_date
           dataType:
             type: Timestamp
+          description: Date and time when the player's financial snapshot was recorded.
       description: Provides a comprehensive view of player earnings, including salaries,
         endorsements, and net income, supporting financial analysis of athletes and
         teams.
@@ -164,45 +191,59 @@ sqlSources:
         - name: cdm_player_id
           dataType:
             type: String
+          description: Unique identifier assigned to each player in the system.
         - name: cdm_player_key
           dataType:
             type: String
+          description: Alternate unique key used to reference the player across systems.
         - name: first_name
           dataType:
             type: String
+          description: Player's given first name.
         - name: last_name
           dataType:
             type: String
+          description: Player's family or surname.
         - name: full_name
           dataType:
             type: String
+          description: Complete name of the player, combining first and last names.
         - name: player_status
           dataType:
             type: String
+          description: Current status of the player, such as active, retired, or injured.
         - name: position_code
           dataType:
             type: String
+          description: Code representing the player's position on the team.
         - name: draft_info_year
           dataType:
             type: Bigint
+          description: Year in which the player was drafted.
         - name: country_of_origin
           dataType:
             type: String
+          description: Country where the player was born or represents.
         - name: physical_attributes_height_cm
           dataType:
             type: Bigint
+          description: Player's height measured in centimeters.
         - name: physical_attributes_weight_kg
           dataType:
             type: Bigint
+          description: Player's weight in kilograms as recorded in official records.
         - name: created_date
           dataType:
             type: Timestamp
+          description: Date and time when the player's record was first added.
         - name: updated_date
           dataType:
             type: Timestamp
+          description: Date and time when the player's record was last updated.
         - name: data_source
           dataType:
             type: String
+          description: Origin or system from which the player's information was obtained.
       description: Comprehensive player profiles supporting player identification,
         status tracking, and talent management.
       author: prakharmartand@prophecy.io

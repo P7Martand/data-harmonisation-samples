@@ -10,20 +10,18 @@
         "fields" : [ ]
       }
     },
-    "schedule" : {
+    "schedules" : [ {
+      "name" : "Schedule 1",
+      "scheduleType" : "cron",
       "cron" : "* 0 2 * * * *",
       "timeZone" : "GMT",
       "emailOnSuccess" : false,
       "emailOnFailure" : false,
       "emailOnStart" : false,
       "emails" : [ "email@gmail.com" ],
-      "enabled" : false
-    },
-    "sensorSchedule" : {
       "enabled" : false,
-      "isDefaultView" : false,
       "triggers" : { }
-    },
+    } ],
     "isTranspiledPipeline" : false,
     "publishDiagnosticMetrics" : false
   },
