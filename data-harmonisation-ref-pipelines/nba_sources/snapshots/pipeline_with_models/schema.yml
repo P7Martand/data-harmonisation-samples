@@ -1,6 +1,0 @@
----
-version: 2
-snapshots:
-- name: "pipeline_with_models__new_cdm_brand_summary"
-  tags:
-  - "prophecy_temp"
